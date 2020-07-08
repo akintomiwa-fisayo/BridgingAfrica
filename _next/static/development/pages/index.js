@@ -1238,7 +1238,7 @@ var Header = /*#__PURE__*/function (_React$Component) {
           columnNumber: 17
         }
       }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_8___default.a, {
-        href: "/about",
+        href: "about",
         __self: this,
         __source: {
           fileName: _jsxFileName,
