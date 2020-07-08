@@ -23,7 +23,7 @@ class Header extends React.Component {
   render() {
     const { props } = this;
     // console.log('header props', props);
-    const { header, socialHeader } = props.settings;
+    const { header } = props.settings;
     const headerStyle = { };
 
     return (
@@ -60,6 +60,7 @@ class Header extends React.Component {
           />
           {/*   <!-- End loading animation --> */}
           <link href="/css/theme.min.css" rel="stylesheet" type="text/css" media="all" />
+          <link href="/css/demo.css" rel="stylesheet" type="text/css" media="all" />
           {/* <link href="https://fonts.googleapis.com/css?family=Nunito:400,400i,600,700&amp;display=swap" rel="stylesheet" /> */}
           <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;1,100;1,200;1,300&display=swap" rel="stylesheet" />
           <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
@@ -127,27 +128,7 @@ class Header extends React.Component {
           <script type="text/javascript" src="/js/theme.js" />
           <script type="text/javascript" src="/js/custom.js" />
           {/*      This script appears only on the demo.  It is used to delay unnecessary image loading until after the main page content is loaded.  */}
-          <script
-            type="text/javascript"
-            dangerouslySetInnerHTML={{
-              __html: `
-                    window.addEventListener("load", function () {
-                      setTimeout(function () {
-                          const delayedImages = document.querySelectorAll('[data-delay-src]');
-                          theme.mrUtil.forEach(delayedImages, (index, elem) => {
-                              const source = elem.getAttribute('data-delay-src');
-                              elem.removeAttribute('data-delay-src');
-                              elem.setAttribute('src', source);
-                          });
-                      }, 500);
-                    });
-                    // This script appears only in the demo - it disables forms with no action attribute to prevent 
-                    // navigating away from the page.
-                    jQuery("form:not([action])").on('submit', function () { return false; });
 
-              `,
-            }}
-          />
           <script type="text/javascript" src="/js/jarallax.min.js" defer />
         </Head>
 
@@ -156,25 +137,25 @@ class Header extends React.Component {
           className={`navbar-container${header.transparent ? ' transparent' : ''}${!header.fixed ? ' fixed' : ''}`}
           style={header.fixed ? {
             position: 'absolute',
-            top: `${socialHeader.height}px`,
+            top: `${header.fixedTop}px`,
           } : { }}
           ref={this.regHeight}
         >
           <nav className="navbar navbar-expand-lg navbar-light " data-sticky="top">
 
             <Link href="/index">
-              <a className="navbar-brand navbar-brand-dynamic-color fade-page">
+              <a id="logo" className="navbar-brand navbar-brand-dynamic-color fade-page">
                 <img
                   alt="AfriHub"
-                  src="/img/logos/brigingafrikalogo.jpg"
+                  src="/img/logo.png"
                   style={{ borderRadius: '4px', height: '50px' }}
                 />
               </a>
             </Link>
 
             <div className="d-flex align-items-center order-lg-3">
-              <Link href="/">
-                <a className="btn btn-primary ml-lg-4 mr-3 mr-md-4 mr-lg-0 d-none d-sm-block order-lg-3">Login / Signup </a>
+              <Link href="/sign-up">
+                <a id="login" className="btn btn-primary ml-lg-4 mr-3 mr-md-4 mr-lg-0 d-none d-sm-block order-lg-3">Login / Signup </a>
               </Link>
 
               <button
@@ -209,26 +190,8 @@ class Header extends React.Component {
                 </li>
 
                 <li className="nav-item">
-                  <a className="nav-link" href="#">
+                  <a className="nav-link" href="/about">
                     <span className="	fa fa-book icon" />About
-                  </a>
-                </li>
-
-                <li className="nav-item">
-                  <a className="nav-link" href="#">
-                    <span className="	fa fa-medkit icon" />Innovation
-                  </a>
-                </li>
-
-                <li className="nav-item">
-                  <a className="nav-link" href="#">
-                    <span className="	fa fa-leaf icon" />Customer Profile
-                  </a>
-                </li>
-
-                <li className="nav-item">
-                  <a className="nav-link" href="#">
-                    <span className="	fa fa-gears icon" />Crowd Funding
                   </a>
                 </li>
 
@@ -239,13 +202,7 @@ class Header extends React.Component {
                 </li>
 
                 <li className="nav-item">
-                  <a className="nav-link" href="#">
-                    <span className="	fa fa-book icon" />Forum
-                  </a>
-                </li>
-
-                <li className="nav-item">
-                  <a className="nav-link" href="#">
+                  <a className="nav-link" href="/contact">
                     <span className="	fa fa-book icon" />Contact
                   </a>
                 </li>

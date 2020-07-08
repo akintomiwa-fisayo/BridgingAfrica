@@ -8,11 +8,13 @@ class Layout extends React.Component {
     const { props } = this;
     const { children } = props;
     return (
-      <main className="">
+      <>
         <Header />
-        {children}
+        <main className="">
+          {children}
+        </main>
         <Footer />
-      </main>
+      </>
     );
   }
 }

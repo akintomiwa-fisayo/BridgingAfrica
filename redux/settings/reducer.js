@@ -3,8 +3,8 @@ import { actionTypes } from './action';
 export const initState = {
   header: {
     height: 0,
-    transparent: true,
     fixed: false,
+    fixedTop: null,
   },
   socialHeader: {
     height: 0,

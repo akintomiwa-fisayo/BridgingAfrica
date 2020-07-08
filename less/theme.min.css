@@ -8503,11 +8503,11 @@ button.bg-primary-3:hover {
 }
 
 .shadow-sm {
-  box-shadow: 0 .25rem .375rem rgba(0, 0, 0, .09) !important
+  box-shadow: 0 .25rem .4rem rgba(0, 0, 0, .09) !important
 }
 
 .shadow {
-  box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .09) !important
+  box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1) !important
 }
 
 .shadow-lg {

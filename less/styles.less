@@ -1,7 +1,9 @@
 @import "assets/variables.less";
 @import "assets/form-input.less";
+@import "assets/slideshow.less";
 
 @import (inline)  "./theme.min.css";
+@import (reference)  "../public/css/demo.css";
 
 @keyframes pulse {
   0% {
@@ -37,16 +39,27 @@
   animation: pulse 1s infinite ease-in-out
 }
 
+.link{
+  cursor: pointer;
+}
+
 body {
   background-color: #eee;
   font-weight: 500;
-  font-size: 1.2em;
+  font-size: 16px;
 
   main{
     position: relative;
     background-color: white;
     padding-left: 0px;
     padding-right: 0px;
+    z-index: 1;
+    min-height: 100vh;
+
+  }
+
+  .bolder{
+    font-weight: 800;
   }
   
   >div.loader {
@@ -126,5 +139,8 @@ body {
 }
 
 @import "./header.less";
+@import "./footer.less";
 @import "./home.less";
+@import "./about.less";
+@import "./contact.less";
 @import "./sign-up.less";
