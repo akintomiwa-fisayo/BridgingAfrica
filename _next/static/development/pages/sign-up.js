@@ -1,4 +1,4 @@
-(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["static\\development\\pages\\about.js"],{
+(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["static\\development\\pages\\sign-up.js"],{
 
 /***/ "./components/general/Footer.js":
 /*!**************************************!*\
@@ -2371,21 +2371,21 @@ var assign=Object.assign.bind(Object);function g(){return assign;}Object.defineP
 
 /***/ }),
 
-/***/ "./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fabout&absolutePagePath=C%3A%5CUsers%5Cphezzy%5CDesktop%5CWORK%5Cafrihub%5Cpages%5Cabout.js!./":
-/*!*************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fabout&absolutePagePath=C%3A%5CUsers%5Cphezzy%5CDesktop%5CWORK%5Cafrihub%5Cpages%5Cabout.js ***!
-  \*************************************************************************************************************************************************************************************/
+/***/ "./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fsign-up&absolutePagePath=C%3A%5CUsers%5Cphezzy%5CDesktop%5CWORK%5Cafrihub%5Cpages%5Csign-up.js!./":
+/*!*****************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fsign-up&absolutePagePath=C%3A%5CUsers%5Cphezzy%5CDesktop%5CWORK%5Cafrihub%5Cpages%5Csign-up.js ***!
+  \*****************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-    (window.__NEXT_P=window.__NEXT_P||[]).push(["/about", function() {
-      var mod = __webpack_require__(/*! ./pages/about.js */ "./pages/about.js")
+    (window.__NEXT_P=window.__NEXT_P||[]).push(["/sign-up", function() {
+      var mod = __webpack_require__(/*! ./pages/sign-up.js */ "./pages/sign-up.js")
       if(true) {
-        module.hot.accept(/*! ./pages/about.js */ "./pages/about.js", function() {
-          if(!next.router.components["/about"]) return
-          var updatedPage = __webpack_require__(/*! ./pages/about.js */ "./pages/about.js")
-          next.router.update("/about", updatedPage)
+        module.hot.accept(/*! ./pages/sign-up.js */ "./pages/sign-up.js", function() {
+          if(!next.router.components["/sign-up"]) return
+          var updatedPage = __webpack_require__(/*! ./pages/sign-up.js */ "./pages/sign-up.js")
+          next.router.update("/sign-up", updatedPage)
         })
       }
       return mod
@@ -9211,10 +9211,10 @@ module.exports = function(originalModule) {
 
 /***/ }),
 
-/***/ "./pages/about.js":
-/*!************************!*\
-  !*** ./pages/about.js ***!
-  \************************/
+/***/ "./pages/sign-up.js":
+/*!**************************!*\
+  !*** ./pages/sign-up.js ***!
+  \**************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -9239,7 +9239,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var _jsxFileName = "C:\\Users\\phezzy\\Desktop\\WORK\\afrihub\\pages\\about.js";
+var _jsxFileName = "C:\\Users\\phezzy\\Desktop\\WORK\\afrihub\\pages\\sign-up.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement;
 
 function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = Object(_babel_runtime_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_4__["default"])(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = Object(_babel_runtime_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_4__["default"])(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return Object(_babel_runtime_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_3__["default"])(this, result); }; }
@@ -9288,6 +9288,8 @@ var SignUp = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
+      var _this2 = this;
+
       var props = this.props,
           state = this.state;
       var header = props.settings.header;
@@ -9300,326 +9302,338 @@ var SignUp = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 40,
+          lineNumber: 39,
           columnNumber: 7
         }
       }, __jsx("div", {
-        id: "aboutPage",
+        id: "signUpPage",
+        style: {
+          paddingTop: "".concat(header.height, "px")
+        },
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 41,
+          lineNumber: 40,
           columnNumber: 9
         }
       }, __jsx("div", {
-        className: "banner",
-        __self: this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 42,
-          columnNumber: 11
-        }
-      }, __jsx("img", {
-        src: "/img/innovation-5.jpg",
-        alt: "",
-        className: "bk",
-        __self: this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 43,
-          columnNumber: 13
-        }
-      }), __jsx("div", {
-        className: "fk",
-        __self: this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 44,
-          columnNumber: 13
-        }
-      }, __jsx("h1", {
-        __self: this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 45,
-          columnNumber: 15
-        }
-      }, "About Bridging Afika"))), __jsx("div", {
         className: "container",
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 48,
+          lineNumber: 41,
           columnNumber: 11
         }
-      }, __jsx("div", {
-        className: "about-info",
+      }, __jsx("section", {
+        className: "left",
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 49,
+          lineNumber: 42,
           columnNumber: 13
         }
-      }, __jsx("h1", {
-        className: "title",
+      }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_6___default.a, {
+        href: "/index",
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 43,
+          columnNumber: 15
+        }
+      }, __jsx("a", {
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 44,
+          columnNumber: 17
+        }
+      }, __jsx("span", {
+        className: "fa fa-long-arrow-left",
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 45,
+          columnNumber: 19
+        }
+      }))), __jsx("img", {
+        src: "/img/sign-up.jpg",
+        alt: "sign up",
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 48,
+          columnNumber: 15
+        }
+      })), __jsx("section", {
+        className: "right",
         __self: this,
         __source: {
           fileName: _jsxFileName,
           lineNumber: 50,
-          columnNumber: 15
-        }
-      }, "Our Mission"), __jsx("div", {
-        className: "info",
-        __self: this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 51,
-          columnNumber: 15
-        }
-      }, __jsx("span", {
-        className: "fa fa-quote-left left icon",
-        __self: this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 52,
-          columnNumber: 17
-        }
-      }), "Nostrud ad aute nulla nulla. Ad dolor exercitation incididunt et pariatur magna. Irure laborum et enim aliquip proident. Elit deserunt ipsum amet ut consectetur occaecat et anim consequat mollit. Nulla culpa elit tempor ut reprehenderit cillum esse. Proident proident reprehenderit commodo laborum esse. Ad pariatur anim minim pariatur fugiat eiusmod ullamco consectetur pariatur sint aute in minim. Sunt enim anim reprehenderit labore ipsum irure. Exercitation nulla adipisicing do aliquip. Occaecat magna proident nostrud enim adipisicing veniam ad dolor non aute et quis labore. Labore enim aliqua consequat laborum esse fugiat ad culpa aliquip qui laboris exercitation amet nisi.", __jsx("span", {
-        className: "fa fa-quote-right right icon",
-        __self: this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 56,
-          columnNumber: 17
-        }
-      }))), __jsx("div", {
-        className: "about-info",
-        __self: this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 60,
           columnNumber: 13
         }
-      }, __jsx("h1", {
-        className: "title",
+      }, __jsx("div", {
+        className: "forms",
+        "data-form": state.formType,
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 61,
+          lineNumber: 64,
           columnNumber: 15
         }
-      }, "Our Vision"), __jsx("div", {
-        className: "info",
+      }, __jsx("div", {
+        className: "form",
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 62,
-          columnNumber: 15
-        }
-      }, __jsx("span", {
-        className: "fa fa-quote-right left icon",
-        __self: this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 63,
+          lineNumber: 65,
           columnNumber: 17
         }
-      }), "Nostrud ad aute nulla nulla. Ad dolor exercitation incididunt et pariatur magna. Irure laborum et enim aliquip proident. Elit deserunt ipsum amet ut consectetur occaecat et anim consequat mollit. Nulla culpa elit tempor ut reprehenderit cillum esse. Proident proident reprehenderit commodo laborum esse. Ad pariatur anim minim pariatur fugiat eiusmod ullamco consectetur pariatur sint aute in minim. Sunt enim anim reprehenderit labore ipsum irure. Exercitation nulla adipisicing do aliquip. Occaecat magna proident nostrud enim adipisicing veniam ad dolor non aute et quis labore. Labore enim aliqua consequat laborum esse fugiat ad culpa aliquip qui laboris exercitation amet nisi.", __jsx("span", {
-        className: "fa fa-quote-right right icon",
+      }, __jsx("div", {
+        className: "top",
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 66,
+          columnNumber: 19
+        }
+      }, __jsx("h1", {
         __self: this,
         __source: {
           fileName: _jsxFileName,
           lineNumber: 67,
-          columnNumber: 17
+          columnNumber: 21
         }
-      })))), __jsx("div", {
-        className: "our-team",
+      }, "Register"), __jsx("p", {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 71,
-          columnNumber: 11
+          lineNumber: 68,
+          columnNumber: 21
         }
-      }, __jsx("h1", {
+      }, "Already have an account?", __jsx(next_link__WEBPACK_IMPORTED_MODULE_6___default.a, {
+        href: "#",
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 70,
+          columnNumber: 23
+        }
+      }, __jsx("a", {
+        onClick: function onClick(e) {
+          _this2.onChangeFormType(e, 'logIn');
+        },
         __self: this,
         __source: {
           fileName: _jsxFileName,
           lineNumber: 72,
-          columnNumber: 13
+          columnNumber: 25
         }
-      }, "Our Team"), __jsx("div", {
-        className: "the-team",
-        __self: this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 73,
-          columnNumber: 13
-        }
-      }, __jsx("div", {
-        className: "person",
-        __self: this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 74,
-          columnNumber: 15
-        }
-      }, __jsx("div", {
-        className: "avi",
-        __self: this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 75,
-          columnNumber: 17
-        }
-      }, __jsx("img", {
-        src: "/img/avatars/female-1.jpg",
-        alt: "",
-        __self: this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 76,
-          columnNumber: 19
-        }
-      })), __jsx("h4", {
-        className: "title",
+      }, " Login ")))), __jsx(_components_general_FormInput__WEBPACK_IMPORTED_MODULE_11__["default"], {
+        label: "First Name",
+        value: firstName,
+        onChange: function onChange(value) {
+          _this2.setState({
+            firstName: value
+          });
+        },
         __self: this,
         __source: {
           fileName: _jsxFileName,
           lineNumber: 78,
-          columnNumber: 17
-        }
-      }, "FirstName lastName"), __jsx("h5", {
-        className: "position",
-        __self: this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 79,
-          columnNumber: 17
-        }
-      }, "Position")), __jsx("div", {
-        className: "person",
-        __self: this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 82,
-          columnNumber: 15
-        }
-      }, __jsx("div", {
-        className: "avi",
-        __self: this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 83,
-          columnNumber: 17
-        }
-      }, __jsx("img", {
-        src: "/img/avatars/female-1.jpg",
-        alt: "",
-        __self: this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 84,
           columnNumber: 19
         }
-      })), __jsx("h4", {
-        className: "title",
+      }), __jsx(_components_general_FormInput__WEBPACK_IMPORTED_MODULE_11__["default"], {
+        label: "Last Name",
+        value: lastName,
+        onChange: function onChange(value) {
+          _this2.setState({
+            lastName: value
+          });
+        },
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 86,
-          columnNumber: 17
+          lineNumber: 85,
+          columnNumber: 19
         }
-      }, "FirstName lastName"), __jsx("h5", {
-        className: "position",
-        __self: this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 87,
-          columnNumber: 17
-        }
-      }, "Position")), __jsx("div", {
-        className: "person",
-        __self: this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 90,
-          columnNumber: 15
-        }
-      }, __jsx("div", {
-        className: "avi",
-        __self: this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 91,
-          columnNumber: 17
-        }
-      }, __jsx("img", {
-        src: "/img/avatars/female-1.jpg",
-        alt: "",
+      }), __jsx(_components_general_FormInput__WEBPACK_IMPORTED_MODULE_11__["default"], {
+        label: "Email",
+        value: email,
+        onChange: function onChange(value) {
+          _this2.setState({
+            email: value
+          });
+        },
         __self: this,
         __source: {
           fileName: _jsxFileName,
           lineNumber: 92,
           columnNumber: 19
         }
-      })), __jsx("h4", {
-        className: "title",
-        __self: this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 94,
-          columnNumber: 17
-        }
-      }, "FirstName lastName"), __jsx("h5", {
-        className: "position",
-        __self: this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 95,
-          columnNumber: 17
-        }
-      }, "Position")), __jsx("div", {
-        className: "person",
-        __self: this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 98,
-          columnNumber: 15
-        }
-      }, __jsx("div", {
-        className: "avi",
+      }), __jsx(_components_general_FormInput__WEBPACK_IMPORTED_MODULE_11__["default"], {
+        type: "password",
+        label: "Password",
+        value: password,
+        onChange: function onChange(value) {
+          _this2.setState({
+            password: value
+          });
+        },
         __self: this,
         __source: {
           fileName: _jsxFileName,
           lineNumber: 99,
-          columnNumber: 17
-        }
-      }, __jsx("img", {
-        src: "/img/avatars/female-1.jpg",
-        alt: "",
-        __self: this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 100,
           columnNumber: 19
         }
-      })), __jsx("h4", {
-        className: "title",
+      }), __jsx(_components_general_FormInput__WEBPACK_IMPORTED_MODULE_11__["default"], {
+        type: "password",
+        label: "Re-type Password",
+        value: password2,
+        onChange: function onChange(value) {
+          _this2.setState({
+            password2: value
+          });
+        },
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 102,
-          columnNumber: 17
+          lineNumber: 107,
+          columnNumber: 19
         }
-      }, "FirstName lastName"), __jsx("h5", {
-        className: "position",
+      }), __jsx("div", {
+        id: "agreement",
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 103,
+          lineNumber: 116,
+          columnNumber: 19
+        }
+      }, __jsx("input", {
+        type: "checkBox",
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 117,
+          columnNumber: 21
+        }
+      }), __jsx("span", {
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 118,
+          columnNumber: 21
+        }
+      }, "you need to agree to our ", __jsx(next_link__WEBPACK_IMPORTED_MODULE_6___default.a, {
+        href: "/",
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 118,
+          columnNumber: 52
+        }
+      }, __jsx("a", {
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 118,
+          columnNumber: 67
+        }
+      }, "Terms and conditions")))), __jsx("button", {
+        id: "signUpBtn",
+        className: "btn btn-success form-action",
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 121,
+          columnNumber: 19
+        }
+      }, "SIGN UP")), __jsx("div", {
+        className: "form",
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 126,
           columnNumber: 17
         }
-      }, "Position"))))));
+      }, __jsx("div", {
+        className: "top",
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 127,
+          columnNumber: 19
+        }
+      }, __jsx("h1", {
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 128,
+          columnNumber: 21
+        }
+      }, "Log In"), __jsx("p", {
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 129,
+          columnNumber: 21
+        }
+      }, "Don't have an account?", __jsx(next_link__WEBPACK_IMPORTED_MODULE_6___default.a, {
+        href: "#",
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 131,
+          columnNumber: 23
+        }
+      }, __jsx("a", {
+        onClick: function onClick(e) {
+          _this2.onChangeFormType(e, 'signUp');
+        },
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 133,
+          columnNumber: 25
+        }
+      }, " Sign up ")))), __jsx(_components_general_FormInput__WEBPACK_IMPORTED_MODULE_11__["default"], {
+        label: "Email",
+        value: state.loginEmail,
+        onChange: function onChange(value) {
+          _this2.setState({
+            loginEmail: value
+          });
+        },
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 139,
+          columnNumber: 19
+        }
+      }), __jsx(_components_general_FormInput__WEBPACK_IMPORTED_MODULE_11__["default"], {
+        label: "Password",
+        type: "password",
+        value: state.loginPassword,
+        onChange: function onChange(value) {
+          _this2.setState({
+            loginPassword: value
+          });
+        },
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 146,
+          columnNumber: 19
+        }
+      }), __jsx("button", {
+        className: "btn btn-success form-action",
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 155,
+          columnNumber: 19
+        }
+      }, "Log In")))))));
     }
   }], [{
     key: "getInitialProps",
@@ -9686,14 +9700,14 @@ var updateSocialHeader = function updateSocialHeader(props) {
 
 /***/ }),
 
-/***/ 4:
-/*!*****************************************************************************************************************************************!*\
-  !*** multi next-client-pages-loader?page=%2Fabout&absolutePagePath=C%3A%5CUsers%5Cphezzy%5CDesktop%5CWORK%5Cafrihub%5Cpages%5Cabout.js ***!
-  \*****************************************************************************************************************************************/
+/***/ 5:
+/*!*********************************************************************************************************************************************!*\
+  !*** multi next-client-pages-loader?page=%2Fsign-up&absolutePagePath=C%3A%5CUsers%5Cphezzy%5CDesktop%5CWORK%5Cafrihub%5Cpages%5Csign-up.js ***!
+  \*********************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! next-client-pages-loader?page=%2Fabout&absolutePagePath=C%3A%5CUsers%5Cphezzy%5CDesktop%5CWORK%5Cafrihub%5Cpages%5Cabout.js! */"./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fabout&absolutePagePath=C%3A%5CUsers%5Cphezzy%5CDesktop%5CWORK%5Cafrihub%5Cpages%5Cabout.js!./");
+module.exports = __webpack_require__(/*! next-client-pages-loader?page=%2Fsign-up&absolutePagePath=C%3A%5CUsers%5Cphezzy%5CDesktop%5CWORK%5Cafrihub%5Cpages%5Csign-up.js! */"./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fsign-up&absolutePagePath=C%3A%5CUsers%5Cphezzy%5CDesktop%5CWORK%5Cafrihub%5Cpages%5Csign-up.js!./");
 
 
 /***/ }),
@@ -9709,5 +9723,5 @@ module.exports = dll_2adc2403d89adc16ead0;
 
 /***/ })
 
-},[[4,"static/runtime/webpack.js"]]]);
-//# sourceMappingURL=about.js.map
+},[[5,"static/runtime/webpack.js"]]]);
+//# sourceMappingURL=sign-up.js.map

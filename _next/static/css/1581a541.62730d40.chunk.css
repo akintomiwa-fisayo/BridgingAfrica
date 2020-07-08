@@ -19507,8 +19507,6 @@ pre[class*=language-] {
 .tweet {
   word-break: break-word
 }
-
-/*# sourceMappingURL=theme.min.css.map */
 @keyframes pulse {
   0% {
     -webkit-transform: scale(0);
@@ -20445,5 +20443,3 @@ footer .copy-right {
   box-shadow: 0px 0.35em 1em #b3b3b3;
 }
 
-
-/*# sourceMappingURL=styles.chunk.css.map*/
