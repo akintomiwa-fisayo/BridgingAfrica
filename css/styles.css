@@ -19632,6 +19632,11 @@ body:not(.loaded) > div.loader {
 #header nav #login {
   font-size: 100%;
 }
+#header nav .navbar-nav {
+  display: grid;
+  grid-auto-flow: column;
+  grid-gap: 1.8em;
+}
 #header nav .navbar-nav .nav-item {
   margin-right: 0em;
   font-size: 100%;
@@ -20224,65 +20229,61 @@ footer .copy-right {
 }
 #aboutPage .container {
   display: block;
-  padding-top: 3em;
-  padding-bottom: 3em;
+  padding: 3em 5%;
   text-align: center;
 }
-#aboutPage .container .about-info {
-  padding: 0 3em;
-  margin-bottom: 8em;
-}
-#aboutPage .container .about-info .title {
+#aboutPage .container .title {
   margin-bottom: 1.6em;
 }
-#aboutPage .container .about-info .info {
-  padding: 2em;
-  border-radius: 1em;
-  background: rgba(55, 64, 82, 0.056);
+#aboutPage .container .infos {
+  font-size: 1.2em;
+  border-bottom: dashed 1px white;
 }
-#aboutPage .container .about-info .info .icon {
-  font-size: 1.3em;
-  font-weight: 600;
-  height: auto;
-}
-#aboutPage .container .about-info .info .icon.right {
-  margin-left: 0.4em;
-}
-#aboutPage .container .about-info .info .icon.left {
-  margin-right: 0.4em;
-}
-#aboutPage .our-team {
-  padding: 3.5em 10em;
-  background: rgba(55, 64, 82, 0.056);
-  text-align: center;
-}
-#aboutPage .our-team h1 {
-  margin: 0 0 1.5em;
-}
-#aboutPage .our-team .the-team {
+#aboutPage .container .infos .info {
   display: grid;
   grid-auto-flow: column;
-  grid-template-columns: repeat(4, 1fr);
-  grid-gap: 5em;
-  padding: 0 4em;
+  grid-auto-columns: max-content;
+  align-items: center;
+  grid-gap: 1em;
+  margin-bottom: 2em;
+  text-align: left;
 }
-#aboutPage .our-team .the-team .person {
-  display: block;
+#aboutPage .container .infos .info .icon {
+  font-size: 2em;
+  width: max-content;
+  height: auto;
 }
-#aboutPage .our-team .the-team .person .avi {
-  padding: 0 15%;
+#aboutPage .container .feed-back {
+  margin-top: 2em;
 }
-#aboutPage .our-team .the-team .person .avi img {
-  width: 100%;
-  border-radius: 999999px;
-  border: solid 0.6em rgba(55, 64, 82, 0.156);
+#aboutPage .container .feed-back .form .input {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  margin-bottom: 2em;
 }
-#aboutPage .our-team .the-team .person .title {
-  margin: 1em 0;
+#aboutPage .container .feed-back .form .input label {
+  font-size: 1.2em;
+  padding: 0 1em;
 }
-#aboutPage .our-team .the-team .person .position {
-  font-style: italic;
-  font-weight: 400;
+#aboutPage .container .feed-back .form .input input,
+#aboutPage .container .feed-back .form .input textarea {
+  border: solid 1px #cfcfcf;
+  padding: 1em;
+  outline: none;
+  border-radius: 1em;
+}
+#aboutPage .container .feed-back .form .input input:focus,
+#aboutPage .container .feed-back .form .input textarea:focus,
+#aboutPage .container .feed-back .form .input input:active,
+#aboutPage .container .feed-back .form .input textarea:active {
+  border-color: #8d8d8d;
+}
+#aboutPage .container .feed-back .form .input textarea {
+  height: 15em;
+}
+#aboutPage .container .feed-back .form button .icon {
+  margin-left: 0.8em;
 }
 #signUpPage {
   width: 100%;

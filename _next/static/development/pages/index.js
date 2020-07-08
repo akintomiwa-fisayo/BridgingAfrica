@@ -1205,8 +1205,7 @@ var Header = /*#__PURE__*/function (_React$Component) {
           lineNumber: 187,
           columnNumber: 17
         }
-      }, __jsx("a", {
-        className: "nav-link",
+      }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_8___default.a, {
         href: "/",
         __self: this,
         __source: {
@@ -1214,21 +1213,37 @@ var Header = /*#__PURE__*/function (_React$Component) {
           lineNumber: 188,
           columnNumber: 19
         }
-      }, __jsx("span", {
-        className: "\tfa fa-home icon",
+      }, __jsx("a", {
+        className: "nav-link",
         __self: this,
         __source: {
           fileName: _jsxFileName,
           lineNumber: 189,
           columnNumber: 21
         }
-      }), "Home")), __jsx("li", {
+      }, __jsx("span", {
+        className: "\tfa fa-home icon",
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 190,
+          columnNumber: 23
+        }
+      }), "Home"))), __jsx("li", {
         className: "nav-item",
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 193,
+          lineNumber: 195,
           columnNumber: 17
+        }
+      }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_8___default.a, {
+        href: "/about",
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 196,
+          columnNumber: 19
         }
       }, __jsx("a", {
         className: "nav-link",
@@ -1236,58 +1251,40 @@ var Header = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 194,
-          columnNumber: 19
+          lineNumber: 197,
+          columnNumber: 21
         }
       }, __jsx("span", {
         className: "\tfa fa-book icon",
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 195,
-          columnNumber: 21
+          lineNumber: 198,
+          columnNumber: 23
         }
-      }), "About")), __jsx("li", {
+      }), "About"))), __jsx("li", {
         className: "nav-item",
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 199,
+          lineNumber: 203,
           columnNumber: 17
         }
-      }, __jsx("a", {
-        className: "nav-link",
+      }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_8___default.a, {
         href: "#",
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 200,
+          lineNumber: 204,
           columnNumber: 19
-        }
-      }, __jsx("span", {
-        className: "\tfa fa-book icon",
-        __self: this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 201,
-          columnNumber: 21
-        }
-      }), "Blog")), __jsx("li", {
-        className: "nav-item",
-        __self: this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 205,
-          columnNumber: 17
         }
       }, __jsx("a", {
         className: "nav-link",
-        href: "/contact",
         __self: this,
         __source: {
           fileName: _jsxFileName,
           lineNumber: 206,
-          columnNumber: 19
+          columnNumber: 21
         }
       }, __jsx("span", {
         className: "\tfa fa-book icon",
@@ -1295,9 +1292,41 @@ var Header = /*#__PURE__*/function (_React$Component) {
         __source: {
           fileName: _jsxFileName,
           lineNumber: 207,
+          columnNumber: 23
+        }
+      }), "Blog"))), __jsx("li", {
+        className: "nav-item",
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 212,
+          columnNumber: 17
+        }
+      }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_8___default.a, {
+        href: "/contact",
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 213,
+          columnNumber: 19
+        }
+      }, __jsx("a", {
+        className: "nav-link",
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 214,
           columnNumber: 21
         }
-      }), "Contact")))))));
+      }, __jsx("span", {
+        className: "\tfa fa-book icon",
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 215,
+          columnNumber: 23
+        }
+      }), "Contact"))))))));
     }
   }]);
 
