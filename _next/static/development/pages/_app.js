@@ -8447,8 +8447,8 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 var initState = {
   header: {
     height: 0,
-    transparent: true,
-    fixed: false
+    fixed: false,
+    fixedTop: null
   },
   socialHeader: {
     height: 0
