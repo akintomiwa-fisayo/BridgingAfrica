@@ -1,203 +1,4 @@
-(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["static\\development\\pages\\index.js"],{
-
-/***/ "./components/SlideShow.js":
-/*!*********************************!*\
-  !*** ./components/SlideShow.js ***!
-  \*********************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _babel_runtime_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/esm/toConsumableArray */ "./node_modules/@babel/runtime/helpers/esm/toConsumableArray.js");
-/* harmony import */ var _babel_runtime_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/esm/classCallCheck */ "./node_modules/@babel/runtime/helpers/esm/classCallCheck.js");
-/* harmony import */ var _babel_runtime_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime/helpers/esm/createClass */ "./node_modules/@babel/runtime/helpers/esm/createClass.js");
-/* harmony import */ var _babel_runtime_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime/helpers/esm/assertThisInitialized */ "./node_modules/@babel/runtime/helpers/esm/assertThisInitialized.js");
-/* harmony import */ var _babel_runtime_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @babel/runtime/helpers/esm/inherits */ "./node_modules/@babel/runtime/helpers/esm/inherits.js");
-/* harmony import */ var _babel_runtime_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @babel/runtime/helpers/esm/possibleConstructorReturn */ "./node_modules/@babel/runtime/helpers/esm/possibleConstructorReturn.js");
-/* harmony import */ var _babel_runtime_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @babel/runtime/helpers/esm/getPrototypeOf */ "./node_modules/@babel/runtime/helpers/esm/getPrototypeOf.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_7__);
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_8__);
-
-
-
-
-
-
-
-var _jsxFileName = "C:\\Users\\phezzy\\Desktop\\WORK\\afrihub\\components\\SlideShow.js";
-var __jsx = react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement;
-
-function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = Object(_babel_runtime_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_6__["default"])(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = Object(_babel_runtime_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_6__["default"])(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return Object(_babel_runtime_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_5__["default"])(this, result); }; }
-
-function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
-
-
-
-
-var SlideShow = /*#__PURE__*/function (_React$Component) {
-  Object(_babel_runtime_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_4__["default"])(SlideShow, _React$Component);
-
-  var _super = _createSuper(SlideShow);
-
-  function SlideShow(props) {
-    var _this;
-
-    Object(_babel_runtime_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_1__["default"])(this, SlideShow);
-
-    _this = _super.call(this, props);
-    _this.state = {
-      focused: 0,
-      items: Object(_babel_runtime_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_0__["default"])(props.items)
-    };
-    _this.moveSlide = _this.moveSlide.bind(Object(_babel_runtime_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_3__["default"])(_this));
-    return _this;
-  }
-
-  Object(_babel_runtime_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_2__["default"])(SlideShow, [{
-    key: "moveSlide",
-    value: function moveSlide(dir) {
-      var state = this.state;
-      var next = 0;
-
-      if (dir === 'left') {
-        next = state.focused === 0 ? state.items.length / 4 - 1 : state.focused - 1;
-      } else if (dir === 'right') {
-        next = state.focused === state.items.length / 4 - 1 ? 0 : state.focused + 1;
-      }
-
-      this.setState(function () {
-        return {
-          focused: next
-        };
-      });
-    }
-  }, {
-    key: "render",
-    value: function render() {
-      var _this2 = this;
-
-      var state = this.state;
-      var items = [];
-      var indicators = [];
-      var counter = 1;
-      state.items.forEach(function (item, i) {
-        if (counter === 1) {
-          items.push([]);
-        }
-
-        items[items.length - 1].push(__jsx("div", {
-          className: "item",
-          key: "".concat(i, "_item"),
-          __self: _this2,
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 40,
-            columnNumber: 9
-          }
-        }, item.content, __jsx("p", {
-          className: "item-label",
-          __self: _this2,
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 42,
-            columnNumber: 11
-          }
-        }, item.label))); // eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions
-
-        /*  indicators.push(<li
-          className={`${state.focused === i ? 'active' : ''}`}
-          key={`${i}_indicator`}
-          onClick={() => {
-            this.setState(() => ({ focused: i }));
-          }}
-        />); */
-
-        counter = counter === 4 ? 1 : counter + 1;
-      });
-      return __jsx("div", {
-        "data-slideshow": true,
-        className: "slide-show-container",
-        __self: this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 57,
-          columnNumber: 7
-        }
-      }, __jsx("div", {
-        className: "screen",
-        __self: this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 58,
-          columnNumber: 9
-        }
-      }, __jsx("div", {
-        className: "items",
-        style: {
-          transform: "translate(-".concat(state.focused, "00%, 0)")
-        },
-        __self: this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 59,
-          columnNumber: 11
-        }
-      }, items.map(function (itemGroup) {
-        return __jsx("div", {
-          className: "item-group",
-          __self: _this2,
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 60,
-            columnNumber: 39
-          }
-        }, itemGroup);
-      })), __jsx("ul", {
-        className: "indicators",
-        __self: this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 62,
-          columnNumber: 11
-        }
-      }, indicators, " "), __jsx("span", {
-        className: "controller left icon-chevron-left",
-        onClick: function onClick() {
-          _this2.moveSlide('left');
-        },
-        __self: this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 64,
-          columnNumber: 11
-        }
-      }), __jsx("span", {
-        className: "controller right icon-chevron-right",
-        onClick: function onClick() {
-          _this2.moveSlide('right');
-        },
-        __self: this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 70,
-          columnNumber: 11
-        }
-      })));
-    }
-  }]);
-
-  return SlideShow;
-}(react__WEBPACK_IMPORTED_MODULE_7___default.a.Component);
-
-SlideShow.propTypes = {
-  items: prop_types__WEBPACK_IMPORTED_MODULE_8___default.a.array.isRequired
-};
-/* harmony default export */ __webpack_exports__["default"] = (SlideShow);
-
-/***/ }),
+(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["static\\development\\pages\\about.js"],{
 
 /***/ "./components/general/Footer.js":
 /*!**************************************!*\
@@ -631,6 +432,196 @@ var Footer = /*#__PURE__*/function (_React$Component) {
 }(react__WEBPACK_IMPORTED_MODULE_5___default.a.Component);
 
 /* harmony default export */ __webpack_exports__["default"] = (Footer);
+
+/***/ }),
+
+/***/ "./components/general/FormInput.js":
+/*!*****************************************!*\
+  !*** ./components/general/FormInput.js ***!
+  \*****************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _babel_runtime_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/esm/classCallCheck */ "./node_modules/@babel/runtime/helpers/esm/classCallCheck.js");
+/* harmony import */ var _babel_runtime_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/esm/createClass */ "./node_modules/@babel/runtime/helpers/esm/createClass.js");
+/* harmony import */ var _babel_runtime_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime/helpers/esm/assertThisInitialized */ "./node_modules/@babel/runtime/helpers/esm/assertThisInitialized.js");
+/* harmony import */ var _babel_runtime_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime/helpers/esm/inherits */ "./node_modules/@babel/runtime/helpers/esm/inherits.js");
+/* harmony import */ var _babel_runtime_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @babel/runtime/helpers/esm/possibleConstructorReturn */ "./node_modules/@babel/runtime/helpers/esm/possibleConstructorReturn.js");
+/* harmony import */ var _babel_runtime_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @babel/runtime/helpers/esm/getPrototypeOf */ "./node_modules/@babel/runtime/helpers/esm/getPrototypeOf.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_7__);
+
+
+
+
+
+
+var _jsxFileName = "C:\\Users\\phezzy\\Desktop\\WORK\\afrihub\\components\\general\\FormInput.js";
+var __jsx = react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement;
+
+function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = Object(_babel_runtime_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_5__["default"])(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = Object(_babel_runtime_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_5__["default"])(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return Object(_babel_runtime_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_4__["default"])(this, result); }; }
+
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
+
+
+
+
+var FormInput = /*#__PURE__*/function (_React$Component) {
+  Object(_babel_runtime_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_3__["default"])(FormInput, _React$Component);
+
+  var _super = _createSuper(FormInput);
+
+  function FormInput(props) {
+    var _this;
+
+    Object(_babel_runtime_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_0__["default"])(this, FormInput);
+
+    _this = _super.call(this, props);
+    _this.state = {
+      value: ''
+    };
+    _this.onChange = _this.onChange.bind(Object(_babel_runtime_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_2__["default"])(_this));
+    _this.onFocus = _this.onFocus.bind(Object(_babel_runtime_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_2__["default"])(_this));
+    _this.onBlur = _this.onBlur.bind(Object(_babel_runtime_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_2__["default"])(_this));
+    _this.onKeyDown = _this.onKeyDown.bind(Object(_babel_runtime_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_2__["default"])(_this));
+    return _this;
+  }
+
+  Object(_babel_runtime_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__["default"])(FormInput, [{
+    key: "onChange",
+    value: function onChange(event) {
+      var value = event.target.value;
+      this.setState({
+        value: value
+      });
+      this.props.onChange(value);
+    }
+  }, {
+    key: "onFocus",
+    value: function onFocus(event) {
+      this.setState({
+        isFocused: true
+      });
+      this.props.onFocus(event);
+    }
+  }, {
+    key: "onBlur",
+    value: function onBlur(event) {
+      this.setState({
+        isFocused: false
+      });
+      this.props.onBlur(event);
+    }
+  }, {
+    key: "onKeyDown",
+    value: function onKeyDown(event) {
+      if (event.key === 'Enter') {
+        this.props.onKeyEnter();
+      }
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var state = this.state;
+      var _this$props = this.props,
+          label = _this$props.label,
+          value = _this$props.value,
+          className = _this$props.className,
+          type = _this$props.type; // const isEmptyClass = state.isEmpty ? ' Error' : '';
+
+      var isFocusedClass = state.isFocused ? ' focused' : ''; // const mandatoryClass = props.mandatory ? ' mandatory' : '';
+      // let isFilledClass = state.isFilled ? ' not-empty' : '';
+
+      if (typeof value === 'string') {// isFilledClass = !isEmpty(props.value) ? ' not-empty' : '';
+      }
+
+      var extraClasses = '';
+      extraClasses += isFocusedClass;
+      extraClasses += " ".concat(className);
+      return __jsx("div", {
+        className: "form-input".concat(extraClasses),
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 57,
+          columnNumber: 7
+        }
+      }, __jsx("div", {
+        className: "form-input-container",
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 58,
+          columnNumber: 9
+        }
+      }, __jsx("span", {
+        className: "form-input-label",
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 59,
+          columnNumber: 11
+        }
+      }, label), __jsx("input", {
+        type: type,
+        className: "form-input-field",
+        value: value || state.value,
+        onChange: this.onChange,
+        onKeyDown: this.onKeyDown,
+        onFocus: this.onFocus,
+        onBlur: this.onBlur,
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 60,
+          columnNumber: 11
+        }
+      })), __jsx("div", {
+        className: "form-input-ruler",
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 70,
+          columnNumber: 9
+        }
+      }), __jsx("div", {
+        className: "form-input-focus-ruler",
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 71,
+          columnNumber: 9
+        }
+      }));
+    }
+  }]);
+
+  return FormInput;
+}(react__WEBPACK_IMPORTED_MODULE_6___default.a.Component);
+
+FormInput.propTypes = {
+  onChange: prop_types__WEBPACK_IMPORTED_MODULE_7___default.a.func,
+  onFocus: prop_types__WEBPACK_IMPORTED_MODULE_7___default.a.func,
+  onBlur: prop_types__WEBPACK_IMPORTED_MODULE_7___default.a.func,
+  onKeyEnter: prop_types__WEBPACK_IMPORTED_MODULE_7___default.a.func,
+  value: prop_types__WEBPACK_IMPORTED_MODULE_7___default.a.string,
+  className: prop_types__WEBPACK_IMPORTED_MODULE_7___default.a.string,
+  type: prop_types__WEBPACK_IMPORTED_MODULE_7___default.a.string
+};
+FormInput.defaultProps = {
+  onChange: function onChange() {},
+  onFocus: function onFocus() {},
+  onBlur: function onBlur() {},
+  onKeyEnter: function onKeyEnter() {},
+  value: '',
+  className: '',
+  type: 'text'
+};
+/* harmony default export */ __webpack_exports__["default"] = (FormInput);
 
 /***/ }),
 
@@ -1478,795 +1469,6 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 
 /***/ }),
 
-/***/ "./lib/custom.js":
-/*!***********************!*\
-  !*** ./lib/custom.js ***!
-  \***********************/
-/*! exports provided: $, strReverse, devalueString, onDOMChange, isEmpty, isElement, isEmail, isObject, isDescendant, isUpperCase, isLowerCase, ucFirst, lcFirst, capitalize, deleteIndex, popMessage, popAlert, JSONtoArray, JSONParse, parallaxBk, heroInput, heroCheckBox, countries, isCountry, getWeekDay, getMonth, getRelativeTime, getRelativeParent, getRelativePosition, getPosition, getCordinates, arrNormalize */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "$", function() { return $; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "strReverse", function() { return strReverse; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "devalueString", function() { return devalueString; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "onDOMChange", function() { return onDOMChange; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "isEmpty", function() { return isEmpty; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "isElement", function() { return isElement; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "isEmail", function() { return isEmail; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "isObject", function() { return isObject; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "isDescendant", function() { return isDescendant; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "isUpperCase", function() { return isUpperCase; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "isLowerCase", function() { return isLowerCase; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ucFirst", function() { return ucFirst; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "lcFirst", function() { return lcFirst; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "capitalize", function() { return capitalize; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "deleteIndex", function() { return deleteIndex; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "popMessage", function() { return popMessage; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "popAlert", function() { return popAlert; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "JSONtoArray", function() { return JSONtoArray; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "JSONParse", function() { return JSONParse; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "parallaxBk", function() { return parallaxBk; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "heroInput", function() { return heroInput; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "heroCheckBox", function() { return heroCheckBox; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "countries", function() { return countries; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "isCountry", function() { return isCountry; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getWeekDay", function() { return getWeekDay; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getMonth", function() { return getMonth; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getRelativeTime", function() { return getRelativeTime; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getRelativeParent", function() { return getRelativeParent; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getRelativePosition", function() { return getRelativePosition; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getPosition", function() { return getPosition; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getCordinates", function() { return getCordinates; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "arrNormalize", function() { return arrNormalize; });
-/* harmony import */ var _babel_runtime_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/esm/slicedToArray */ "./node_modules/@babel/runtime/helpers/esm/slicedToArray.js");
-/* harmony import */ var _babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/esm/defineProperty */ "./node_modules/@babel/runtime/helpers/esm/defineProperty.js");
-
-
-
-function _createForOfIteratorHelper(o, allowArrayLike) { var it; if (typeof Symbol === "undefined" || o[Symbol.iterator] == null) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = o[Symbol.iterator](); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
-
-function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
-
-function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
-
-function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
-
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_1__["default"])(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
-
-/* eslint-disable no-param-reassign */
-
-/* eslint-disable no-restricted-syntax */
-
-/* eslint-disable no-use-before-define */
-
-/* eslint-disable no-inner-declarations */
-
-/* eslint-disable max-len */
-
-/* eslint-disable no-unused-vars */
-
-/* eslint-disable no-underscore-dangle */
-function getCaretCharacterOfsetWithin(element) {
-  var caretOffset = 0;
-  var doc = element.ownerDocument || element.document;
-  var win = doc.defaultView || doc.parentWindow;
-  var sel = win.getSelection();
-
-  if (typeof win.getSelection !== 'undefined') {
-    console.log({
-      sel: sel
-    });
-
-    if (sel.rangeCount > 0) {
-      var range = win.getSelection().getRangeAt(0);
-      var preCaretRange = range.cloneRange();
-      preCaretRange.selectNodeContents(element);
-      console.log({
-        preCaretRange: preCaretRange
-      });
-      preCaretRange.setEnd(range.endContainer, range.endOffset);
-      console.log({
-        preCaretRange: preCaretRange
-      });
-      caretOffset = preCaretRange.toString().length;
-      console.log("seen content is :{".concat(preCaretRange.toString(), "}"));
-    }
-  } else if (sel == doc.selection && sel.type != 'Control') {
-    var textRange = sel.createRange();
-    var preCaretTextRange = doc.body.createTextRange();
-    preCaretTextRange.moveToElementText(element);
-    preCaretTextRange.setEndPoint('EndToEnd', textRange);
-    caretOffset = preCaretTextRange.text.length;
-  }
-
-  return caretOffset;
-}
-
-var lib = {};
-
-lib.$ = function (q) {
-  return isElement(q) ? [q] : document.querySelectorAll(q);
-};
-
-lib.isEmpty = function (str) {
-  return str ? !"".concat(str).trim() : true;
-};
-
-lib.isElement = function (o) {
-  return typeof HTMLElement === 'object' ? o instanceof HTMLElement : o && typeof o === 'object' && o !== null && o.nodeType === 1 && typeof o.nodeName === 'string';
-};
-
-lib.isEmail = function (str) {
-  return !(/[a-z0-9]+@+[a-z0-9]+\.+[a-z]{3,}/i.test(str) === false || /[^a-z0-9._@]/i.test(str) === true);
-};
-
-lib.isObject = function (variable) {
-  return variable && typeof variable === 'object' && variable.constructor === Object;
-};
-
-lib.isDescendant = function (e, query) {
-  var matches = typeof query === 'string' ? document.querySelectorAll(query) : query;
-  var el = lib.isElement(e) ? e : document.querySelector(e);
-  var matchesLen = 0;
-
-  if (lib.isElement(matches)) {
-    if (query.contains(el)) return query;
-  } else if (matches) {
-    matchesLen = matches.length;
-
-    while (el && !(el.tagName === 'HTML')) {
-      for (var i = 0; i < matchesLen; i += 1) {
-        if (el === matches[i]) return el;
-      }
-
-      el = el.parentElement;
-    }
-  }
-
-  return false;
-};
-
-lib.isUpperCase = function (v) {
-  return !!(v.toUpperCase() !== v.toLowerCase() && v === v.toUpperCase());
-};
-
-lib.isLowerCase = function (v) {
-  return !!(v.toUpperCase() !== v.toLowerCase() && v === v.toLowerCase());
-};
-
-lib.ucFirst = function (value) {
-  if (isNaN(value)) {
-    var newValue = '';
-
-    for (var i = 0; i < value.length; i += 1) {
-      if (i === 0) {
-        newValue = value[0].toUpperCase();
-      } else {
-        newValue += value[i];
-      }
-    }
-
-    return newValue;
-  }
-
-  return value;
-};
-
-lib.lcFirst = function (value) {
-  if (isNaN(value)) {
-    var newValue = '';
-
-    for (var i = 0; i < value.length; i += 1) {
-      if (i === 0) {
-        newValue = value[0].toLowerCase();
-      } else {
-        newValue += value[i];
-      }
-    }
-
-    return newValue;
-  }
-
-  return value;
-};
-
-lib.capitalize = function (word) {
-  if (isNaN(word) && !lib.isEmpty(word)) {
-    var newWord = '';
-    var subValue = word.split(' ');
-    var subValueLength = subValue.length;
-
-    for (var j = 0; j < subValueLength; j += 1) {
-      var value = subValue[j];
-
-      for (var i = 0; i < value.length; i += 1) {
-        if (i === 0) {
-          newWord += value[0].toUpperCase();
-        } else {
-          newWord += value[i];
-        }
-      }
-
-      if (j < subValueLength) {
-        newWord += ' ';
-      }
-    }
-
-    return newWord;
-  }
-
-  return word;
-};
-
-lib.deleteIndex = function (value) {
-  // can input as much parameter as possible but first parameter much be an array obj or string
-  var newArray = [];
-  var argumentsLength = arguments.length <= 1 ? 0 : arguments.length - 1;
-  var save = true;
-
-  for (var j = 0; j < value.length; j += 1) {
-    save = true;
-
-    for (var i = 0; i < argumentsLength; i += 1) {
-      var currentIndex = i + 1 < 1 || arguments.length <= i + 1 ? undefined : arguments[i + 1];
-
-      if (j === currentIndex) {
-        save = false;
-        break;
-      }
-    }
-
-    if (save) newArray.push(value[j]);
-  }
-
-  return typeof value === 'string' ? newArray.join('') : newArray;
-};
-
-lib.popMessage = function (m) {
-  var timeout = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 4500;
-  var animationTime = 300; // <== value must be the same here and in general.less
-
-  var showMsg = function showMsg(msg) {
-    setTimeout(function () {
-      msg.classList.add('show');
-    }, 100);
-  };
-
-  var popMsg = document.querySelector('#popMessage');
-  var msg = document.createElement('DIV');
-  msg.classList = 'message';
-  msg.innerHTML = m;
-
-  if (!popMsg) {
-    // alert('popMsg not created yet');
-    popMsg = document.createElement('DIV');
-    popMsg.id = 'popMessage';
-    popMsg.appendChild(msg);
-    document.querySelector('#root').appendChild(popMsg);
-    showMsg(msg);
-  } else {
-    popMsg.appendChild(msg);
-    showMsg(msg);
-  }
-
-  setTimeout(function () {
-    msg.classList.remove('show');
-    setTimeout(function () {
-      popMsg.removeChild(msg);
-
-      if (!popMsg.children[0]) {
-        document.querySelector('#root').removeChild(popMsg);
-      }
-    }, animationTime);
-  }, timeout);
-};
-
-lib.popAlert = function (msg) {
-  /* alert();
-      USING POPALERT
-      #can send in html tags;
-      #cant take in functions or methods but can take in string getting methods e.g(document.getElementById(id).innerHTML)
-      #can style elements but will have to do the code as a string variable e.g var name= " <b style='color:red'>the name</b> is a smart ass "
-      #can set a sub line---passing it as a sting too in the parameters, string starting with 'sub~'
-      */
-  var popAlert = document.getElementById('popAlert');
-
-  var enterToCancelPopAlert = function enterToCancelPopAlert(event) {
-    // alert("just entered enterToCancelPopAlert()")
-    if (event.keyCode === 13) {
-      event.preventDefault(); // <== prevent any other function that has been attached to the event
-
-      popCancel();
-    }
-  };
-
-  var popCancel = function popCancel() {
-    var pA = document.getElementById('popAlert');
-
-    if (pA) {
-      document.querySelector('#root').removeChild(pA);
-    }
-
-    window.removeEventListener('keydown', enterToCancelPopAlert);
-  };
-
-  if (!popAlert) {
-    popAlert = document.createElement('div');
-    popAlert.id = 'popAlert';
-    popAlert.innerHTML = " <div class=\"fk\" >\n      <div class='content' >\n        <div> ".concat(msg, "</div>\n      </div>      <div class='cancel-holder'>\n        <button class='btn btn-default cancel'>close</button>\n      </div>\n    </div> ");
-  }
-
-  document.querySelector('#root').appendChild(popAlert);
-  document.querySelector('#popAlert .cancel').addEventListener('click', popCancel);
-  window.addEventListener('keydown', enterToCancelPopAlert);
-};
-
-lib.JSONtoArray = function (json) {
-  var r = []; // eslint-disable-next-line no-restricted-syntax
-
-  if (lib.isObject(json)) Object.keys(json).forEach(function (key) {
-    r.push(json[key]);
-  });
-  return r;
-};
-
-lib.JSONParse = function (str) {
-  try {
-    var o = JSON.parse(str); // Handle non-exception-throwing cases:
-    // Neither JSON.parse(false) or JSON.parse(1234) throw errors, hence the type-checking,
-    // but... JSON.parse(null) returns null, and typeof null === "object",
-    // so we must check for that, too. Thankfully, null is falsey, so this suffices:
-
-    if (o && typeof o === 'object') return o;
-  } catch (e) {// console.log(e);
-  }
-
-  return false;
-};
-
-lib.getWeekDay = function (day) {
-  var weekdays = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'];
-  return isNaN(day) ? false : weekdays[day];
-};
-
-lib.getMonth = function (month) {
-  var months = ['january', 'february', 'march', 'april', 'may', 'june', 'july', 'august', 'september', 'october', 'november', 'december'];
-  return isNaN(month) ? false : months[month];
-};
-
-lib.getRelativeTime = function (timestamp) {
-  var relative = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : true;
-  var d1 = new Date();
-  var d2 = new Date(timestamp);
-  var relativeTime = '';
-  var year = d2.getFullYear();
-  year = d1.getFullYear() === year ? '' : " ".concat(year);
-  var month = lib.getMonth(d2.getMonth());
-  var hour = d2.getHours();
-  var hourPref = hour >= 12 ? 'pm' : 'am';
-
-  if (hour === 0) {
-    hour = 12;
-  } else {
-    hour = hour > 12 ? hour - 12 : hour;
-  }
-
-  var date = d2.getDate() + 1;
-  var minutes = d2.getMinutes();
-  var minutesDbl = "".concat(minutes);
-  minutesDbl = minutesDbl.length === 1 ? "0".concat(minutesDbl) : minutesDbl;
-  var day = lib.getWeekDay(d2.getDay());
-
-  if (relative) {
-    var diffInMilliseconds = d1 - d2;
-    var diffInSec = Math.floor(diffInMilliseconds / 1000);
-
-    if (diffInSec >= 60) {
-      // 60 seconds make a minute
-      var diffInMinutes = Math.floor(diffInSec / 60);
-
-      if (diffInMinutes >= 60) {
-        // 60 minutes make in an hour
-        var diffInHours = Math.floor(diffInMinutes / 60);
-
-        if (diffInHours >= 24) {
-          // 24 hours make in a day
-          var diffInDays = Math.floor(diffInHours / 24);
-
-          if (diffInDays >= 7) {
-            // 7 day make in a week
-            relativeTime = "".concat(day, ", ").concat(month, " ").concat(date).concat(year, " at ").concat(hour, ":").concat(minutesDbl, " ").concat(hourPref);
-          } else if (diffInDays === 1) {
-            relativeTime = "yesterday at ".concat(hour, ":").concat(minutesDbl, " ").concat(hourPref);
-          } else {
-            relativeTime = "last ".concat(day, " at ").concat(hour, ":").concat(minutesDbl, " ").concat(hourPref);
-          }
-        } else relativeTime = "".concat(diffInHours, "hr").concat(diffInHours > 1 ? 's' : '', " ago");
-      } else relativeTime = "".concat(diffInMinutes, "min").concat(diffInMinutes > 1 ? 's' : '', " ago");
-    } else relativeTime = 'just now';
-  } else {
-    relativeTime = "".concat(day, ", ").concat(month, " ").concat(date).concat(year, " at ").concat(hour, ":").concat(minutesDbl, " ").concat(hourPref);
-  }
-
-  return relativeTime;
-};
-
-lib.onDOMChange = function () {
-  var config = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {
-    attributes: false,
-    attributeOldValue: false,
-    childList: false,
-    characterData: false,
-    characterDataOldValue: false,
-    subtree: false,
-    targetNode: window.document // <== Select the node that will be observed for mutations
-
-  };
-  var callback = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : function (mutationsList, observe) {};
-
-  // Options for the observer (which mutations to observe)
-  var Config = _objectSpread({}, {
-    attributes: false,
-    attributeOldValue: false,
-    childList: false,
-    characterData: false,
-    characterDataOldValue: false,
-    subtree: false,
-    targetNode: window.document // <== Select the node that will be observed for mutations
-
-  }, {}, config); // Create an observer instance linked to the callback function
-
-
-  var _window = window,
-      MutationObserver = _window.MutationObserver;
-  var observer = new MutationObserver(callback); // <== Callback function to execute when mutations are observed
-  // Start observing the target node for configured mutations
-
-  observer.observe(Config.targetNode, Config); // Later, you can stop observing
-  // observer.disconnect();
-
-  return observer;
-};
-/**
-      In other for the elmenet to the placed exactly where you want it to be in relaive to the flow of the page
-      "getRelativePosition" takes the position of the element in the page flow(getPosition()) and returns the relative position of the element to the nearest non-static('absolute', 'relative' or 'fixed') parent
-  */
-
-
-lib.getRelativePosition = function (el, xPos, yPos) {
-  var relativeX;
-  var relativeY; // alert("we are about to call getRelativeParent in getRelativePosition")
-
-  var elRelativeParent = getRelativeParent(el);
-  /* alert("we've called getRelativeParent in getRelativePosition\n"
-  +"and elRelativeParent id is : " + elRelativeParent.id
-  ); */
-
-  if (elRelativeParent.tagName === 'BODY') {
-    relativeX = xPos;
-    relativeY = yPos;
-  } else {
-    // Number(back.style.transform.split("deg")[0].split("(")[1]);
-    var elRelativeParentStyle = window.getComputedStyle(elRelativeParent, null);
-    var elRelativeParentBorderLeft = Number(elRelativeParentStyle.getPropertyValue('border-left-width').split('px')[0]);
-    var elRelativeParentBorderTop = Number(elRelativeParentStyle.getPropertyValue('border-top-width').split('px')[0]); // alert("elRelativeParentBorderLeft is : " + elRelativeParentBorderLeft);
-
-    var elRelativeParentPosition = getPosition(elRelativeParent);
-    var elRelativeParentLeft = elRelativeParentPosition.left;
-    var elRelativeParentTop = elRelativeParentPosition.top;
-    /*  console.log({
-      elRelativeParentPosition,
-      elRelativeParentLeft,
-      elRelativeParentTop,
-    }); */
-    // alert("the element that this position relate to have the id : " + elRelativeParent.id+ "its left is : " + elParentLeft)
-
-    relativeX = xPos - (elRelativeParentLeft + elRelativeParentBorderLeft);
-    relativeY = yPos - (elRelativeParentTop + elRelativeParentBorderTop);
-  }
-
-  return {
-    left: relativeX,
-    top: relativeY
-  };
-};
-
-lib.getRelativeParent = function (el) {
-  /* /
-      returns the element(ancestor) which the element(el) will be positioned in relative to in the page flow
-  */
-  var returnVar;
-  var elParent;
-  var elParentStyle;
-  var elParentStylePosition;
-
-  while (el) {
-    elParent = el.offsetParent;
-    elParentStyle = window.getComputedStyle(elParent, null);
-    elParentStylePosition = elParentStyle.getPropertyValue('position');
-
-    if (el.tagName === 'BODY') {
-      var _$ = $('body');
-
-      var _$2 = Object(_babel_runtime_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_0__["default"])(_$, 1);
-
-      returnVar = _$2[0];
-      break;
-    } else if (!(elParentStylePosition === 'static') || elParent.tagName === 'BODY') {
-      returnVar = elParent;
-      break;
-    } else {
-      el = elParent;
-    }
-  }
-
-  return returnVar;
-};
-
-lib.getPosition = function (el) {
-  var _$3 = $(el);
-
-  var _$4 = Object(_babel_runtime_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_0__["default"])(_$3, 1);
-
-  el = _$4[0];
-  // to get the location of an element in page in relative to the nearest parent that shares the same position with it
-  var xPos = 0;
-  var yPos = 0;
-
-  while (el) {
-    // for all other non-BODY elements
-    xPos += el.offsetLeft;
-    yPos += el.offsetTop;
-    el = el.offsetParent;
-  } // alert(xPos +"\n"+ yPos);
-
-
-  return {
-    left: xPos,
-    top: yPos
-  };
-};
-
-lib.getCordinates = function (el) {
-  var scrollContainer = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : lib.$('html')[0];
-  var elem = lib.isElement(el) ? el : lib.$(el);
-  var xPos = elem.offsetLeft - scrollContainer.scrollLeft;
-  var yPos = elem.offsetTop - scrollContainer.scrollTop; // console.log('in the gu: ', {elem, scrollContainer,xPos, yPos});
-
-  return {
-    left: xPos,
-    top: yPos
-  };
-};
-
-lib.parallaxBk = {
-  container: null,
-  stop: function stop() {
-    window.removeEventListener('scroll', lib.parallaxBk.onScroll);
-  },
-  init: function init() {
-    var container = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : window;
-    parallaxBk.container = container;
-    container.addEventListener('scroll', lib.parallaxBk.onScroll);
-  },
-  scroll: function scroll(parallaxBk) {
-    var container = parallaxBk.parentElement;
-    var containerHeight = container.offsetHeight;
-    var containerTop = lib.getCordinates(container).top;
-    var containerPtop = container.offsetTop;
-    var containerBottom = containerTop + containerHeight; // console.log({
-    //   containerTop,
-    //   libParallaxBkContainerInnerHeight: lib.parallaxBk.container.innerHeight,
-    //   containerBottom,
-    // });
-
-    if (containerTop <= lib.parallaxBk.container.innerHeight && containerBottom >= 0) {
-      containerPtop = containerPtop > window.innerHeight ? window.innerHeight : containerPtop; // v the amount of distance the parallax bk have moved (in percentage)
-      // eslint-disable-next-line max-len
-
-      var displacement = (containerTop - containerPtop) / (containerPtop + containerHeight) * 100;
-      var relativeDisplacement = displacement / 100 * (parallaxBk.offsetHeight - containerHeight);
-      parallaxBk.style.transform = "translate3d(0px, ".concat(relativeDisplacement, "px, 0px)");
-    }
-  },
-  onScroll: function onScroll() {
-    lib.$('.parallax-bk').forEach(function (parallaxBk) {
-      lib.parallaxBk.scroll(parallaxBk);
-    });
-  }
-};
-lib.heroCheckBox = {
-  onClick: function onClick(parent) {
-    var checkBox = parent.querySelector('.hero-check-box-field');
-
-    if (checkBox.classList.contains('checked')) {
-      checkBox.classList.remove('checked');
-    } else checkBox.classList.add('checked');
-  },
-  stop: function stop() {},
-  init: function init() {
-    var params = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {
-      onClick: function onClick(heroCheckBox) {}
-    };
-    alert('want hero chkeddck box shit');
-
-    var init = function init() {
-      var checkBoxes = document.querySelectorAll('.hero-check-box');
-
-      var _loop = function _loop(i) {
-        if (checkBoxes[i].init_check_box !== true) {
-          checkBoxes[i].init_check_box = true;
-          checkBoxes[i].addEventListener('click', function (event) {
-            lib.heroCheckBox.onClick(checkBoxes[i]);
-            if (params.onClick) params.onClick(event);
-          });
-        }
-      };
-
-      for (var i = 0; i < checkBoxes.length; i += 1) {
-        _loop(i);
-      }
-    };
-
-    init();
-    var observer = lib.onDOMChange({
-      childList: true,
-      subtree: true
-    }, function (mutationsList) {
-      var _iterator = _createForOfIteratorHelper(mutationsList),
-          _step;
-
-      try {
-        for (_iterator.s(); !(_step = _iterator.n()).done;) {
-          var mutation = _step.value;
-
-          // console.log('mutation for checkbox is = > ', mutation, 'asnd observer is => ', observer);
-          if (mutation.type === 'childList') {
-            var addedChildren = mutation.addedNodes; // console.log("childList attributeName is = > ", mutation.attributeName ,", mutation \n=> ", mutation)
-
-            if (addedChildren.length > 0) {
-              init();
-            }
-          }
-        }
-      } catch (err) {
-        _iterator.e(err);
-      } finally {
-        _iterator.f();
-      }
-    });
-
-    lib.heroCheckBox.stop = function () {
-      observer.disconnect();
-    };
-  }
-};
-lib.countries = ['afghanistan', 'albania', 'algeria', 'andorra', 'angola', 'antigua and barbuda', 'argentina', 'armenia', 'australia', 'austria', 'azerbaijan', 'bahamas', 'bahrain', 'bangladesh', 'barbados', 'belarus', 'belgium', 'belize', 'benin', 'bhutan', 'bolivia', 'bosnia and herzegovina', 'botswana', 'brazil', 'brunei', 'bulgaria', 'burkina faso', 'burundi', 'cote d ivoire', 'cabo verde', 'cambodia', 'cameroon', 'canada', 'central african republic', 'chad', 'chile', 'china', 'colombia', 'comoros', 'congo', 'costa rica', 'croatia', 'cuba', 'cyprus', 'czech republic', 'democratic republic of the congo', 'denmark', 'djibouti', 'dominica', 'dominican republic', 'ecuador', 'egypt', 'el salvador', 'equatorial guinea', 'eritrea', 'estonia', 'ethiopia', 'fiji', 'finland', 'france', 'gabon', 'gambia', 'georgia', 'germany', 'ghana', 'greece', 'grenada', 'guatemala', 'guinea', 'guineabissau', 'guyana', 'haiti', 'holy see', 'honduras', 'hungary', 'iceland', 'india', 'indonesia', 'iran', 'iraq', 'ireland', 'israel', 'italy', 'jamaica', 'japan', 'jordan', 'kazakhstan', 'kenya', 'kiribati', 'kuwait', 'kyrgyzstan', 'laos', 'latvia', 'lebanon', 'lesotho', 'liberia', 'libya', 'liechtenstein', 'lithuania', 'luxembourg', 'macedonia', 'madagascar', 'malawi', 'malaysia', 'maldives', 'mali', 'malta', 'marshall islands', 'mauritania', 'mauritius', 'mexico', 'micronesia', 'moldova', 'monaco', 'mongolia', 'montenegro', 'morocco', 'mozambique', 'myanmar', 'namibia', 'nauru', 'nepal', 'netherlands', 'new zealand', 'nicaragua', 'niger', 'nigeria', 'north korea', 'norway', 'oman', 'pakistan', 'palau', 'palestine state', 'panama', 'papua new guinea', 'paraguay', 'peru', 'philippines', 'poland', 'portugal', 'qatar', 'romania', 'russia', 'rwanda', 'saint kitts and nevis', 'saint lucia', 'saint vincent and the grenadines', 'samoa', 'san marino', 'sao tome and principe', 'saudi arabia', 'senegal', 'serbia', 'seychelles', 'sierra leone', 'singapore', 'slovakia', 'slovenia', 'solomon islands', 'somalia', 'south africa', 'south korea', 'south sudan', 'spain', 'sri lanka', 'sudan', 'suriname', 'swaziland', 'sweden', 'switzerland', 'syria', 'tajikistan', 'tanzania', 'thailand', 'timorleste', 'togo', 'tonga', 'trinidad and tobago', 'tunisia', 'turkey', 'turkmenistan', 'tuvalu', 'uganda', 'ukraine', 'united arab emirates', 'united kingdom', 'united states of america', 'uruguay', 'uzbekistan', 'vanuatu', 'venezuela', 'viet nam', 'yemen', 'zambia', 'zimbabwe'];
-
-lib.isCountry = function (country) {
-  return lib.countries.indexOf(country) !== -1;
-};
-
-lib.arrNormalize = function (arr) {
-  var newArr = [];
-
-  var _iterator2 = _createForOfIteratorHelper(arr),
-      _step2;
-
-  try {
-    for (_iterator2.s(); !(_step2 = _iterator2.n()).done;) {
-      var value = _step2.value;
-      if (newArr.indexOf(value) === -1) newArr.push(value.trimLeft());
-    }
-  } catch (err) {
-    _iterator2.e(err);
-  } finally {
-    _iterator2.f();
-  }
-
-  return newArr;
-};
-
-lib.devalueString = function (string) {
-  var returnee = '';
-
-  for (var i = 0; i < string.length; i += 1) {
-    if (isUpperCase(string[i])) {
-      // popMessage(string[i] + " is isUpperCase")
-      returnee += " ".concat(string[i].toLowerCase());
-    } else if (string[i] === '_' || string[i] === '-') {
-      returnee += ' ';
-    } else {
-      returnee += string[i];
-    }
-  }
-
-  return returnee;
-};
-
-lib.strToArr = function (string) {
-  var arr = [];
-
-  for (var i = 0; i < string.length; i += 1) {
-    arr.push(string[i]);
-  }
-
-  return arr;
-};
-
-lib.strReverse = function (string) {
-  var arr = lib.strToArr("".concat(string));
-  return arr.reverse().join('');
-};
-
-var $ = lib.$;
-
-var strReverse = lib.strReverse;
-
-var devalueString = lib.devalueString;
-
-var onDOMChange = lib.onDOMChange;
-
-var isEmpty = lib.isEmpty;
-
-var isElement = lib.isElement;
-
-var isEmail = lib.isEmail;
-
-var isObject = lib.isObject;
-
-var isDescendant = lib.isDescendant;
-
-var isUpperCase = lib.isUpperCase;
-
-var isLowerCase = lib.isLowerCase;
-
-var ucFirst = lib.ucFirst;
-
-var lcFirst = lib.lcFirst;
-
-var capitalize = lib.capitalize;
-
-var deleteIndex = lib.deleteIndex;
-
-var popMessage = lib.popMessage;
-
-var popAlert = lib.popAlert;
-
-var JSONtoArray = lib.JSONtoArray;
-
-var JSONParse = lib.JSONParse;
-
-var parallaxBk = lib.parallaxBk;
-
-var heroInput = lib.heroInput;
-
-var heroCheckBox = lib.heroCheckBox;
-
-var countries = lib.countries;
-
-var isCountry = lib.isCountry;
-
-var getWeekDay = lib.getWeekDay;
-
-var getMonth = lib.getMonth;
-
-var getRelativeTime = lib.getRelativeTime;
-
-var getRelativeParent = lib.getRelativeParent;
-
-var getRelativePosition = lib.getRelativePosition;
-
-var getPosition = lib.getPosition;
-
-var getCordinates = lib.getCordinates;
-
-var arrNormalize = lib.arrNormalize;
-
-
-/***/ }),
-
 /***/ "./node_modules/@babel/runtime/helpers/arrayWithHoles.js":
 /*!***************************************************************!*\
   !*** ./node_modules/@babel/runtime/helpers/arrayWithHoles.js ***!
@@ -2409,44 +1611,6 @@ module.exports = _createClass;
 
 /***/ }),
 
-/***/ "./node_modules/@babel/runtime/helpers/esm/arrayWithHoles.js":
-/*!*******************************************************************!*\
-  !*** ./node_modules/@babel/runtime/helpers/esm/arrayWithHoles.js ***!
-  \*******************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return _arrayWithHoles; });
-function _arrayWithHoles(arr) {
-  if (Array.isArray(arr)) return arr;
-}
-
-/***/ }),
-
-/***/ "./node_modules/@babel/runtime/helpers/esm/arrayWithoutHoles.js":
-/*!**********************************************************************!*\
-  !*** ./node_modules/@babel/runtime/helpers/esm/arrayWithoutHoles.js ***!
-  \**********************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return _arrayWithoutHoles; });
-function _arrayWithoutHoles(arr) {
-  if (Array.isArray(arr)) {
-    for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) {
-      arr2[i] = arr[i];
-    }
-
-    return arr2;
-  }
-}
-
-/***/ }),
-
 /***/ "./node_modules/@babel/runtime/helpers/esm/assertThisInitialized.js":
 /*!**************************************************************************!*\
   !*** ./node_modules/@babel/runtime/helpers/esm/assertThisInitialized.js ***!
@@ -2509,33 +1673,6 @@ function _createClass(Constructor, protoProps, staticProps) {
   if (protoProps) _defineProperties(Constructor.prototype, protoProps);
   if (staticProps) _defineProperties(Constructor, staticProps);
   return Constructor;
-}
-
-/***/ }),
-
-/***/ "./node_modules/@babel/runtime/helpers/esm/defineProperty.js":
-/*!*******************************************************************!*\
-  !*** ./node_modules/@babel/runtime/helpers/esm/defineProperty.js ***!
-  \*******************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return _defineProperty; });
-function _defineProperty(obj, key, value) {
-  if (key in obj) {
-    Object.defineProperty(obj, key, {
-      value: value,
-      enumerable: true,
-      configurable: true,
-      writable: true
-    });
-  } else {
-    obj[key] = value;
-  }
-
-  return obj;
 }
 
 /***/ }),
@@ -2618,96 +1755,6 @@ function _inherits(subClass, superClass) {
 
 /***/ }),
 
-/***/ "./node_modules/@babel/runtime/helpers/esm/iterableToArray.js":
-/*!********************************************************************!*\
-  !*** ./node_modules/@babel/runtime/helpers/esm/iterableToArray.js ***!
-  \********************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return _iterableToArray; });
-function _iterableToArray(iter) {
-  if (Symbol.iterator in Object(iter) || Object.prototype.toString.call(iter) === "[object Arguments]") return Array.from(iter);
-}
-
-/***/ }),
-
-/***/ "./node_modules/@babel/runtime/helpers/esm/iterableToArrayLimit.js":
-/*!*************************************************************************!*\
-  !*** ./node_modules/@babel/runtime/helpers/esm/iterableToArrayLimit.js ***!
-  \*************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return _iterableToArrayLimit; });
-function _iterableToArrayLimit(arr, i) {
-  if (!(Symbol.iterator in Object(arr) || Object.prototype.toString.call(arr) === "[object Arguments]")) {
-    return;
-  }
-
-  var _arr = [];
-  var _n = true;
-  var _d = false;
-  var _e = undefined;
-
-  try {
-    for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) {
-      _arr.push(_s.value);
-
-      if (i && _arr.length === i) break;
-    }
-  } catch (err) {
-    _d = true;
-    _e = err;
-  } finally {
-    try {
-      if (!_n && _i["return"] != null) _i["return"]();
-    } finally {
-      if (_d) throw _e;
-    }
-  }
-
-  return _arr;
-}
-
-/***/ }),
-
-/***/ "./node_modules/@babel/runtime/helpers/esm/nonIterableRest.js":
-/*!********************************************************************!*\
-  !*** ./node_modules/@babel/runtime/helpers/esm/nonIterableRest.js ***!
-  \********************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return _nonIterableRest; });
-function _nonIterableRest() {
-  throw new TypeError("Invalid attempt to destructure non-iterable instance");
-}
-
-/***/ }),
-
-/***/ "./node_modules/@babel/runtime/helpers/esm/nonIterableSpread.js":
-/*!**********************************************************************!*\
-  !*** ./node_modules/@babel/runtime/helpers/esm/nonIterableSpread.js ***!
-  \**********************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return _nonIterableSpread; });
-function _nonIterableSpread() {
-  throw new TypeError("Invalid attempt to spread non-iterable instance");
-}
-
-/***/ }),
-
 /***/ "./node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js":
 /*!*********************************************************************************!*\
   !*** ./node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js ***!
@@ -2776,50 +1823,6 @@ function _setPrototypeOf(o, p) {
   };
 
   return _setPrototypeOf(o, p);
-}
-
-/***/ }),
-
-/***/ "./node_modules/@babel/runtime/helpers/esm/slicedToArray.js":
-/*!******************************************************************!*\
-  !*** ./node_modules/@babel/runtime/helpers/esm/slicedToArray.js ***!
-  \******************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return _slicedToArray; });
-/* harmony import */ var _arrayWithHoles__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./arrayWithHoles */ "./node_modules/@babel/runtime/helpers/esm/arrayWithHoles.js");
-/* harmony import */ var _iterableToArrayLimit__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./iterableToArrayLimit */ "./node_modules/@babel/runtime/helpers/esm/iterableToArrayLimit.js");
-/* harmony import */ var _nonIterableRest__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./nonIterableRest */ "./node_modules/@babel/runtime/helpers/esm/nonIterableRest.js");
-
-
-
-function _slicedToArray(arr, i) {
-  return Object(_arrayWithHoles__WEBPACK_IMPORTED_MODULE_0__["default"])(arr) || Object(_iterableToArrayLimit__WEBPACK_IMPORTED_MODULE_1__["default"])(arr, i) || Object(_nonIterableRest__WEBPACK_IMPORTED_MODULE_2__["default"])();
-}
-
-/***/ }),
-
-/***/ "./node_modules/@babel/runtime/helpers/esm/toConsumableArray.js":
-/*!**********************************************************************!*\
-  !*** ./node_modules/@babel/runtime/helpers/esm/toConsumableArray.js ***!
-  \**********************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return _toConsumableArray; });
-/* harmony import */ var _arrayWithoutHoles__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./arrayWithoutHoles */ "./node_modules/@babel/runtime/helpers/esm/arrayWithoutHoles.js");
-/* harmony import */ var _iterableToArray__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./iterableToArray */ "./node_modules/@babel/runtime/helpers/esm/iterableToArray.js");
-/* harmony import */ var _nonIterableSpread__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./nonIterableSpread */ "./node_modules/@babel/runtime/helpers/esm/nonIterableSpread.js");
-
-
-
-function _toConsumableArray(arr) {
-  return Object(_arrayWithoutHoles__WEBPACK_IMPORTED_MODULE_0__["default"])(arr) || Object(_iterableToArray__WEBPACK_IMPORTED_MODULE_1__["default"])(arr) || Object(_nonIterableSpread__WEBPACK_IMPORTED_MODULE_2__["default"])();
 }
 
 /***/ }),
@@ -3439,21 +2442,21 @@ var assign=Object.assign.bind(Object);function g(){return assign;}Object.defineP
 
 /***/ }),
 
-/***/ "./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F&absolutePagePath=C%3A%5CUsers%5Cphezzy%5CDesktop%5CWORK%5Cafrihub%5Cpages%5Cindex.js!./":
-/*!********************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F&absolutePagePath=C%3A%5CUsers%5Cphezzy%5CDesktop%5CWORK%5Cafrihub%5Cpages%5Cindex.js ***!
-  \********************************************************************************************************************************************************************************/
+/***/ "./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fabout&absolutePagePath=C%3A%5CUsers%5Cphezzy%5CDesktop%5CWORK%5Cafrihub%5Cpages%5Cabout.js!./":
+/*!*************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fabout&absolutePagePath=C%3A%5CUsers%5Cphezzy%5CDesktop%5CWORK%5Cafrihub%5Cpages%5Cabout.js ***!
+  \*************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-    (window.__NEXT_P=window.__NEXT_P||[]).push(["/", function() {
-      var mod = __webpack_require__(/*! ./pages/index.js */ "./pages/index.js")
+    (window.__NEXT_P=window.__NEXT_P||[]).push(["/about", function() {
+      var mod = __webpack_require__(/*! ./pages/about.js */ "./pages/about.js")
       if(true) {
-        module.hot.accept(/*! ./pages/index.js */ "./pages/index.js", function() {
-          if(!next.router.components["/"]) return
-          var updatedPage = __webpack_require__(/*! ./pages/index.js */ "./pages/index.js")
-          next.router.update("/", updatedPage)
+        module.hot.accept(/*! ./pages/about.js */ "./pages/about.js", function() {
+          if(!next.router.components["/about"]) return
+          var updatedPage = __webpack_require__(/*! ./pages/about.js */ "./pages/about.js")
+          next.router.update("/about", updatedPage)
         })
       }
       return mod
@@ -10279,9 +9282,9 @@ module.exports = function(originalModule) {
 
 /***/ }),
 
-/***/ "./pages/index.js":
+/***/ "./pages/about.js":
 /*!************************!*\
-  !*** ./pages/index.js ***!
+  !*** ./pages/about.js ***!
   \************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -10290,29 +9293,27 @@ module.exports = function(originalModule) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/esm/classCallCheck */ "./node_modules/@babel/runtime/helpers/esm/classCallCheck.js");
 /* harmony import */ var _babel_runtime_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/esm/createClass */ "./node_modules/@babel/runtime/helpers/esm/createClass.js");
-/* harmony import */ var _babel_runtime_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime/helpers/esm/assertThisInitialized */ "./node_modules/@babel/runtime/helpers/esm/assertThisInitialized.js");
-/* harmony import */ var _babel_runtime_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime/helpers/esm/inherits */ "./node_modules/@babel/runtime/helpers/esm/inherits.js");
-/* harmony import */ var _babel_runtime_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @babel/runtime/helpers/esm/possibleConstructorReturn */ "./node_modules/@babel/runtime/helpers/esm/possibleConstructorReturn.js");
-/* harmony import */ var _babel_runtime_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @babel/runtime/helpers/esm/getPrototypeOf */ "./node_modules/@babel/runtime/helpers/esm/getPrototypeOf.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var _babel_runtime_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime/helpers/esm/inherits */ "./node_modules/@babel/runtime/helpers/esm/inherits.js");
+/* harmony import */ var _babel_runtime_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime/helpers/esm/possibleConstructorReturn */ "./node_modules/@babel/runtime/helpers/esm/possibleConstructorReturn.js");
+/* harmony import */ var _babel_runtime_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @babel/runtime/helpers/esm/getPrototypeOf */ "./node_modules/@babel/runtime/helpers/esm/getPrototypeOf.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_6__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_8__);
-/* harmony import */ var _components_general_Layout__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../components/general/Layout */ "./components/general/Layout.js");
-/* harmony import */ var _lib_custom__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../lib/custom */ "./lib/custom.js");
-/* harmony import */ var _redux_settings_action__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../redux/settings/action */ "./redux/settings/action.js");
-/* harmony import */ var _components_SlideShow__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../components/SlideShow */ "./components/SlideShow.js");
+/* harmony import */ var _components_general_Header__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../components/general/Header */ "./components/general/Header.js");
+/* harmony import */ var _components_general_Footer__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../components/general/Footer */ "./components/general/Footer.js");
+/* harmony import */ var _components_general_Layout__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../components/general/Layout */ "./components/general/Layout.js");
+/* harmony import */ var _components_general_FormInput__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../components/general/FormInput */ "./components/general/FormInput.js");
 
 
 
 
 
+var _jsxFileName = "C:\\Users\\phezzy\\Desktop\\WORK\\afrihub\\pages\\about.js";
+var __jsx = react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement;
 
-var _jsxFileName = "C:\\Users\\phezzy\\Desktop\\WORK\\afrihub\\pages\\index.js";
-var __jsx = react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement;
-
-function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = Object(_babel_runtime_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_5__["default"])(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = Object(_babel_runtime_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_5__["default"])(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return Object(_babel_runtime_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_4__["default"])(this, result); }; }
+function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = Object(_babel_runtime_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_4__["default"])(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = Object(_babel_runtime_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_4__["default"])(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return Object(_babel_runtime_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_3__["default"])(this, result); }; }
 
 function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
 
@@ -10324,1124 +9325,383 @@ function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Re
 
 
 
-var Index = /*#__PURE__*/function (_React$Component) {
-  Object(_babel_runtime_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_3__["default"])(Index, _React$Component);
+var SignUp = /*#__PURE__*/function (_React$Component) {
+  Object(_babel_runtime_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_2__["default"])(SignUp, _React$Component);
 
-  var _super = _createSuper(Index);
+  var _super = _createSuper(SignUp);
 
-  function Index(props) {
+  function SignUp(props) {
     var _this;
 
-    Object(_babel_runtime_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_0__["default"])(this, Index);
+    Object(_babel_runtime_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_0__["default"])(this, SignUp);
 
     _this = _super.call(this, props);
-    _this.banner = null;
-    _this.onScroll = _this.onScroll.bind(Object(_babel_runtime_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_2__["default"])(_this));
+    _this.state = {
+      firstName: '',
+      lastName: '',
+      email: '',
+      password: '',
+      password2: '',
+      submitting: false,
+      formType: 'signUp'
+    };
     return _this;
   }
 
-  Object(_babel_runtime_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__["default"])(Index, [{
-    key: "componentDidMount",
-    value: function componentDidMount() {
-      this.onScroll();
-      window.addEventListener('scroll', this.onScroll);
-    }
-  }, {
-    key: "componentWillUnmount",
-    value: function componentWillUnmount() {
-      window.removeEventListener('scroll', this.onScroll);
-      this.props.updateHeader({
-        fixed: false,
-        fixedTop: 0
+  Object(_babel_runtime_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__["default"])(SignUp, [{
+    key: "onChangeFormType",
+    value: function onChangeFormType(e, formType) {
+      e.preventDefault();
+      this.setState({
+        formType: formType
       });
-    }
-  }, {
-    key: "onScroll",
-    value: function onScroll() {
-      console.log('we sha scrolling');
-
-      if (this.banner) {
-        var _window = window,
-            $ = _window.$;
-        var bannerHeight = $('#banner').height();
-        var socialHeaderHeight = $('#socialHeader').outerHeight();
-        var headerHeight = this.props.settings.header.height;
-        var bannerPositionTop = Object(_lib_custom__WEBPACK_IMPORTED_MODULE_10__["getCordinates"])(this.banner).top;
-        var socialHeaderPositionTop = Object(_lib_custom__WEBPACK_IMPORTED_MODULE_10__["getCordinates"])(this.banner).top;
-        console.log(socialHeaderPositionTop, '||', socialHeaderHeight);
-        this.props.updateHeader({
-          fixed: $('html')[0].scrollTop < socialHeaderHeight,
-          fixedTop: socialHeaderHeight
-        });
-      }
     }
   }, {
     key: "render",
     value: function render() {
-      var _this2 = this;
-
-      return __jsx(_components_general_Layout__WEBPACK_IMPORTED_MODULE_9__["default"], {
+      var props = this.props,
+          state = this.state;
+      var header = props.settings.header;
+      var firstName = state.firstName,
+          lastName = state.lastName,
+          email = state.email,
+          password = state.password,
+          password2 = state.password2;
+      return __jsx(_components_general_Layout__WEBPACK_IMPORTED_MODULE_10__["default"], {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 49,
+          lineNumber: 40,
           columnNumber: 7
         }
       }, __jsx("div", {
-        id: "homePage",
+        id: "aboutPage",
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 50,
+          lineNumber: 41,
           columnNumber: 9
         }
       }, __jsx("div", {
-        id: "banner",
-        ref: function ref(e) {
-          _this2.banner = e;
-        },
+        className: "banner",
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 51,
+          lineNumber: 42,
           columnNumber: 11
         }
-      }, __jsx("div", {
-        id: "socialHeader",
-        ref: this.regSocialHeaderHeight,
-        __self: this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 52,
-          columnNumber: 13
-        }
-      }, __jsx("span", {
-        className: "fa fa-facebook-square",
-        __self: this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 53,
-          columnNumber: 15
-        }
-      }), __jsx("span", {
-        className: "fa fa-linkedin-square",
-        __self: this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 54,
-          columnNumber: 15
-        }
-      }), __jsx("span", {
-        className: "fa fa-twitter-square",
-        __self: this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 55,
-          columnNumber: 15
-        }
-      }), __jsx("span", {
-        className: "fa fa-instagram",
-        __self: this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 56,
-          columnNumber: 15
-        }
-      })), __jsx("img", {
-        src: "img/heros/5W9IHRVEb5.jpg",
-        alt: "Background",
+      }, __jsx("img", {
+        src: "/img/innovation-5.jpg",
+        alt: "",
         className: "bk",
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 58,
+          lineNumber: 43,
           columnNumber: 13
         }
-      }), __jsx("section", {
-        className: "pb-0",
+      }), __jsx("div", {
+        className: "fk",
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 59,
+          lineNumber: 44,
           columnNumber: 13
         }
+      }, __jsx("h1", {
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 45,
+          columnNumber: 15
+        }
+      }, "About Bridging Afika"))), __jsx("div", {
+        className: "container",
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 48,
+          columnNumber: 11
+        }
       }, __jsx("div", {
-        className: "content",
+        className: "about-info",
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 49,
+          columnNumber: 13
+        }
+      }, __jsx("h1", {
+        className: "title",
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 50,
+          columnNumber: 15
+        }
+      }, "Our Mission"), __jsx("div", {
+        className: "info",
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 51,
+          columnNumber: 15
+        }
+      }, __jsx("span", {
+        className: "fa fa-quote-left left icon",
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 52,
+          columnNumber: 17
+        }
+      }), "Nostrud ad aute nulla nulla. Ad dolor exercitation incididunt et pariatur magna. Irure laborum et enim aliquip proident. Elit deserunt ipsum amet ut consectetur occaecat et anim consequat mollit. Nulla culpa elit tempor ut reprehenderit cillum esse. Proident proident reprehenderit commodo laborum esse. Ad pariatur anim minim pariatur fugiat eiusmod ullamco consectetur pariatur sint aute in minim. Sunt enim anim reprehenderit labore ipsum irure. Exercitation nulla adipisicing do aliquip. Occaecat magna proident nostrud enim adipisicing veniam ad dolor non aute et quis labore. Labore enim aliqua consequat laborum esse fugiat ad culpa aliquip qui laboris exercitation amet nisi.", __jsx("span", {
+        className: "fa fa-quote-right right icon",
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 56,
+          columnNumber: 17
+        }
+      }))), __jsx("div", {
+        className: "about-info",
         __self: this,
         __source: {
           fileName: _jsxFileName,
           lineNumber: 60,
-          columnNumber: 15
+          columnNumber: 13
         }
-      }, __jsx("div", {
-        id: "spinner",
+      }, __jsx("h1", {
+        className: "title",
         __self: this,
         __source: {
           fileName: _jsxFileName,
           lineNumber: 61,
-          columnNumber: 17
+          columnNumber: 15
         }
-      }), __jsx("div", {
-        id: "innovationWeb",
+      }, "Our Vision"), __jsx("div", {
+        className: "info",
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 62,
+          columnNumber: 15
+        }
+      }, __jsx("span", {
+        className: "fa fa-quote-right left icon",
         __self: this,
         __source: {
           fileName: _jsxFileName,
           lineNumber: 63,
           columnNumber: 17
         }
-      }, __jsx("div", {
-        className: "innovation",
+      }), "Nostrud ad aute nulla nulla. Ad dolor exercitation incididunt et pariatur magna. Irure laborum et enim aliquip proident. Elit deserunt ipsum amet ut consectetur occaecat et anim consequat mollit. Nulla culpa elit tempor ut reprehenderit cillum esse. Proident proident reprehenderit commodo laborum esse. Ad pariatur anim minim pariatur fugiat eiusmod ullamco consectetur pariatur sint aute in minim. Sunt enim anim reprehenderit labore ipsum irure. Exercitation nulla adipisicing do aliquip. Occaecat magna proident nostrud enim adipisicing veniam ad dolor non aute et quis labore. Labore enim aliqua consequat laborum esse fugiat ad culpa aliquip qui laboris exercitation amet nisi.", __jsx("span", {
+        className: "fa fa-quote-right right icon",
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 64,
-          columnNumber: 19
+          lineNumber: 67,
+          columnNumber: 17
         }
-      }, __jsx("span", {
-        className: "fa fa-book icon",
+      })))), __jsx("div", {
+        className: "our-team",
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 65,
-          columnNumber: 21
+          lineNumber: 71,
+          columnNumber: 11
         }
-      })), __jsx("div", {
-        className: "innovation",
-        __self: this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 68,
-          columnNumber: 19
-        }
-      }, __jsx("span", {
-        className: "fa fa-medkit icon",
-        __self: this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 69,
-          columnNumber: 21
-        }
-      })), __jsx("div", {
-        className: "innovation",
+      }, __jsx("h1", {
         __self: this,
         __source: {
           fileName: _jsxFileName,
           lineNumber: 72,
-          columnNumber: 19
+          columnNumber: 13
         }
-      }, __jsx("span", {
-        className: "fa fa-leaf icon",
+      }, "Our Team"), __jsx("div", {
+        className: "the-team",
         __self: this,
         __source: {
           fileName: _jsxFileName,
           lineNumber: 73,
-          columnNumber: 21
+          columnNumber: 13
         }
-      })), __jsx("div", {
-        className: "innovation",
+      }, __jsx("div", {
+        className: "person",
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 74,
+          columnNumber: 15
+        }
+      }, __jsx("div", {
+        className: "avi",
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 75,
+          columnNumber: 17
+        }
+      }, __jsx("img", {
+        src: "/img/avatars/female-1.jpg",
+        alt: "",
         __self: this,
         __source: {
           fileName: _jsxFileName,
           lineNumber: 76,
           columnNumber: 19
         }
-      }, __jsx("span", {
-        className: "fa fa-gears icon",
+      })), __jsx("h4", {
+        className: "title",
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 77,
-          columnNumber: 21
+          lineNumber: 78,
+          columnNumber: 17
         }
-      })), __jsx("div", {
-        className: "innovation",
+      }, "FirstName lastName"), __jsx("h5", {
+        className: "position",
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 80,
-          columnNumber: 19
+          lineNumber: 79,
+          columnNumber: 17
         }
-      }, __jsx("span", {
-        className: "fa fa-book icon",
+      }, "Position")), __jsx("div", {
+        className: "person",
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 81,
-          columnNumber: 21
+          lineNumber: 82,
+          columnNumber: 15
         }
-      })), __jsx("div", {
-        className: "innovation",
+      }, __jsx("div", {
+        className: "avi",
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 83,
+          columnNumber: 17
+        }
+      }, __jsx("img", {
+        src: "/img/avatars/female-1.jpg",
+        alt: "",
         __self: this,
         __source: {
           fileName: _jsxFileName,
           lineNumber: 84,
           columnNumber: 19
         }
-      }, __jsx("span", {
-        className: "fa fa-book icon",
+      })), __jsx("h4", {
+        className: "title",
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 85,
-          columnNumber: 21
+          lineNumber: 86,
+          columnNumber: 17
         }
-      })), __jsx("div", {
-        className: "innovation",
+      }, "FirstName lastName"), __jsx("h5", {
+        className: "position",
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 88,
-          columnNumber: 19
+          lineNumber: 87,
+          columnNumber: 17
         }
-      }, __jsx("span", {
-        className: "fa fa-book icon",
+      }, "Position")), __jsx("div", {
+        className: "person",
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 89,
-          columnNumber: 21
+          lineNumber: 90,
+          columnNumber: 15
         }
-      }))), __jsx(_components_SlideShow__WEBPACK_IMPORTED_MODULE_12__["default"], {
-        items: [{
-          label: 'Technology',
-          content: __jsx("img", {
-            src: "img/innovation-1.jpg",
-            alt: "martfury",
-            __self: this,
-            __source: {
-              fileName: _jsxFileName,
-              lineNumber: 96,
-              columnNumber: 32
-            }
-          })
-        }, {
-          label: 'Education',
-          content: __jsx("img", {
-            src: "img/innovation-2.jpg",
-            alt: "martfury",
-            __self: this,
-            __source: {
-              fileName: _jsxFileName,
-              lineNumber: 103,
-              columnNumber: 32
-            }
-          })
-        }, {
-          label: 'Health',
-          content: __jsx("img", {
-            src: "img/innovation-3.jpg",
-            alt: "martfury",
-            __self: this,
-            __source: {
-              fileName: _jsxFileName,
-              lineNumber: 110,
-              columnNumber: 32
-            }
-          })
-        }, {
-          label: 'Agriculture',
-          content: __jsx("img", {
-            src: "img/innovation-4.jpg",
-            alt: "martfury",
-            __self: this,
-            __source: {
-              fileName: _jsxFileName,
-              lineNumber: 117,
-              columnNumber: 32
-            }
-          })
-        }],
+      }, __jsx("div", {
+        className: "avi",
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 91,
+          columnNumber: 17
+        }
+      }, __jsx("img", {
+        src: "/img/avatars/female-1.jpg",
+        alt: "",
         __self: this,
         __source: {
           fileName: _jsxFileName,
           lineNumber: 92,
+          columnNumber: 19
+        }
+      })), __jsx("h4", {
+        className: "title",
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 94,
           columnNumber: 17
         }
-      })))), __jsx("section", {
-        className: "single-center",
+      }, "FirstName lastName"), __jsx("h5", {
+        className: "position",
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 155,
-          columnNumber: 11
+          lineNumber: 95,
+          columnNumber: 17
         }
-      }, __jsx("h2", {
-        className: "section-title bolder",
+      }, "Position")), __jsx("div", {
+        className: "person",
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 156,
-          columnNumber: 13
-        }
-      }, "Bridging Africa's Pr\xE9sentation "), __jsx("p", {
-        __self: this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 157,
-          columnNumber: 13
-        }
-      }, "Bridging Afrika est une plateforme d\u2019innovation en ligne dont l\u2019objectif principal est la r\xE9solution des probl\xE8mes africains gr\xE2ce \xE0 des innovations cr\xE9\xE9es par des africains pour des africains."), __jsx("p", {
-        __self: this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 162,
-          columnNumber: 13
-        }
-      }, "Nous voulons faciliter la r\xE9solution de crises en cr\xE9ant un espace o\xF9 toutes les innovations, solutions de ces crises, sont r\xE9f\xE9renc\xE9es et mises en avant."), __jsx("p", {
-        __self: this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 166,
-          columnNumber: 13
-        }
-      }, "En promouvant ces innovations, nous cr\xE9erons avec les innovateurs une communaut\xE9 pr\xEAte \xE0 \xEAtre d\xE9ploy\xE9e quelque soit le challenge.")), __jsx("section", {
-        className: "double-sides",
-        __self: this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 172,
-          columnNumber: 11
+          lineNumber: 98,
+          columnNumber: 15
         }
       }, __jsx("div", {
-        className: "text",
+        className: "avi",
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 173,
-          columnNumber: 13
-        }
-      }, __jsx("h2", {
-        className: "section-title bolder",
-        __self: this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 174,
-          columnNumber: 15
-        }
-      }, "Bridging Africa's Pr\xE9sentation "), __jsx("p", {
-        __self: this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 175,
-          columnNumber: 15
-        }
-      }, "Bridging Afrika est une plateforme d\u2019innovation en ligne dont l\u2019objectif principal est la r\xE9solution des probl\xE8mes africains gr\xE2ce \xE0 des innovations cr\xE9\xE9es par des africains pour des africains."), __jsx("p", {
-        __self: this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 180,
-          columnNumber: 15
-        }
-      }, "Nous voulons faciliter la r\xE9solution de crises en cr\xE9ant un espace o\xF9 toutes les innovations, solutions de ces crises, sont r\xE9f\xE9renc\xE9es et mises en avant."), __jsx("p", {
-        __self: this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 184,
-          columnNumber: 15
-        }
-      }, "En promouvant ces innovations, nous cr\xE9erons avec les innovateurs une communaut\xE9 pr\xEAte \xE0 \xEAtre d\xE9ploy\xE9e quelque soit le challenge."), __jsx("div", {
-        className: "text-center",
-        __self: this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 188,
-          columnNumber: 15
-        }
-      }, __jsx("button", {
-        type: "button",
-        className: "btn btn-info",
-        __self: this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 189,
+          lineNumber: 99,
           columnNumber: 17
-        }
-      }, "En savoir plus"))), __jsx("div", {
-        className: "media",
-        __self: this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 192,
-          columnNumber: 13
         }
       }, __jsx("img", {
-        src: "img/square-2.jpg",
-        className: "img-fluid rounded shadow",
-        alt: "j",
+        src: "/img/avatars/female-1.jpg",
+        alt: "",
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 193,
-          columnNumber: 15
+          lineNumber: 100,
+          columnNumber: 19
         }
-      }))), __jsx("section", {
-        className: "double-sides",
+      })), __jsx("h4", {
+        className: "title",
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 197,
-          columnNumber: 11
-        }
-      }, __jsx("div", {
-        className: "text",
-        __self: this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 198,
-          columnNumber: 13
-        }
-      }, __jsx("h2", {
-        className: "section-title bolder",
-        __self: this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 199,
-          columnNumber: 15
-        }
-      }, "Bridging Africa's Pr\xE9sentation "), __jsx("p", {
-        __self: this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 200,
-          columnNumber: 15
-        }
-      }, "Bridging Afrika est une plateforme d\u2019innovation en ligne dont l\u2019objectif principal est la r\xE9solution des probl\xE8mes africains gr\xE2ce \xE0 des innovations cr\xE9\xE9es par des africains pour des africains."), __jsx("p", {
-        __self: this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 205,
-          columnNumber: 15
-        }
-      }, "Nous voulons faciliter la r\xE9solution de crises en cr\xE9ant un espace o\xF9 toutes les innovations, solutions de ces crises, sont r\xE9f\xE9renc\xE9es et mises en avant."), __jsx("p", {
-        __self: this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 209,
-          columnNumber: 15
-        }
-      }, "En promouvant ces innovations, nous cr\xE9erons avec les innovateurs une communaut\xE9 pr\xEAte \xE0 \xEAtre d\xE9ploy\xE9e quelque soit le challenge."), __jsx("div", {
-        className: "text-center",
-        __self: this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 213,
-          columnNumber: 15
-        }
-      }, __jsx("button", {
-        type: "button",
-        className: "btn btn-info",
-        __self: this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 214,
+          lineNumber: 102,
           columnNumber: 17
         }
-      }, "En savoir plus"))), __jsx("div", {
-        className: "media",
+      }, "FirstName lastName"), __jsx("h5", {
+        className: "position",
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 217,
-          columnNumber: 13
-        }
-      }, __jsx("iframe", {
-        src: "https://www.youtube.com/embed/4ce-Hk6pVsg",
-        className: "rounded shadow",
-        __self: this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 218,
-          columnNumber: 15
-        }
-      }))), __jsx("div", {
-        id: "partners",
-        __self: this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 222,
-          columnNumber: 11
-        }
-      }, __jsx("div", {
-        className: "content",
-        __self: this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 223,
-          columnNumber: 13
-        }
-      }, __jsx("h3", {
-        __self: this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 224,
-          columnNumber: 15
-        }
-      }, "Our Partners"), __jsx("div", {
-        className: "rocker",
-        __self: this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 225,
-          columnNumber: 15
-        }
-      }, __jsx("div", {
-        className: "partners",
-        __self: this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 226,
+          lineNumber: 103,
           columnNumber: 17
         }
-      }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_8___default.a, {
-        href: "/",
-        __self: this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 227,
-          columnNumber: 19
-        }
-      }, __jsx("a", {
-        className: "fa fa-amazon partner",
-        __self: this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 228,
-          columnNumber: 21
-        }
-      })), __jsx(next_link__WEBPACK_IMPORTED_MODULE_8___default.a, {
-        href: "/",
-        __self: this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 231,
-          columnNumber: 19
-        }
-      }, __jsx("a", {
-        className: "fa fa-adn partner",
-        __self: this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 232,
-          columnNumber: 21
-        }
-      })), __jsx(next_link__WEBPACK_IMPORTED_MODULE_8___default.a, {
-        href: "/",
-        __self: this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 235,
-          columnNumber: 19
-        }
-      }, __jsx("a", {
-        className: "fa fa-android partner",
-        __self: this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 236,
-          columnNumber: 21
-        }
-      })), __jsx(next_link__WEBPACK_IMPORTED_MODULE_8___default.a, {
-        href: "/",
-        __self: this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 239,
-          columnNumber: 19
-        }
-      }, __jsx("a", {
-        className: "fa fa-apple partner",
-        __self: this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 240,
-          columnNumber: 21
-        }
-      })), __jsx(next_link__WEBPACK_IMPORTED_MODULE_8___default.a, {
-        href: "/",
-        __self: this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 243,
-          columnNumber: 19
-        }
-      }, __jsx("a", {
-        className: "fa fa-adn partner",
-        __self: this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 244,
-          columnNumber: 21
-        }
-      })), __jsx(next_link__WEBPACK_IMPORTED_MODULE_8___default.a, {
-        href: "/",
-        __self: this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 247,
-          columnNumber: 19
-        }
-      }, __jsx("a", {
-        className: "fa fa-apple partner",
-        __self: this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 248,
-          columnNumber: 21
-        }
-      })), __jsx(next_link__WEBPACK_IMPORTED_MODULE_8___default.a, {
-        href: "/",
-        __self: this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 251,
-          columnNumber: 19
-        }
-      }, __jsx("a", {
-        className: "fa fa-amazon partner",
-        __self: this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 252,
-          columnNumber: 21
-        }
-      })), __jsx(next_link__WEBPACK_IMPORTED_MODULE_8___default.a, {
-        href: "/",
-        __self: this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 255,
-          columnNumber: 19
-        }
-      }, __jsx("a", {
-        className: "fa fa-adn partner",
-        __self: this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 256,
-          columnNumber: 21
-        }
-      })), __jsx(next_link__WEBPACK_IMPORTED_MODULE_8___default.a, {
-        href: "/",
-        __self: this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 259,
-          columnNumber: 19
-        }
-      }, __jsx("a", {
-        className: "fa fa-android partner",
-        __self: this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 260,
-          columnNumber: 21
-        }
-      })), __jsx(next_link__WEBPACK_IMPORTED_MODULE_8___default.a, {
-        href: "/",
-        __self: this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 263,
-          columnNumber: 19
-        }
-      }, __jsx("a", {
-        className: "fa fa-apple partner",
-        __self: this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 264,
-          columnNumber: 21
-        }
-      })), __jsx(next_link__WEBPACK_IMPORTED_MODULE_8___default.a, {
-        href: "/",
-        __self: this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 267,
-          columnNumber: 19
-        }
-      }, __jsx("a", {
-        className: "fa fa-adn partner",
-        __self: this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 268,
-          columnNumber: 21
-        }
-      })), __jsx(next_link__WEBPACK_IMPORTED_MODULE_8___default.a, {
-        href: "/",
-        __self: this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 271,
-          columnNumber: 19
-        }
-      }, __jsx("a", {
-        className: "fa fa-apple partner",
-        __self: this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 272,
-          columnNumber: 21
-        }
-      })))))), __jsx("section", {
-        id: "extraSection",
-        __self: this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 279,
-          columnNumber: 11
-        }
-      }, __jsx("div", {
-        className: "row",
-        __self: this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 280,
-          columnNumber: 13
-        }
-      }, __jsx("div", {
-        id: "blogs",
-        className: "col-md-12 ",
-        __self: this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 281,
-          columnNumber: 15
-        }
-      }, __jsx("h2", {
-        className: "display-5 title",
-        __self: this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 282,
-          columnNumber: 17
-        }
-      }, "Latest Articles"), __jsx("div", {
-        className: "row content",
-        __self: this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 283,
-          columnNumber: 17
-        }
-      }, __jsx("div", {
-        className: "blog-post col-lg-3",
-        __self: this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 284,
-          columnNumber: 19
-        }
-      }, __jsx("div", {
-        className: "card h-100 hover-box-shadow",
-        __self: this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 285,
-          columnNumber: 21
-        }
-      }, __jsx("div", {
-        className: "d-block bg-gradient rounded-top position-relative",
-        __self: this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 286,
-          columnNumber: 23
-        }
-      }, __jsx("img", {
-        className: "card-img-top hover-fade-out",
-        src: "img/blog/1.jpg",
-        alt: "accompanying Treva testimonial",
-        __self: this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 287,
-          columnNumber: 25
-        }
-      })), __jsx("div", {
-        className: "card-body",
-        __self: this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 294,
-          columnNumber: 23
-        }
-      }, __jsx("h5", {
-        className: "card-title",
-        __self: this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 295,
-          columnNumber: 25
-        }
-      }, "Comment s\u2019organise la riposte contre le Covid-19 au Cameroun ?"), __jsx("p", {
-        className: "card-info",
-        __self: this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 296,
-          columnNumber: 25
-        }
-      }, "Face au d\xE9fi du coronavirus, le Cameroun a mis en place un syst\xE8me de d\xE9tection qui ob\xE9it \xE0 une proc\xE9dure conforme aux orientations propos\xE9es par l\u2019Organisation mondiale de la sant\xE9 (OMS)."), __jsx("a", {
-        href: "#",
-        className: "stretched-link",
-        __self: this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 299,
-          columnNumber: 25
-        }
-      }, "Read Story")))), __jsx("div", {
-        className: "blog-post col-lg-3",
-        __self: this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 303,
-          columnNumber: 19
-        }
-      }, __jsx("div", {
-        className: "card h-100 hover-box-shadow",
-        __self: this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 304,
-          columnNumber: 21
-        }
-      }, __jsx("div", {
-        className: "d-block bg-gradient rounded-top position-relative",
-        __self: this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 305,
-          columnNumber: 23
-        }
-      }, __jsx("img", {
-        className: "card-img-top hover-fade-out",
-        src: "img/blog/2.jpg",
-        alt: "accompanying Treva testimonial",
-        __self: this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 306,
-          columnNumber: 25
-        }
-      })), __jsx("div", {
-        className: "card-body",
-        __self: this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 313,
-          columnNumber: 23
-        }
-      }, __jsx("h5", {
-        className: "card-title",
-        __self: this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 314,
-          columnNumber: 25
-        }
-      }, "Acc\xE8s prioritaire au vaccin chinois contre la Covid-19 pour l\u2019Afrique ?"), __jsx("p", {
-        className: "card-info",
-        __self: this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 315,
-          columnNumber: 25
-        }
-      }, "(Agence Ecofin) - Bient\xF4t l\u2019\xE9pilogue ? Point de d\xE9part de la maladie \xE0 Coronavirus 2019 et ancien \xE9picentre de la pand\xE9mie, la Chine peut aujourd\u2019hui se targuer d\u2019avoir acquis une certaine exp\xE9rience pour ce qui est de la gestion de cette crise. Mieux, selon Ding Yifang, conseiller aupr\xE8s du gouvernement, un vaccin sera bient\xF4t produit en masse."), __jsx("a", {
-        href: "#",
-        className: "stretched-link",
-        __self: this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 318,
-          columnNumber: 25
-        }
-      }, "Read Story")))), __jsx("div", {
-        className: "blog-post col-lg-3",
-        __self: this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 322,
-          columnNumber: 19
-        }
-      }, __jsx("div", {
-        className: "card h-100 hover-box-shadow",
-        __self: this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 323,
-          columnNumber: 21
-        }
-      }, __jsx("div", {
-        className: "d-block bg-gradient rounded-top position-relative",
-        __self: this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 324,
-          columnNumber: 23
-        }
-      }, __jsx("img", {
-        className: "card-img-top hover-fade-out",
-        src: "img/blog/4.webp",
-        alt: "accompanying Treva testimonial",
-        __self: this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 325,
-          columnNumber: 25
-        }
-      })), __jsx("div", {
-        className: "card-body",
-        __self: this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 332,
-          columnNumber: 23
-        }
-      }, __jsx("h5", {
-        className: "card-title",
-        __self: this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 333,
-          columnNumber: 25
-        }
-      }, "Covid-19 : nette acc\xE9l\xE9ration de la pand\xE9mie en Afrique, avertit l'OMS"), __jsx("p", {
-        className: "card-info",
-        __self: this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 334,
-          columnNumber: 25
-        }
-      }, "La vitesse \xE0 laquelle le nombre de cas confirm\xE9s de Covid-19 a doubl\xE9 \u2014 moins de 20 jours \u2014 montre l'acc\xE9l\xE9ration de la propagation du nouveau coronavirus en Afrique, a averti, jeudi 11 juin, l'Organisation mondiale de Sant\xE9 (OMS)."), __jsx("a", {
-        href: "#",
-        className: "stretched-link",
-        __self: this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 337,
-          columnNumber: 25
-        }
-      }, "Read Story")))), __jsx("div", {
-        className: "blog-post col-lg-3",
-        __self: this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 341,
-          columnNumber: 19
-        }
-      }, __jsx("div", {
-        className: "card h-100 hover-box-shadow",
-        __self: this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 342,
-          columnNumber: 21
-        }
-      }, __jsx("div", {
-        className: "d-block bg-gradient rounded-top position-relative",
-        __self: this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 343,
-          columnNumber: 23
-        }
-      }, __jsx("img", {
-        className: "card-img-top hover-fade-out",
-        src: "img/case-studies/thumb-5.jpg",
-        alt: "accompanying Treva testimonial",
-        __self: this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 344,
-          columnNumber: 25
-        }
-      })), __jsx("div", {
-        className: "card-body",
-        __self: this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 351,
-          columnNumber: 23
-        }
-      }, __jsx("h5", {
-        className: "card-title",
-        __self: this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 352,
-          columnNumber: 25
-        }
-      }, "Covid-19: voici le top 10 Africain des pays les plus touch\xE9s"), __jsx("p", {
-        className: "card-info",
-        __self: this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 353,
-          columnNumber: 25
-        }
-      }, "Avec plus de 9 420 cas d\xE9clar\xE9s de covid-19 et 186 morts, l\u2019Afrique du Sud pr\xE9sente le bilan le plus lourd en termes de personnes infect\xE9es selon les donn\xE9es de l\u2019Universit\xE9 Johns Hopkins. Le pays de Mandela est suivi de l\u2019Egypte, avec 8 964 cas positifs et \xE0 ce jour 514 d\xE9c\xE8s. Le Maroc pr\xE9sente, lui, 6 038 cas pour 188 d\xE9c\xE8s contre 5 558 cas et 494 morts pour l\u2019Alg\xE9rie."), __jsx("a", {
-        href: "#",
-        className: "stretched-link",
-        __self: this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 356,
-          columnNumber: 25
-        }
-      }, "Read Story")))))))), __jsx("section", {
-        id: "feedback",
-        style: {
-          display: 'none'
-        },
-        __self: this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 365,
-          columnNumber: 11
-        }
-      }, __jsx("h2", {
-        __self: this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 366,
-          columnNumber: 13
-        }
-      }, "Laissez-nous votre adresse e-mail, nous vous recontacterons une fois que le site internet sera fonctionnel "), __jsx("div", {
-        id: "box",
-        __self: this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 367,
-          columnNumber: 13
-        }
-      }, __jsx("input", {
-        placeholder: "Input email",
-        __self: this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 368,
-          columnNumber: 15
-        }
-      }), __jsx("button", {
-        type: "button",
-        className: "btn btn-primary ml-lg-4 mr-3 mr-md-4 mr-lg-0 d-none d-sm-block order-lg-3",
-        __self: this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 369,
-          columnNumber: 15
-        }
-      }, "Envoyer")))));
+      }, "Position"))))));
+    }
+  }], [{
+    key: "getInitialProps",
+    value: function getInitialProps(_ref) {// return store;
+
+      var store = _ref.store;
     }
   }]);
 
-  return Index;
-}(react__WEBPACK_IMPORTED_MODULE_6___default.a.Component);
+  return SignUp;
+}(react__WEBPACK_IMPORTED_MODULE_5___default.a.Component);
 
 var mapStateToProps = function mapStateToProps(state) {
   return {
@@ -11450,17 +9710,11 @@ var mapStateToProps = function mapStateToProps(state) {
 };
 
 var mapDispatchToProps = function mapDispatchToProps(dispatch) {
-  return {
-    updateHeader: function updateHeader(props) {
-      return dispatch(Object(_redux_settings_action__WEBPACK_IMPORTED_MODULE_11__["updateHeader"])(props));
-    },
-    updateSocialHeader: function updateSocialHeader(props) {
-      return dispatch(Object(_redux_settings_action__WEBPACK_IMPORTED_MODULE_11__["updateSocialHeader"])(props));
-    }
+  return {// updateHeader: (props) => dispatch(updateHeader(props)),
   };
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_7__["connect"])(mapStateToProps, mapDispatchToProps)(Index));
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_7__["connect"])(mapStateToProps, mapDispatchToProps)(SignUp));
 
 /***/ }),
 
@@ -11503,14 +9757,14 @@ var updateSocialHeader = function updateSocialHeader(props) {
 
 /***/ }),
 
-/***/ 2:
-/*!************************************************************************************************************************************!*\
-  !*** multi next-client-pages-loader?page=%2F&absolutePagePath=C%3A%5CUsers%5Cphezzy%5CDesktop%5CWORK%5Cafrihub%5Cpages%5Cindex.js ***!
-  \************************************************************************************************************************************/
+/***/ 1:
+/*!*****************************************************************************************************************************************!*\
+  !*** multi next-client-pages-loader?page=%2Fabout&absolutePagePath=C%3A%5CUsers%5Cphezzy%5CDesktop%5CWORK%5Cafrihub%5Cpages%5Cabout.js ***!
+  \*****************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! next-client-pages-loader?page=%2F&absolutePagePath=C%3A%5CUsers%5Cphezzy%5CDesktop%5CWORK%5Cafrihub%5Cpages%5Cindex.js! */"./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F&absolutePagePath=C%3A%5CUsers%5Cphezzy%5CDesktop%5CWORK%5Cafrihub%5Cpages%5Cindex.js!./");
+module.exports = __webpack_require__(/*! next-client-pages-loader?page=%2Fabout&absolutePagePath=C%3A%5CUsers%5Cphezzy%5CDesktop%5CWORK%5Cafrihub%5Cpages%5Cabout.js! */"./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fabout&absolutePagePath=C%3A%5CUsers%5Cphezzy%5CDesktop%5CWORK%5Cafrihub%5Cpages%5Cabout.js!./");
 
 
 /***/ }),
@@ -11526,5 +9780,5 @@ module.exports = dll_c2e10d183b950a67d9e7;
 
 /***/ })
 
-},[[2,"static/runtime/webpack.js"]]]);
-//# sourceMappingURL=index.js.map
+},[[1,"static/runtime/webpack.js"]]]);
+//# sourceMappingURL=about.js.map
