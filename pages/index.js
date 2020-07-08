@@ -54,14 +54,9 @@ class Index extends React.Component {
               <span className="fa fa-twitter-square" />
               <span className="fa fa-instagram" />
             </div>
-            <img src="/img/heros/5W9IHRVEb5.jpg" alt="Background" className="bk" />
+            <img src="img/heros/5W9IHRVEb5.jpg" alt="Background" className="bk" />
             <section className="pb-0">
               <div className="content">
-                {/*  <div id="searchBar">
-                  <input placeholder="Search" />
-                  <icon className="fa fa-search" />
-                </div> */}
-
                 <div id="spinner" />
 
                 <div id="innovationWeb">
@@ -98,28 +93,28 @@ class Index extends React.Component {
                     {
                       label: 'Technology',
                       content: <img
-                        src="/img/innovation-1.jpg"
+                        src="img/innovation-1.jpg"
                         alt="martfury"
                       />,
                     },
                     {
                       label: 'Education',
                       content: <img
-                        src="/img/innovation-2.jpg"
+                        src="img/innovation-2.jpg"
                         alt="martfury"
                       />,
                     },
                     {
                       label: 'Health',
                       content: <img
-                        src="/img/innovation-3.jpg"
+                        src="img/innovation-3.jpg"
                         alt="martfury"
                       />,
                     },
                     {
                       label: 'Agriculture',
                       content: <img
-                        src="/img/innovation-4.jpg"
+                        src="img/innovation-4.jpg"
                         alt="martfury"
                       />,
                     },
@@ -194,7 +189,7 @@ class Index extends React.Component {
               </div>
             </div>
             <div className="media">
-              <img src="/img/square-2.jpg" className="img-fluid rounded shadow" alt="j" />
+              <img src="img/square-2.jpg" className="img-fluid rounded shadow" alt="j" />
             </div>
           </section>
 
@@ -290,7 +285,7 @@ class Index extends React.Component {
                       <div className="d-block bg-gradient rounded-top position-relative">
                         <img
                           className="card-img-top hover-fade-out"
-                          src="/img/blog/1.jpg"
+                          src="img/blog/1.jpg"
                           alt="accompanying Treva testimonial"
                         />
 
@@ -309,7 +304,7 @@ class Index extends React.Component {
                       <div className="d-block bg-gradient rounded-top position-relative">
                         <img
                           className="card-img-top hover-fade-out"
-                          src="/img/blog/2.jpg"
+                          src="img/blog/2.jpg"
                           alt="accompanying Treva testimonial"
                         />
 
@@ -328,7 +323,7 @@ class Index extends React.Component {
                       <div className="d-block bg-gradient rounded-top position-relative">
                         <img
                           className="card-img-top hover-fade-out"
-                          src="/img/blog/4.webp"
+                          src="img/blog/4.webp"
                           alt="accompanying Treva testimonial"
                         />
 
@@ -347,7 +342,7 @@ class Index extends React.Component {
                       <div className="d-block bg-gradient rounded-top position-relative">
                         <img
                           className="card-img-top hover-fade-out"
-                          src="/img/case-studies/thumb-5.jpg"
+                          src="img/case-studies/thumb-5.jpg"
                           alt="accompanying Treva testimonial"
                         />
 
