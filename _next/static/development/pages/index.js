@@ -1222,7 +1222,7 @@ var Header = /*#__PURE__*/function (_React$Component) {
           columnNumber: 21
         }
       }, __jsx("span", {
-        className: "\tfa fa-home icon",
+        className: "fa fa-home icon",
         __self: this,
         __source: {
           fileName: _jsxFileName,
@@ -1247,7 +1247,6 @@ var Header = /*#__PURE__*/function (_React$Component) {
         }
       }, __jsx("a", {
         className: "nav-link",
-        href: "/about",
         __self: this,
         __source: {
           fileName: _jsxFileName,
@@ -1283,7 +1282,7 @@ var Header = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 206,
+          lineNumber: 205,
           columnNumber: 21
         }
       }, __jsx("span", {
@@ -1291,7 +1290,7 @@ var Header = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 207,
+          lineNumber: 206,
           columnNumber: 23
         }
       }), "Blog"))), __jsx("li", {
@@ -1299,7 +1298,7 @@ var Header = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 212,
+          lineNumber: 211,
           columnNumber: 17
         }
       }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_8___default.a, {
@@ -1307,7 +1306,7 @@ var Header = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 213,
+          lineNumber: 212,
           columnNumber: 19
         }
       }, __jsx("a", {
@@ -1315,7 +1314,7 @@ var Header = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 214,
+          lineNumber: 213,
           columnNumber: 21
         }
       }, __jsx("span", {
@@ -1323,7 +1322,7 @@ var Header = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 215,
+          lineNumber: 214,
           columnNumber: 23
         }
       }), "Contact"))))))));
