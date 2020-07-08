@@ -789,7 +789,7 @@ var Header = /*#__PURE__*/function (_React$Component) {
           columnNumber: 11
         }
       }), __jsx("link", {
-        href: "/css/theme.min.css",
+        href: "css/theme.min.css",
         rel: "stylesheet",
         type: "text/css",
         media: "all",
@@ -800,7 +800,7 @@ var Header = /*#__PURE__*/function (_React$Component) {
           columnNumber: 11
         }
       }), __jsx("link", {
-        href: "/css/demo.css",
+        href: "css/demo.css",
         rel: "stylesheet",
         type: "text/css",
         media: "all",
@@ -811,12 +811,23 @@ var Header = /*#__PURE__*/function (_React$Component) {
           columnNumber: 11
         }
       }), __jsx("link", {
+        href: "css/styles.css",
+        rel: "stylesheet",
+        type: "text/css",
+        media: "all",
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 64,
+          columnNumber: 11
+        }
+      }), __jsx("link", {
         href: "https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;1,100;1,200;1,300&display=swap",
         rel: "stylesheet",
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 65,
+          lineNumber: 66,
           columnNumber: 11
         }
       }), __jsx("link", {
@@ -825,7 +836,7 @@ var Header = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 66,
+          lineNumber: 67,
           columnNumber: 11
         }
       }), __jsx("script", {
@@ -834,7 +845,7 @@ var Header = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 69,
+          lineNumber: 70,
           columnNumber: 11
         }
       }), __jsx("script", {
@@ -843,7 +854,7 @@ var Header = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 70,
+          lineNumber: 71,
           columnNumber: 11
         }
       }), __jsx("script", {
@@ -852,7 +863,7 @@ var Header = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 71,
+          lineNumber: 72,
           columnNumber: 11
         }
       }), __jsx("script", {
@@ -863,84 +874,75 @@ var Header = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 76,
+          lineNumber: 77,
           columnNumber: 11
         }
       }), __jsx("script", {
         type: "text/javascript",
-        src: "/js/aos.js",
+        src: "js/aos.js",
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 93,
+          lineNumber: 94,
           columnNumber: 11
         }
       }), __jsx("script", {
         type: "text/javascript",
-        src: "/js/clipboard.min.js",
+        src: "js/clipboard.min.js",
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 95,
+          lineNumber: 96,
           columnNumber: 11
         }
       }), __jsx("script", {
         type: "text/javascript",
-        src: "/js/jquery.fancybox.min.js",
+        src: "js/jquery.fancybox.min.js",
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 97,
+          lineNumber: 98,
           columnNumber: 11
         }
       }), __jsx("script", {
         type: "text/javascript",
-        src: "/js/flatpickr.min.js",
+        src: "js/flatpickr.min.js",
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 99,
+          lineNumber: 100,
           columnNumber: 11
         }
       }), __jsx("script", {
         type: "text/javascript",
-        src: "/js/flickity.pkgd.min.js",
+        src: "js/flickity.pkgd.min.js",
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 101,
+          lineNumber: 102,
           columnNumber: 11
         }
       }), __jsx("script", {
         type: "text/javascript",
-        src: "/js/ion.rangeSlider.min.js",
+        src: "js/ion.rangeSlider.min.js",
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 103,
+          lineNumber: 104,
           columnNumber: 11
         }
       }), __jsx("script", {
         type: "text/javascript",
-        src: "/js/isotope.pkgd.min.js",
+        src: "js/isotope.pkgd.min.js",
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 105,
+          lineNumber: 106,
           columnNumber: 11
         }
       }), __jsx("script", {
         type: "text/javascript",
-        src: "/js/jarallax-video.min.js",
-        __self: this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 107,
-          columnNumber: 11
-        }
-      }), __jsx("script", {
-        type: "text/javascript",
-        src: "/js/jarallax-element.min.js",
+        src: "js/jarallax-video.min.js",
         __self: this,
         __source: {
           fileName: _jsxFileName,
@@ -949,97 +951,97 @@ var Header = /*#__PURE__*/function (_React$Component) {
         }
       }), __jsx("script", {
         type: "text/javascript",
-        src: "/js/jquery.countdown.min.js",
+        src: "js/jarallax-element.min.js",
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 110,
+          lineNumber: 109,
           columnNumber: 11
         }
       }), __jsx("script", {
         type: "text/javascript",
-        src: "/js/jquery.smartWizard.min.js",
+        src: "js/jquery.countdown.min.js",
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 112,
+          lineNumber: 111,
           columnNumber: 11
         }
       }), __jsx("script", {
         type: "text/javascript",
-        src: "/js/plyr.polyfilled.min.js",
+        src: "js/jquery.smartWizard.min.js",
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 114,
+          lineNumber: 113,
           columnNumber: 11
         }
       }), __jsx("script", {
         type: "text/javascript",
-        src: "/js/prism.js",
+        src: "js/plyr.polyfilled.min.js",
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 116,
+          lineNumber: 115,
           columnNumber: 11
         }
       }), __jsx("script", {
         type: "text/javascript",
-        src: "/js/scrollMonitor.js",
+        src: "js/prism.js",
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 118,
+          lineNumber: 117,
           columnNumber: 11
         }
       }), __jsx("script", {
         type: "text/javascript",
-        src: "/js/smooth-scroll.polyfills.min.js",
+        src: "js/scrollMonitor.js",
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 120,
+          lineNumber: 119,
           columnNumber: 11
         }
       }), __jsx("script", {
         type: "text/javascript",
-        src: "/js/svg-injector.umd.production.js",
+        src: "js/smooth-scroll.polyfills.min.js",
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 122,
+          lineNumber: 121,
           columnNumber: 11
         }
       }), __jsx("script", {
         type: "text/javascript",
-        src: "/js/twitterFetcher_min.js",
+        src: "js/svg-injector.umd.production.js",
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 124,
+          lineNumber: 123,
           columnNumber: 11
         }
       }), __jsx("script", {
         type: "text/javascript",
-        src: "/js/typed.min.js",
+        src: "js/twitterFetcher_min.js",
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 126,
+          lineNumber: 125,
           columnNumber: 11
         }
       }), __jsx("script", {
         type: "text/javascript",
-        src: "/js/theme.js",
+        src: "js/typed.min.js",
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 128,
+          lineNumber: 127,
           columnNumber: 11
         }
       }), __jsx("script", {
         type: "text/javascript",
-        src: "/js/custom.js",
+        src: "js/theme.js",
         __self: this,
         __source: {
           fileName: _jsxFileName,
@@ -1048,12 +1050,21 @@ var Header = /*#__PURE__*/function (_React$Component) {
         }
       }), __jsx("script", {
         type: "text/javascript",
-        src: "/js/jarallax.min.js",
+        src: "js/custom.js",
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 130,
+          columnNumber: 11
+        }
+      }), __jsx("script", {
+        type: "text/javascript",
+        src: "js/jarallax.min.js",
         defer: true,
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 132,
+          lineNumber: 133,
           columnNumber: 11
         }
       })), __jsx("div", {
@@ -1067,7 +1078,7 @@ var Header = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 135,
+          lineNumber: 136,
           columnNumber: 9
         }
       }, __jsx("nav", {
@@ -1076,7 +1087,7 @@ var Header = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 144,
+          lineNumber: 145,
           columnNumber: 11
         }
       }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_8___default.a, {
@@ -1084,7 +1095,7 @@ var Header = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 146,
+          lineNumber: 147,
           columnNumber: 13
         }
       }, __jsx("a", {
@@ -1093,12 +1104,12 @@ var Header = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 147,
+          lineNumber: 148,
           columnNumber: 15
         }
       }, __jsx("img", {
         alt: "AfriHub",
-        src: "/img/logo.png",
+        src: "img/logo.png",
         style: {
           borderRadius: '4px',
           height: '50px'
@@ -1106,7 +1117,7 @@ var Header = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 148,
+          lineNumber: 149,
           columnNumber: 17
         }
       }))), __jsx("div", {
@@ -1114,7 +1125,7 @@ var Header = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 156,
+          lineNumber: 157,
           columnNumber: 13
         }
       }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_8___default.a, {
@@ -1122,7 +1133,7 @@ var Header = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 157,
+          lineNumber: 158,
           columnNumber: 15
         }
       }, __jsx("a", {
@@ -1131,7 +1142,7 @@ var Header = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 158,
+          lineNumber: 159,
           columnNumber: 17
         }
       }, "Login / Signup ")), __jsx("button", {
@@ -1144,7 +1155,7 @@ var Header = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 161,
+          lineNumber: 162,
           columnNumber: 15
         }
       }, __jsx("img", {
@@ -1155,7 +1166,7 @@ var Header = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 169,
+          lineNumber: 170,
           columnNumber: 17
         }
       }), __jsx("img", {
@@ -1166,7 +1177,7 @@ var Header = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 175,
+          lineNumber: 176,
           columnNumber: 17
         }
       }))), __jsx("div", {
@@ -1175,7 +1186,7 @@ var Header = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 184,
+          lineNumber: 185,
           columnNumber: 13
         }
       }, __jsx("ul", {
@@ -1183,7 +1194,7 @@ var Header = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 185,
+          lineNumber: 186,
           columnNumber: 15
         }
       }, __jsx("li", {
@@ -1191,7 +1202,7 @@ var Header = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 186,
+          lineNumber: 187,
           columnNumber: 17
         }
       }, __jsx("a", {
@@ -1200,7 +1211,7 @@ var Header = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 187,
+          lineNumber: 188,
           columnNumber: 19
         }
       }, __jsx("span", {
@@ -1208,7 +1219,7 @@ var Header = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 188,
+          lineNumber: 189,
           columnNumber: 21
         }
       }), "Home")), __jsx("li", {
@@ -1216,7 +1227,7 @@ var Header = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 192,
+          lineNumber: 193,
           columnNumber: 17
         }
       }, __jsx("a", {
@@ -1225,7 +1236,7 @@ var Header = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 193,
+          lineNumber: 194,
           columnNumber: 19
         }
       }, __jsx("span", {
@@ -1233,7 +1244,7 @@ var Header = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 194,
+          lineNumber: 195,
           columnNumber: 21
         }
       }), "About")), __jsx("li", {
@@ -1241,7 +1252,7 @@ var Header = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 198,
+          lineNumber: 199,
           columnNumber: 17
         }
       }, __jsx("a", {
@@ -1250,7 +1261,7 @@ var Header = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 199,
+          lineNumber: 200,
           columnNumber: 19
         }
       }, __jsx("span", {
@@ -1258,7 +1269,7 @@ var Header = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 200,
+          lineNumber: 201,
           columnNumber: 21
         }
       }), "Blog")), __jsx("li", {
@@ -1266,7 +1277,7 @@ var Header = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 204,
+          lineNumber: 205,
           columnNumber: 17
         }
       }, __jsx("a", {
@@ -1275,7 +1286,7 @@ var Header = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 205,
+          lineNumber: 206,
           columnNumber: 19
         }
       }, __jsx("span", {
@@ -1283,7 +1294,7 @@ var Header = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 206,
+          lineNumber: 207,
           columnNumber: 21
         }
       }), "Contact")))))));
@@ -10375,7 +10386,7 @@ var Index = /*#__PURE__*/function (_React$Component) {
           columnNumber: 15
         }
       })), __jsx("img", {
-        src: "/img/heros/5W9IHRVEb5.jpg",
+        src: "img/heros/5W9IHRVEb5.jpg",
         alt: "Background",
         className: "bk",
         __self: this,
@@ -10544,7 +10555,7 @@ var Index = /*#__PURE__*/function (_React$Component) {
         }, {
           label: 'Education',
           content: __jsx("img", {
-            src: "/img/innovation-2.jpg",
+            src: "img/innovation-2.jpg",
             alt: "martfury",
             __self: this,
             __source: {
@@ -10556,7 +10567,7 @@ var Index = /*#__PURE__*/function (_React$Component) {
         }, {
           label: 'Health',
           content: __jsx("img", {
-            src: "/img/innovation-3.jpg",
+            src: "img/innovation-3.jpg",
             alt: "martfury",
             __self: this,
             __source: {
@@ -10692,7 +10703,7 @@ var Index = /*#__PURE__*/function (_React$Component) {
           columnNumber: 13
         }
       }, __jsx("img", {
-        src: "/img/square-2.jpg",
+        src: "img/square-2.jpg",
         className: "img-fluid rounded shadow",
         alt: "j",
         __self: this,
@@ -11078,7 +11089,7 @@ var Index = /*#__PURE__*/function (_React$Component) {
         }
       }, __jsx("img", {
         className: "card-img-top hover-fade-out",
-        src: "/img/blog/1.jpg",
+        src: "img/blog/1.jpg",
         alt: "accompanying Treva testimonial",
         __self: this,
         __source: {
@@ -11145,7 +11156,7 @@ var Index = /*#__PURE__*/function (_React$Component) {
         }
       }, __jsx("img", {
         className: "card-img-top hover-fade-out",
-        src: "/img/blog/2.jpg",
+        src: "img/blog/2.jpg",
         alt: "accompanying Treva testimonial",
         __self: this,
         __source: {
@@ -11212,7 +11223,7 @@ var Index = /*#__PURE__*/function (_React$Component) {
         }
       }, __jsx("img", {
         className: "card-img-top hover-fade-out",
-        src: "/img/blog/4.webp",
+        src: "img/blog/4.webp",
         alt: "accompanying Treva testimonial",
         __self: this,
         __source: {
@@ -11279,7 +11290,7 @@ var Index = /*#__PURE__*/function (_React$Component) {
         }
       }, __jsx("img", {
         className: "card-img-top hover-fade-out",
-        src: "/img/case-studies/thumb-5.jpg",
+        src: "img/case-studies/thumb-5.jpg",
         alt: "accompanying Treva testimonial",
         __self: this,
         __source: {
