@@ -185,27 +185,43 @@ class Header extends React.Component {
             <div className="collapse navbar-collapse order-3 order-lg-2 justify-content-lg-end" id="navigation-menu">
               <ul className="navbar-nav my-3 my-lg-0">
                 <li className="nav-item">
-                  <a className="nav-link" href="/">
-                    <span className="	fa fa-home icon" />Home
-                  </a>
+                  <Link href="about">
+                    <a className="nav-link">
+                      <span className="	fa fa-book icon" />About
+                    </a>
+                  </Link>
                 </li>
 
                 <li className="nav-item">
-                  <a className="nav-link" href="/about">
-                    <span className="	fa fa-book icon" />About
-                  </a>
+                  <Link href="#">
+                    <a className="nav-link">
+                      <span className="	fa fa-book icon" />Blog
+                    </a>
+                  </Link>
                 </li>
 
                 <li className="nav-item">
-                  <a className="nav-link" href="#">
-                    <span className="	fa fa-book icon" />Blog
-                  </a>
+                  <Link href="/">
+                    <a className="nav-link">
+                      <span className="	fa fa-book icon" />Innovations
+                    </a>
+                  </Link>
                 </li>
 
                 <li className="nav-item">
-                  <a className="nav-link" href="/contact">
-                    <span className="	fa fa-book icon" />Contact
-                  </a>
+                  <Link href="/">
+                    <a className="nav-link">
+                      <span className="	fa fa-book icon" />Crowd Funding
+                    </a>
+                  </Link>
+                </li>
+
+                <li className="nav-item">
+                  <Link href="/contact">
+                    <a className="nav-link">
+                      <span className="	fa fa-book icon" />Contact
+                    </a>
+                  </Link>
                 </li>
 
               </ul>

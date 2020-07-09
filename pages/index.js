@@ -16,7 +16,7 @@ class Index extends React.Component {
 
   componentDidMount() {
     this.onScroll();
-    window.addEventListener('scroll', this.onScroll);
+    window.addEventListener('scroll', () => { this.onScroll(); });
   }
 
   componentWillUnmount() {
@@ -28,6 +28,7 @@ class Index extends React.Component {
   }
 
   onScroll() {
+    console.log('we sha scrolling');
     if (this.banner) {
       const { $ } = window;
       const bannerHeight = $('#banner').height();
@@ -152,7 +153,7 @@ class Index extends React.Component {
           </div>
 
           <section className="single-center">
-            <h2 className="section-title bolder">Bridging Africa's Présentation </h2>
+            <h2 className="section-title bolder">Our Mission </h2>
             <p>
               Bridging Afrika est une plateforme d’innovation en ligne dont l’objectif principal est la résolution des problèmes africains grâce à des innovations créées par des africains pour des africains.
 
@@ -190,31 +191,6 @@ class Index extends React.Component {
             </div>
             <div className="media">
               <img src="img/square-2.jpg" className="img-fluid rounded shadow" alt="j" />
-            </div>
-          </section>
-
-          <section className="double-sides">
-            <div className="text">
-              <h2 className="section-title bolder">Bridging Africa's Présentation </h2>
-              <p>
-                Bridging Afrika est une plateforme d’innovation en ligne dont l’objectif principal est la résolution des problèmes africains grâce à des innovations créées par des africains pour des africains.
-
-              </p>
-
-              <p>
-                Nous voulons faciliter la résolution de crises en créant un espace où toutes les innovations, solutions de ces crises, sont référencées et mises en avant.
-              </p>
-
-              <p>
-                En promouvant ces innovations, nous créerons avec les innovateurs une communauté prête à être déployée quelque soit le challenge.
-
-              </p>
-              <div className="text-center">
-                <button type="button" className="btn btn-info">En savoir plus</button>
-              </div>
-            </div>
-            <div className="media">
-              <iframe src="https://www.youtube.com/embed/4ce-Hk6pVsg" className="rounded shadow" />
             </div>
           </section>
 
