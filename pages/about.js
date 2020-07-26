@@ -45,7 +45,7 @@ class SignUp extends React.Component {
               <h1>About Bridging Afika</h1>
             </div>
           </div>
-          <div className="container">
+          <div className="page-container">
             <div className="about-info">
               <h1 className="title">Our Mission</h1>
               <div className="info">

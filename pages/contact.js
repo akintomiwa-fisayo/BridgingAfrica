@@ -45,7 +45,7 @@ class SignUp extends React.Component {
               <h1>Contact Us</h1>
             </div>
           </div>
-          <div className="container">
+          <div className="page-container">
             <h1 className="title">We would love to hear from you</h1>
             <div className="infos">
               <div className="info">

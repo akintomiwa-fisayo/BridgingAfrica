@@ -38,7 +38,7 @@ class SignUp extends React.Component {
     return (
       <Layout>
         <div id="signUpPage" style={{ paddingTop: `${header.height}px` }}>
-          <div className="container">
+          <div className="page-container">
             <section className="left">
               <Link href="/index">
                 <a>

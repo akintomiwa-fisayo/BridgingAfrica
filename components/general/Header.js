@@ -61,7 +61,8 @@ class Header extends React.Component {
           {/*   <!-- End loading animation --> */}
           <link href="css/theme.min.css" rel="stylesheet" type="text/css" media="all" />
           <link href="css/demo.css" rel="stylesheet" type="text/css" media="all" />
-          <link href="css/styles.css" rel="stylesheet" type="text/css" media="all" />
+
+          {/* <link href="css/styles.css" rel="stylesheet" type="text/css" media="all" /> */}
           {/* <link href="https://fonts.googleapis.com/css?family=Nunito:400,400i,600,700&amp;display=swap" rel="stylesheet" /> */}
           <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;1,100;1,200;1,300&display=swap" rel="stylesheet" />
           <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
@@ -131,6 +132,18 @@ class Header extends React.Component {
           {/*      This script appears only on the demo.  It is used to delay unnecessary image loading until after the main page content is loaded.  */}
 
           <script type="text/javascript" src="js/jarallax.min.js" defer />
+
+          {/* <!-- CSS ================================================== --> */}
+          <link rel="stylesheet" href="/css/framework.css" />
+
+          {/* <!-- icons ================================================== --> */}
+          <link rel="stylesheet" href="/css/icons.css" />
+
+          <script src="/js/framework.js" />
+          <script src="/js/simplebar.js" />
+          <script src="/js/main.js" />
+          <script src="/js/nightMode.js" />
+
         </Head>
 
         <div
@@ -142,7 +155,7 @@ class Header extends React.Component {
           } : { }}
           ref={this.regHeight}
         >
-          <nav className="navbar navbar-expand-lg navbar-light " data-sticky="top">
+          <nav className="page-container navbar navbar-expand-lg navbar-light " data-sticky="top">
 
             <Link href="/index">
               <a id="logo" className="navbar-brand navbar-brand-dynamic-color fade-page">
@@ -193,7 +206,7 @@ class Header extends React.Component {
                 </li>
 
                 <li className="nav-item">
-                  <Link href="#">
+                  <Link href="/blog">
                     <a className="nav-link">
                       <span className="	fa fa-book icon" />Blog
                     </a>
@@ -201,7 +214,7 @@ class Header extends React.Component {
                 </li>
 
                 <li className="nav-item">
-                  <Link href="/">
+                  <Link href="/innovations">
                     <a className="nav-link">
                       <span className="	fa fa-book icon" />Innovations
                     </a>
@@ -209,9 +222,9 @@ class Header extends React.Component {
                 </li>
 
                 <li className="nav-item">
-                  <Link href="/">
+                  <Link href="/crowdfunding">
                     <a className="nav-link">
-                      <span className="	fa fa-book icon" />Crowd Funding
+                      <span className="	fa fa-book icon" />Crowdfunding
                     </a>
                   </Link>
                 </li>

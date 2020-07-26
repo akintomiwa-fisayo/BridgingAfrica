@@ -3,28 +3,27 @@
   * Copyright 2018-2019 Medium Rare (undefined)
   */
 (function (global, factory) {
-  typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('aos'), require('jquery'), require('jquery-countdown'), require('scrollmonitor'), require('flatpickr'), require('flickity'), require('ion-rangeslider'), require('isotope-layout'), require('jarallax'), require('plyr'), require('prismjs'), require('smooth-scroll'), require('@tanem/svg-injector'), require('twitter-fetcher'), require('typed.js')) :
-  typeof define === 'function' && define.amd ? define(['exports', 'aos', 'jquery', 'jquery-countdown', 'scrollmonitor', 'flatpickr', 'flickity', 'ion-rangeslider', 'isotope-layout', 'jarallax', 'plyr', 'prismjs', 'smooth-scroll', '@tanem/svg-injector', 'twitter-fetcher', 'typed.js'], factory) :
-  (global = global || self, factory(global.theme = {}, global.AOS, global.jQuery, null, global.scrollMonitor, global.flatpickr, global.Flickity, null, global.Isotope, global.jarallax, global.Plyr, global.Prism, global.SmoothScroll, global.SVGInjector, global.twitterFetcher, global.Typed));
-}(this, function (exports, AOS, jQuery$1, jqueryCountdown, scrollMonitor, flatpickr, Flickity, ionRangeslider, Isotope$1, jarallax$1, Plyr, Prism, SmoothScroll, svgInjector, twitterFetcher, Typed) { 'use strict';
-
-  AOS = AOS && AOS.hasOwnProperty('default') ? AOS['default'] : AOS;
-  jQuery$1 = jQuery$1 && jQuery$1.hasOwnProperty('default') ? jQuery$1['default'] : jQuery$1;
-  scrollMonitor = scrollMonitor && scrollMonitor.hasOwnProperty('default') ? scrollMonitor['default'] : scrollMonitor;
-  flatpickr = flatpickr && flatpickr.hasOwnProperty('default') ? flatpickr['default'] : flatpickr;
-  Flickity = Flickity && Flickity.hasOwnProperty('default') ? Flickity['default'] : Flickity;
-  Isotope$1 = Isotope$1 && Isotope$1.hasOwnProperty('default') ? Isotope$1['default'] : Isotope$1;
-  jarallax$1 = jarallax$1 && jarallax$1.hasOwnProperty('default') ? jarallax$1['default'] : jarallax$1;
-  Plyr = Plyr && Plyr.hasOwnProperty('default') ? Plyr['default'] : Plyr;
-  Prism = Prism && Prism.hasOwnProperty('default') ? Prism['default'] : Prism;
-  SmoothScroll = SmoothScroll && SmoothScroll.hasOwnProperty('default') ? SmoothScroll['default'] : SmoothScroll;
-  twitterFetcher = twitterFetcher && twitterFetcher.hasOwnProperty('default') ? twitterFetcher['default'] : twitterFetcher;
-  Typed = Typed && Typed.hasOwnProperty('default') ? Typed['default'] : Typed;
+  typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('aos'), require('jquery'), require('jquery-countdown'), require('scrollmonitor'), require('flatpickr'), require('flickity'), require('ion-rangeslider'), require('isotope-layout'), require('jarallax'), require('plyr'), require('prismjs'), require('smooth-scroll'), require('@tanem/svg-injector'), require('twitter-fetcher'), require('typed.js'))
+    : typeof define === 'function' && define.amd ? define(['exports', 'aos', 'jquery', 'jquery-countdown', 'scrollmonitor', 'flatpickr', 'flickity', 'ion-rangeslider', 'isotope-layout', 'jarallax', 'plyr', 'prismjs', 'smooth-scroll', '@tanem/svg-injector', 'twitter-fetcher', 'typed.js'], factory)
+      : (global = global || self, factory(global.theme = {}, global.AOS, global.jQuery, null, global.scrollMonitor, global.flatpickr, global.Flickity, null, global.Isotope, global.jarallax, global.Plyr, global.Prism, global.SmoothScroll, global.SVGInjector, global.twitterFetcher, global.Typed));
+}(this, (exports, AOS, jQuery$1, jqueryCountdown, scrollMonitor, flatpickr, Flickity, ionRangeslider, Isotope$1, jarallax$1, Plyr, Prism, SmoothScroll, svgInjector, twitterFetcher, Typed) => {
+  AOS = AOS && AOS.hasOwnProperty('default') ? AOS.default : AOS;
+  jQuery$1 = jQuery$1 && jQuery$1.hasOwnProperty('default') ? jQuery$1.default : jQuery$1;
+  scrollMonitor = scrollMonitor && scrollMonitor.hasOwnProperty('default') ? scrollMonitor.default : scrollMonitor;
+  flatpickr = flatpickr && flatpickr.hasOwnProperty('default') ? flatpickr.default : flatpickr;
+  Flickity = Flickity && Flickity.hasOwnProperty('default') ? Flickity.default : Flickity;
+  Isotope$1 = Isotope$1 && Isotope$1.hasOwnProperty('default') ? Isotope$1.default : Isotope$1;
+  jarallax$1 = jarallax$1 && jarallax$1.hasOwnProperty('default') ? jarallax$1.default : jarallax$1;
+  Plyr = Plyr && Plyr.hasOwnProperty('default') ? Plyr.default : Plyr;
+  Prism = Prism && Prism.hasOwnProperty('default') ? Prism.default : Prism;
+  SmoothScroll = SmoothScroll && SmoothScroll.hasOwnProperty('default') ? SmoothScroll.default : SmoothScroll;
+  twitterFetcher = twitterFetcher && twitterFetcher.hasOwnProperty('default') ? twitterFetcher.default : twitterFetcher;
+  Typed = Typed && Typed.hasOwnProperty('default') ? Typed.default : Typed;
 
   //
-  $(window).on('load', function () {
+  $(window).on('load', () => {
     AOS.init({
-      once: true
+      once: true,
     });
   });
 
@@ -33,24 +32,24 @@
   (function ($) {
     if ('objectFit' in document.documentElement.style === false) {
       $('.bg-image').each(function attachBg() {
-        var img = $(this);
-        var src = img.attr('src');
-        var classes = img.get(0).classList; // Replaces the default <img.bg-image> element with a <div.bg-image>
+        const img = $(this);
+        const src = img.attr('src');
+        const classes = img.get(0).classList; // Replaces the default <img.bg-image> element with a <div.bg-image>
         // to attach background using legacy friendly CSS rules
 
-        img.before($("<div class=\"" + classes + "\" style=\"background: url(" + src + "); background-size: cover; background-position: 50% 50%;\"></div>")); // Removes original <img.bg-image> as it is no longer required
+        img.before($(`<div class="${classes}" style="background: url(${src}); background-size: cover; background-position: 50% 50%;"></div>`)); // Removes original <img.bg-image> as it is no longer required
 
         img.remove();
       });
     }
-  })(jQuery$1);
+  }(jQuery$1));
 
   function _defineProperties(target, props) {
-    for (var i = 0; i < props.length; i++) {
-      var descriptor = props[i];
+    for (let i = 0; i < props.length; i++) {
+      const descriptor = props[i];
       descriptor.enumerable = descriptor.enumerable || false;
       descriptor.configurable = true;
-      if ("value" in descriptor) descriptor.writable = true;
+      if ('value' in descriptor) descriptor.writable = true;
       Object.defineProperty(target, descriptor.key, descriptor);
     }
   }
@@ -61,7 +60,7 @@
     return Constructor;
   }
 
-  var mrCountdown = function ($) {
+  const mrCountdown = (function ($) {
     /**
      * Check for countdown dependency
      * countdown - https://github.com/hilios/jQuery.countdown/
@@ -75,17 +74,16 @@
      * ------------------------------------------------------------------------
      */
 
-
-    var NAME = 'mrCountdown';
-    var VERSION = '1.1.0';
-    var DATA_KEY = 'mr.countdown';
-    var EVENT_KEY = "." + DATA_KEY;
-    var DATA_API_KEY = '.data-api';
-    var JQUERY_NO_CONFLICT = $.fn[NAME];
-    var Event = {
-      LOAD_DATA_API: "load" + EVENT_KEY + DATA_API_KEY
+    const NAME = 'mrCountdown';
+    const VERSION = '1.1.0';
+    const DATA_KEY = 'mr.countdown';
+    const EVENT_KEY = `.${DATA_KEY}`;
+    const DATA_API_KEY = '.data-api';
+    const JQUERY_NO_CONFLICT = $.fn[NAME];
+    const Event = {
+      LOAD_DATA_API: `load${EVENT_KEY}${DATA_API_KEY}`,
     };
-    var Default = {
+    const Default = {
       DAYS_TEXT: 'days',
       ELAPSED: 'Timer Done',
       Y_FMT: '%Y',
@@ -101,12 +99,12 @@
       D_LABEL_FMT: '%!d:Day,Days;',
       H_LABEL_FMT: '%!H:Hour,Hours;',
       MINS_LABEL_FMT: '%!M:Minute,Minutes;',
-      S_LABEL_FMT: '%!S:Second,Seconds;'
+      S_LABEL_FMT: '%!S:Second,Seconds;',
     };
-    var CSS = {
-      D_NONE: 'd-none'
+    const CSS = {
+      D_NONE: 'd-none',
     };
-    var Selector = {
+    const Selector = {
       COUNTDOWN: '[data-countdown-date]',
       ACTIVE: '[data-active-state]',
       ELAPSED: '[data-elapsed-state]',
@@ -127,11 +125,11 @@
       D_LABEL_EL: '[data-days-label]',
       H_LABEL_EL: '[data-hours-label]',
       MINS_LABEL_EL: '[data-minutes-label]',
-      S_LABEL_EL: '[data-seconds-label]'
+      S_LABEL_EL: '[data-seconds-label]',
     };
-    var Options = {
+    const Options = {
       FORMAT: 'format',
-      DETAILED: 'detailed'
+      DETAILED: 'detailed',
     };
     /**
      * ------------------------------------------------------------------------
@@ -139,20 +137,20 @@
      * ------------------------------------------------------------------------
      */
 
-    var Countdown =
-    /*#__PURE__*/
-    function () {
+    const Countdown =
+    /* #__PURE__ */
+    (function () {
       function Countdown(element) {
         // The current countdown element
         this.element = element;
-        var $element = $(element);
+        const $element = $(element);
         this.date = $element.attr(Selector.DATE_ATTR);
         this.daysText = $element.attr(Selector.DAYS_TEXT_ATTR) || Default.DAYS_TEXT;
-        this.countdownText = "%D " + this.daysText + " %H:%M:%S";
+        this.countdownText = `%D ${this.daysText} %H:%M:%S`;
         this.dateFormat = $element.attr(Selector.DATE_FORMAT_ATTR) || this.countdownText;
         this.fallback = $element.attr(Selector.DATE_FALLBACK_ATTR) || Default.ELAPSED; // Options for detailed mode
 
-        this.detailed = this.element.getAttribute("data-" + Options.DETAILED) !== null;
+        this.detailed = this.element.getAttribute(`data-${Options.DETAILED}`) !== null;
 
         if (this.detailed) {
           this.years = {
@@ -162,8 +160,8 @@
             label: {
               show: $element.find(Selector.Y_LABEL_EL).length,
               element: $element.find(Selector.Y_LABEL_EL),
-              format: $element.find(Selector.Y_LABEL_EL).data(Options.FORMAT) || Default.Y_LABEL_FMT
-            }
+              format: $element.find(Selector.Y_LABEL_EL).data(Options.FORMAT) || Default.Y_LABEL_FMT,
+            },
           };
           this.months = {
             show: $element.find(Selector.MTHS_EL).length,
@@ -172,8 +170,8 @@
             label: {
               show: $element.find(Selector.MTHS_LABEL_EL).length,
               element: $element.find(Selector.MTHS_LABEL_EL),
-              format: $element.find(Selector.MTHS_LABEL_EL).data(Options.FORMAT) || Default.MTHS_LABEL_FMT
-            }
+              format: $element.find(Selector.MTHS_LABEL_EL).data(Options.FORMAT) || Default.MTHS_LABEL_FMT,
+            },
           };
           this.weeks = {
             show: $element.find(Selector.W_EL).length,
@@ -182,8 +180,8 @@
             label: {
               show: $element.find(Selector.W_LABEL_EL).length,
               element: $element.find(Selector.W_LABEL_EL),
-              format: $element.find(Selector.W_LABEL_EL).data(Options.FORMAT) || Default.W_LABEL_FMT
-            }
+              format: $element.find(Selector.W_LABEL_EL).data(Options.FORMAT) || Default.W_LABEL_FMT,
+            },
           };
           this.days = {
             show: $element.find(Selector.D_EL).length,
@@ -192,8 +190,8 @@
             label: {
               show: $element.find(Selector.D_LABEL_EL).length,
               element: $element.find(Selector.D_LABEL_EL),
-              format: $element.find(Selector.D_LABEL_EL).data(Options.FORMAT) || Default.D_LABEL_FMT
-            }
+              format: $element.find(Selector.D_LABEL_EL).data(Options.FORMAT) || Default.D_LABEL_FMT,
+            },
           };
           this.hours = {
             show: $element.find(Selector.H_EL).length,
@@ -202,8 +200,8 @@
             label: {
               show: $element.find(Selector.H_LABEL_EL).length,
               element: $element.find(Selector.H_LABEL_EL),
-              format: $element.find(Selector.H_LABEL_EL).data(Options.FORMAT) || Default.H_LABEL_FMT
-            }
+              format: $element.find(Selector.H_LABEL_EL).data(Options.FORMAT) || Default.H_LABEL_FMT,
+            },
           };
           this.minutes = {
             show: $element.find(Selector.MINS_EL).length,
@@ -212,8 +210,8 @@
             label: {
               show: $element.find(Selector.MINS_LABEL_EL).length,
               element: $element.find(Selector.MINS_LABEL_EL),
-              format: $element.find(Selector.MINS_LABEL_EL).data(Options.FORMAT) || Default.MINS_LABEL_FMT
-            }
+              format: $element.find(Selector.MINS_LABEL_EL).data(Options.FORMAT) || Default.MINS_LABEL_FMT,
+            },
           };
           this.seconds = {
             show: $element.find(Selector.S_EL).length,
@@ -222,24 +220,23 @@
             label: {
               show: $element.find(Selector.S_LABEL_EL).length,
               element: $element.find(Selector.S_LABEL_EL),
-              format: $element.find(Selector.S_LABEL_EL).data(Options.FORMAT) || Default.S_LABEL_FMT
-            }
+              format: $element.find(Selector.S_LABEL_EL).data(Options.FORMAT) || Default.S_LABEL_FMT,
+            },
           };
         }
 
         this.initCountdown();
       } // getters
 
-
-      var _proto = Countdown.prototype;
+      const _proto = Countdown.prototype;
 
       _proto.initCountdown = function initCountdown() {
-        var _this = this;
+        const _this = this;
 
-        var element = $(this.element);
+        const element = $(this.element);
 
         if (this.detailed) {
-          element.countdown(this.date, function (event) {
+          element.countdown(this.date, (event) => {
             if (!event.elapsed) {
               if (_this.years.show) {
                 _this.years.element.text(event.strftime(_this.years.format));
@@ -303,7 +300,7 @@
             }
           });
         } else {
-          $(this.element).countdown(this.date, function (event) {
+          $(this.element).countdown(this.date, (event) => {
             if (event.elapsed) {
               element.text(_this.fallback);
             } else {
@@ -315,8 +312,8 @@
 
       Countdown.jQueryInterface = function jQueryInterface() {
         return this.each(function jqEachCountdown() {
-          var $element = $(this);
-          var data = $element.data(DATA_KEY);
+          const $element = $(this);
+          let data = $element.data(DATA_KEY);
 
           if (!data) {
             data = new Countdown(this);
@@ -326,14 +323,14 @@
       };
 
       _createClass(Countdown, null, [{
-        key: "VERSION",
+        key: 'VERSION',
         get: function get() {
           return VERSION;
-        }
+        },
       }]);
 
       return Countdown;
-    }(); // END Class definition
+    }()); // END Class definition
 
     /**
      * ------------------------------------------------------------------------
@@ -341,13 +338,12 @@
      * ------------------------------------------------------------------------
      */
 
-
-    $(window).on(Event.LOAD_DATA_API, function () {
-      var cdownsOnPage = $.makeArray($(Selector.COUNTDOWN));
+    $(window).on(Event.LOAD_DATA_API, () => {
+      const cdownsOnPage = $.makeArray($(Selector.COUNTDOWN));
       /* eslint-disable no-plusplus */
 
-      for (var i = cdownsOnPage.length; i--;) {
-        var $countdown = $(cdownsOnPage[i]);
+      for (let i = cdownsOnPage.length; i--;) {
+        const $countdown = $(cdownsOnPage[i]);
         Countdown.jQueryInterface.call($countdown, $countdown.data());
       }
     });
@@ -368,13 +364,18 @@
     };
     /* eslint-enable no-param-reassign */
 
-
     return Countdown;
-  }(jQuery$1);
+  }(jQuery$1));
 
-  var __assign=undefined&&undefined.__assign||function(){return (__assign=Object.assign||function(t){for(var i,a=1,s=arguments.length;a<s;a++)for(var n in i=arguments[a])Object.prototype.hasOwnProperty.call(i,n)&&(t[n]=i[n]);return t}).apply(this,arguments)},CountUp=function(){function t(t,i,a){var s=this;this.target=t,this.endVal=i,this.options=a,this.version="2.0.4",this.defaults={startVal:0,decimalPlaces:0,duration:2,useEasing:!0,useGrouping:!0,smartEasingThreshold:999,smartEasingAmount:333,separator:",",decimal:".",prefix:"",suffix:""},this.finalEndVal=null,this.useEasing=!0,this.countDown=!1,this.error="",this.startVal=0,this.paused=!0,this.count=function(t){s.startTime||(s.startTime=t);var i=t-s.startTime;s.remaining=s.duration-i,s.useEasing?s.countDown?s.frameVal=s.startVal-s.easingFn(i,0,s.startVal-s.endVal,s.duration):s.frameVal=s.easingFn(i,s.startVal,s.endVal-s.startVal,s.duration):s.countDown?s.frameVal=s.startVal-(s.startVal-s.endVal)*(i/s.duration):s.frameVal=s.startVal+(s.endVal-s.startVal)*(i/s.duration),s.countDown?s.frameVal=s.frameVal<s.endVal?s.endVal:s.frameVal:s.frameVal=s.frameVal>s.endVal?s.endVal:s.frameVal,s.frameVal=Math.round(s.frameVal*s.decimalMult)/s.decimalMult,s.printValue(s.frameVal),i<s.duration?s.rAF=requestAnimationFrame(s.count):null!==s.finalEndVal?s.update(s.finalEndVal):s.callback&&s.callback();},this.formatNumber=function(t){var i,a,n,e,r,o=t<0?"-":"";if(i=Math.abs(t).toFixed(s.options.decimalPlaces),n=(a=(i+="").split("."))[0],e=a.length>1?s.options.decimal+a[1]:"",s.options.useGrouping){r="";for(var l=0,h=n.length;l<h;++l)0!==l&&l%3==0&&(r=s.options.separator+r),r=n[h-l-1]+r;n=r;}return s.options.numerals&&s.options.numerals.length&&(n=n.replace(/[0-9]/g,function(t){return s.options.numerals[+t]}),e=e.replace(/[0-9]/g,function(t){return s.options.numerals[+t]})),o+s.options.prefix+n+e+s.options.suffix},this.easeOutExpo=function(t,i,a,s){return a*(1-Math.pow(2,-10*t/s))*1024/1023+i},this.options=__assign({},this.defaults,a),this.formattingFn=this.options.formattingFn?this.options.formattingFn:this.formatNumber,this.easingFn=this.options.easingFn?this.options.easingFn:this.easeOutExpo,this.startVal=this.validateValue(this.options.startVal),this.frameVal=this.startVal,this.endVal=this.validateValue(i),this.options.decimalPlaces=Math.max(this.options.decimalPlaces),this.decimalMult=Math.pow(10,this.options.decimalPlaces),this.resetDuration(),this.options.separator=String(this.options.separator),this.useEasing=this.options.useEasing,""===this.options.separator&&(this.options.useGrouping=!1),this.el="string"==typeof t?document.getElementById(t):t,this.el?this.printValue(this.startVal):this.error="[CountUp] target is null or undefined";}return t.prototype.determineDirectionAndSmartEasing=function(){var t=this.finalEndVal?this.finalEndVal:this.endVal;this.countDown=this.startVal>t;var i=t-this.startVal;if(Math.abs(i)>this.options.smartEasingThreshold){this.finalEndVal=t;var a=this.countDown?1:-1;this.endVal=t+a*this.options.smartEasingAmount,this.duration=this.duration/2;}else this.endVal=t,this.finalEndVal=null;this.finalEndVal?this.useEasing=!1:this.useEasing=this.options.useEasing;},t.prototype.start=function(t){this.error||(this.callback=t,this.duration>0?(this.determineDirectionAndSmartEasing(),this.paused=!1,this.rAF=requestAnimationFrame(this.count)):this.printValue(this.endVal));},t.prototype.pauseResume=function(){this.paused?(this.startTime=null,this.duration=this.remaining,this.startVal=this.frameVal,this.determineDirectionAndSmartEasing(),this.rAF=requestAnimationFrame(this.count)):cancelAnimationFrame(this.rAF),this.paused=!this.paused;},t.prototype.reset=function(){cancelAnimationFrame(this.rAF),this.paused=!0,this.resetDuration(),this.startVal=this.validateValue(this.options.startVal),this.frameVal=this.startVal,this.printValue(this.startVal);},t.prototype.update=function(t){cancelAnimationFrame(this.rAF),this.startTime=null,this.endVal=this.validateValue(t),this.endVal!==this.frameVal&&(this.startVal=this.frameVal,this.finalEndVal||this.resetDuration(),this.determineDirectionAndSmartEasing(),this.rAF=requestAnimationFrame(this.count));},t.prototype.printValue=function(t){var i=this.formattingFn(t);"INPUT"===this.el.tagName?this.el.value=i:"text"===this.el.tagName||"tspan"===this.el.tagName?this.el.textContent=i:this.el.innerHTML=i;},t.prototype.ensureNumber=function(t){return "number"==typeof t&&!isNaN(t)},t.prototype.validateValue=function(t){var i=Number(t);return this.ensureNumber(i)?i:(this.error="[CountUp] invalid start or end value: "+t,null)},t.prototype.resetDuration=function(){this.startTime=null,this.duration=1e3*Number(this.options.duration),this.remaining=this.duration;},t}();
+  var __assign = undefined && undefined.__assign || function () { return (__assign = Object.assign || function (t) { for (var i, a = 1, s = arguments.length; a < s; a++) for (const n in i = arguments[a])Object.prototype.hasOwnProperty.call(i, n) && (t[n] = i[n]); return t; }).apply(this, arguments); }; const CountUp = (function () {
+    function t(t, i, a) {
+      const s = this; this.target = t, this.endVal = i, this.options = a, this.version = '2.0.4', this.defaults = {
+        startVal: 0, decimalPlaces: 0, duration: 2, useEasing: !0, useGrouping: !0, smartEasingThreshold: 999, smartEasingAmount: 333, separator: ',', decimal: '.', prefix: '', suffix: '',
+      }, this.finalEndVal = null, this.useEasing = !0, this.countDown = !1, this.error = '', this.startVal = 0, this.paused = !0, this.count = function (t) { s.startTime || (s.startTime = t); const i = t - s.startTime; s.remaining = s.duration - i, s.useEasing ? s.countDown ? s.frameVal = s.startVal - s.easingFn(i, 0, s.startVal - s.endVal, s.duration) : s.frameVal = s.easingFn(i, s.startVal, s.endVal - s.startVal, s.duration) : s.countDown ? s.frameVal = s.startVal - (s.startVal - s.endVal) * (i / s.duration) : s.frameVal = s.startVal + (s.endVal - s.startVal) * (i / s.duration), s.countDown ? s.frameVal = s.frameVal < s.endVal ? s.endVal : s.frameVal : s.frameVal = s.frameVal > s.endVal ? s.endVal : s.frameVal, s.frameVal = Math.round(s.frameVal * s.decimalMult) / s.decimalMult, s.printValue(s.frameVal), i < s.duration ? s.rAF = requestAnimationFrame(s.count) : s.finalEndVal !== null ? s.update(s.finalEndVal) : s.callback && s.callback(); }, this.formatNumber = function (t) { let i; let a; let n; let e; let r; const o = t < 0 ? '-' : ''; if (i = Math.abs(t).toFixed(s.options.decimalPlaces), n = (a = (i += '').split('.'))[0], e = a.length > 1 ? s.options.decimal + a[1] : '', s.options.useGrouping) { r = ''; for (let l = 0, h = n.length; l < h; ++l)l !== 0 && l % 3 == 0 && (r = s.options.separator + r), r = n[h - l - 1] + r; n = r; } return s.options.numerals && s.options.numerals.length && (n = n.replace(/[0-9]/g, (t) => s.options.numerals[+t]), e = e.replace(/[0-9]/g, (t) => s.options.numerals[+t])), o + s.options.prefix + n + e + s.options.suffix; }, this.easeOutExpo = function (t, i, a, s) { return a * (1 - Math.pow(2, -10 * t / s)) * 1024 / 1023 + i; }, this.options = { ...this.defaults, ...a }, this.formattingFn = this.options.formattingFn ? this.options.formattingFn : this.formatNumber, this.easingFn = this.options.easingFn ? this.options.easingFn : this.easeOutExpo, this.startVal = this.validateValue(this.options.startVal), this.frameVal = this.startVal, this.endVal = this.validateValue(i), this.options.decimalPlaces = Math.max(this.options.decimalPlaces), this.decimalMult = Math.pow(10, this.options.decimalPlaces), this.resetDuration(), this.options.separator = String(this.options.separator), this.useEasing = this.options.useEasing, this.options.separator === '' && (this.options.useGrouping = !1), this.el = typeof t === 'string' ? document.getElementById(t) : t, this.el ? this.printValue(this.startVal) : this.error = '[CountUp] target is null or undefined';
+    } return t.prototype.determineDirectionAndSmartEasing = function () { const t = this.finalEndVal ? this.finalEndVal : this.endVal; this.countDown = this.startVal > t; const i = t - this.startVal; if (Math.abs(i) > this.options.smartEasingThreshold) { this.finalEndVal = t; const a = this.countDown ? 1 : -1; this.endVal = t + a * this.options.smartEasingAmount, this.duration /= 2; } else this.endVal = t, this.finalEndVal = null; this.finalEndVal ? this.useEasing = !1 : this.useEasing = this.options.useEasing; }, t.prototype.start = function (t) { this.error || (this.callback = t, this.duration > 0 ? (this.determineDirectionAndSmartEasing(), this.paused = !1, this.rAF = requestAnimationFrame(this.count)) : this.printValue(this.endVal)); }, t.prototype.pauseResume = function () { this.paused ? (this.startTime = null, this.duration = this.remaining, this.startVal = this.frameVal, this.determineDirectionAndSmartEasing(), this.rAF = requestAnimationFrame(this.count)) : cancelAnimationFrame(this.rAF), this.paused = !this.paused; }, t.prototype.reset = function () { cancelAnimationFrame(this.rAF), this.paused = !0, this.resetDuration(), this.startVal = this.validateValue(this.options.startVal), this.frameVal = this.startVal, this.printValue(this.startVal); }, t.prototype.update = function (t) { cancelAnimationFrame(this.rAF), this.startTime = null, this.endVal = this.validateValue(t), this.endVal !== this.frameVal && (this.startVal = this.frameVal, this.finalEndVal || this.resetDuration(), this.determineDirectionAndSmartEasing(), this.rAF = requestAnimationFrame(this.count)); }, t.prototype.printValue = function (t) { const i = this.formattingFn(t); this.el.tagName === 'INPUT' ? this.el.value = i : this.el.tagName === 'text' || this.el.tagName === 'tspan' ? this.el.textContent = i : this.el.innerHTML = i; }, t.prototype.ensureNumber = function (t) { return typeof t === 'number' && !isNaN(t); }, t.prototype.validateValue = function (t) { const i = Number(t); return this.ensureNumber(i) ? i : (this.error = `[CountUp] invalid start or end value: ${t}`, null); }, t.prototype.resetDuration = function () { this.startTime = null, this.duration = 1e3 * Number(this.options.duration), this.remaining = this.duration; }, t;
+  }());
 
-  var mrCountup = function ($) {
+  const mrCountup = (function ($) {
     /**
      * Check for scrollMonitor dependency
      * scrollMonitor - https://github.com/stutrek/scrollMonitor
@@ -388,14 +389,13 @@
      * ------------------------------------------------------------------------
      */
 
-
-    var NAME = 'mrCountup';
-    var VERSION = '1.1.0';
-    var DATA_KEY = 'mr.countup';
-    var EVENT_KEY = "." + DATA_KEY;
-    var DATA_API_KEY = '.data-api';
-    var JQUERY_NO_CONFLICT = $.fn[NAME];
-    var Options = {
+    const NAME = 'mrCountup';
+    const VERSION = '1.1.0';
+    const DATA_KEY = 'mr.countup';
+    const EVENT_KEY = `.${DATA_KEY}`;
+    const DATA_API_KEY = '.data-api';
+    const JQUERY_NO_CONFLICT = $.fn[NAME];
+    const Options = {
       START: 'start',
       END: 'end',
       DURATION: 'duration',
@@ -405,15 +405,15 @@
       DECIMAL_PLACES: 'decimal-places',
       PREFIX: 'prefix',
       SUFFIX: 'suffix',
-      EASING: 'easing'
+      EASING: 'easing',
     };
-    var Event = {
-      LOAD_DATA_API: "load" + EVENT_KEY + DATA_API_KEY,
-      RESIZE: "resize" + EVENT_KEY
+    const Event = {
+      LOAD_DATA_API: `load${EVENT_KEY}${DATA_API_KEY}`,
+      RESIZE: `resize${EVENT_KEY}`,
     };
-    var Selector = {
+    const Selector = {
       DATA_ATTR: 'countup',
-      DATA_COUNTUP: '[data-countup]'
+      DATA_COUNTUP: '[data-countup]',
     };
     /**
      * ------------------------------------------------------------------------
@@ -421,11 +421,11 @@
      * ------------------------------------------------------------------------
      */
 
-    var Countup =
-    /*#__PURE__*/
-    function () {
+    const Countup =
+    /* #__PURE__ */
+    (function () {
       function Countup(element) {
-        var $element = $(element); // Grab data-attributes
+        const $element = $(element); // Grab data-attributes
 
         this.start = parseFloat($element.data(Options.START), 10) || 0;
         this.end = parseFloat($element.data(Options.END), 10) || parseFloat($element.text(), 10);
@@ -437,18 +437,17 @@
         this.prefix = $element.data(Options.PREFIX) || '';
         this.suffix = $element.data(Options.SUFFIX) || ''; // the easing data attribute will only disable easing if false is specified. Defaults to true.
 
-        var easing = $element.data(Options.EASING);
+        const easing = $element.data(Options.EASING);
         this.easing = easing === false ? easing : true;
         this.element = element;
         this.initWatcher(element);
         this.startCounting();
       } // getters
 
-
-      var _proto = Countup.prototype;
+      const _proto = Countup.prototype;
 
       _proto.initWatcher = function initWatcher(element) {
-        var _this = this;
+        const _this = this;
 
         this.CountUp = new CountUp(element, this.end, {
           startVal: this.start,
@@ -459,11 +458,11 @@
           separator: this.separator,
           decimal: this.decimalCharacter,
           prefix: this.prefix,
-          suffix: this.suffix
+          suffix: this.suffix,
         });
-        var watcher = scrollMonitor.create(element);
+        const watcher = scrollMonitor.create(element);
         this.watcher = watcher;
-        watcher.stateChange(function () {
+        watcher.stateChange(() => {
           _this.startCounting();
         });
       };
@@ -480,8 +479,8 @@
 
       Countup.jQueryInterface = function jQueryInterface() {
         return this.each(function jqEachCountup() {
-          var $element = $(this);
-          var data = $element.data(DATA_KEY);
+          const $element = $(this);
+          let data = $element.data(DATA_KEY);
 
           if (!data) {
             data = new Countup(this);
@@ -491,27 +490,26 @@
       };
 
       _createClass(Countup, null, [{
-        key: "VERSION",
+        key: 'VERSION',
         get: function get() {
           return VERSION;
-        }
+        },
       }]);
 
       return Countup;
-    }();
+    }());
     /**
      * ------------------------------------------------------------------------
      * Initialise by data attribute
      * ------------------------------------------------------------------------
      */
 
-
-    $(window).on(Event.LOAD_DATA_API, function () {
-      var countupElements = $.makeArray($(Selector.DATA_COUNTUP));
+    $(window).on(Event.LOAD_DATA_API, () => {
+      const countupElements = $.makeArray($(Selector.DATA_COUNTUP));
       /* eslint-disable no-plusplus */
 
-      for (var i = countupElements.length; i--;) {
-        var $countup = $(countupElements[i]);
+      for (let i = countupElements.length; i--;) {
+        const $countup = $(countupElements[i]);
         Countup.jQueryInterface.call($countup, $countup.data());
       }
     });
@@ -532,50 +530,49 @@
     };
     /* eslint-enable no-param-reassign */
 
-
     return Countup;
-  }(jQuery$1);
+  }(jQuery$1));
 
   //
 
-  var mrUtil = function ($) {
-    var VERSION = '1.2.0';
-    var Tagname = {
-      SCRIPT: 'script'
+  var mrUtil = (function ($) {
+    const VERSION = '1.2.0';
+    const Tagname = {
+      SCRIPT: 'script',
     };
-    var Selector = {
-      RECAPTCHA: '[data-recaptcha]'
+    const Selector = {
+      RECAPTCHA: '[data-recaptcha]',
     }; // Activate tooltips
 
     $('body').tooltip({
       selector: '[data-toggle="tooltip"]',
-      container: 'body'
+      container: 'body',
     }); // Activate popovers
 
     $('body').popover({
       selector: '[data-toggle="popover"]',
-      container: 'body'
+      container: 'body',
     }); // Activate toasts
 
     $('.toast').toast();
-    var Util = {
+    const Util = {
       version: VERSION,
       selector: Selector,
       activateIframeSrc: function activateIframeSrc(iframe) {
-        var $iframe = $(iframe);
+        const $iframe = $(iframe);
 
         if ($iframe.attr('data-src')) {
           $iframe.attr('src', $iframe.attr('data-src'));
         }
       },
       idleIframeSrc: function idleIframeSrc(iframe) {
-        var $iframe = $(iframe);
+        const $iframe = $(iframe);
         $iframe.attr('data-src', $iframe.attr('src')).attr('src', '');
       },
       forEach: function forEach(array, callback, scope) {
         if (array) {
           if (array.length) {
-            for (var i = 0; i < array.length; i += 1) {
+            for (let i = 0; i < array.length; i += 1) {
               callback.call(scope, i, array[i]); // passes back stuff we need
             }
           } else if (array[0] || mrUtil.isElement(array)) {
@@ -584,9 +581,9 @@
         }
       },
       dedupArray: function dedupArray(arr) {
-        return arr.reduce(function (p, c) {
+        return arr.reduce((p, c) => {
           // create an identifying String from the object values
-          var id = JSON.stringify(c); // if the JSON string is not found in the temp array
+          const id = JSON.stringify(c); // if the JSON string is not found in the temp array
           // add the object to the output array
           // and add the key to the temp array
 
@@ -598,24 +595,24 @@
           return p; // return the deduped array
         }, {
           temp: [],
-          out: []
+          out: [],
         }).out;
       },
       isElement: function isElement(obj) {
         return !!(obj && obj.nodeType === 1);
       },
       getFuncFromString: function getFuncFromString(funcName, context) {
-        var findFunc = funcName || null; // if already a function, return
+        const findFunc = funcName || null; // if already a function, return
 
         if (typeof findFunc === 'function') return funcName; // if string, try to find function or method of object (of "obj.func" format)
 
         if (typeof findFunc === 'string') {
           if (!findFunc.length) return null;
-          var target = context || window;
-          var func = findFunc.split('.');
+          let target = context || window;
+          const func = findFunc.split('.');
 
           while (func.length) {
-            var ns = func.shift();
+            const ns = func.shift();
             if (typeof target[ns] === 'undefined') return null;
             target = target[ns];
           }
@@ -623,12 +620,11 @@
           if (typeof target === 'function') return target;
         } // return null if could not parse
 
-
         return null;
       },
       getScript: function getScript(source, callback) {
-        var script = document.createElement(Tagname.SCRIPT);
-        var prior = document.getElementsByTagName(Tagname.SCRIPT)[0];
+        let script = document.createElement(Tagname.SCRIPT);
+        const prior = document.getElementsByTagName(Tagname.SCRIPT)[0];
         script.async = 1;
         script.defer = 1;
 
@@ -647,65 +643,65 @@
         script.onload = script.onreadystatechange;
         script.src = source;
         prior.parentNode.insertBefore(script, prior);
-      }
+      },
     };
     return Util;
-  }(jQuery$1);
+  }(jQuery$1));
 
-  var mrDropdownGrid = function ($) {
+  var mrDropdownGrid = (function ($) {
     /**
      * ------------------------------------------------------------------------
      * Constants
      * ------------------------------------------------------------------------
      */
-    var NAME = 'mrDropdownGrid';
-    var VERSION = '1.0.0';
-    var DATA_KEY = 'mr.dropdownGrid';
-    var EVENT_KEY = "." + DATA_KEY;
-    var DATA_API_KEY = '.data-api';
-    var JQUERY_NO_CONFLICT = $.fn[NAME]; // KeyboardEvent.which value for Escape (Esc) key
+    const NAME = 'mrDropdownGrid';
+    const VERSION = '1.0.0';
+    const DATA_KEY = 'mr.dropdownGrid';
+    const EVENT_KEY = `.${DATA_KEY}`;
+    const DATA_API_KEY = '.data-api';
+    const JQUERY_NO_CONFLICT = $.fn[NAME]; // KeyboardEvent.which value for Escape (Esc) key
 
-    var ESCAPE_KEYCODE = 27; // KeyboardEvent.which value for space key
+    const ESCAPE_KEYCODE = 27; // KeyboardEvent.which value for space key
 
-    var SPACE_KEYCODE = 32; // KeyboardEvent.which value for tab key
+    const SPACE_KEYCODE = 32; // KeyboardEvent.which value for tab key
 
-    var TAB_KEYCODE = 9; // KeyboardEvent.which value for up arrow key
+    const TAB_KEYCODE = 9; // KeyboardEvent.which value for up arrow key
 
-    var ARROW_UP_KEYCODE = 38; // KeyboardEvent.which value for down arrow key
+    const ARROW_UP_KEYCODE = 38; // KeyboardEvent.which value for down arrow key
 
-    var ARROW_DOWN_KEYCODE = 40; // MouseEvent.which value for the right button (assuming a right-handed mouse)
+    const ARROW_DOWN_KEYCODE = 40; // MouseEvent.which value for the right button (assuming a right-handed mouse)
 
-    var RIGHT_MOUSE_BUTTON_WHICH = 3;
-    var REGEXP_KEYDOWN = new RegExp(ARROW_UP_KEYCODE + "|" + ARROW_DOWN_KEYCODE + "|" + ESCAPE_KEYCODE);
-    var ClassName = {
-      SHOW: 'show'
+    const RIGHT_MOUSE_BUTTON_WHICH = 3;
+    const REGEXP_KEYDOWN = new RegExp(`${ARROW_UP_KEYCODE}|${ARROW_DOWN_KEYCODE}|${ESCAPE_KEYCODE}`);
+    const ClassName = {
+      SHOW: 'show',
     };
-    var Event = {
-      LOAD_DATA_API: "load" + EVENT_KEY + DATA_API_KEY,
-      RESIZE: "resize" + EVENT_KEY,
-      HIDE: "hide" + EVENT_KEY,
-      HIDDEN: "hidden" + EVENT_KEY,
-      SHOW: "show" + EVENT_KEY,
-      SHOWN: "shown" + EVENT_KEY,
-      CLICK: "click" + EVENT_KEY,
-      MOUSE_ENTER: "mouseenter" + EVENT_KEY,
-      MOUSE_LEAVE: "mouseleave" + EVENT_KEY,
-      CLICK_DATA_API: "click" + EVENT_KEY + DATA_API_KEY,
-      KEYDOWN_DATA_API: "keydown" + EVENT_KEY + DATA_API_KEY,
-      KEYUP_DATA_API: "keyup" + EVENT_KEY + DATA_API_KEY
+    const Event = {
+      LOAD_DATA_API: `load${EVENT_KEY}${DATA_API_KEY}`,
+      RESIZE: `resize${EVENT_KEY}`,
+      HIDE: `hide${EVENT_KEY}`,
+      HIDDEN: `hidden${EVENT_KEY}`,
+      SHOW: `show${EVENT_KEY}`,
+      SHOWN: `shown${EVENT_KEY}`,
+      CLICK: `click${EVENT_KEY}`,
+      MOUSE_ENTER: `mouseenter${EVENT_KEY}`,
+      MOUSE_LEAVE: `mouseleave${EVENT_KEY}`,
+      CLICK_DATA_API: `click${EVENT_KEY}${DATA_API_KEY}`,
+      KEYDOWN_DATA_API: `keydown${EVENT_KEY}${DATA_API_KEY}`,
+      KEYUP_DATA_API: `keyup${EVENT_KEY}${DATA_API_KEY}`,
     };
-    var Selector = {
+    const Selector = {
       DATA_TOGGLE: '[data-toggle="dropdown-grid"]',
       FORM_CHILD: '.dropdown form',
       MENU: '.dropdown-menu',
       CONTAINER: '.dropdown-menu',
       CONTENT: '[data-dropdown-content]',
       NAVBAR_NAV: '.navbar-nav',
-      VISIBLE_ITEMS: '.dropdown-menu .dropdown-item:not(.disabled):not(:disabled)'
+      VISIBLE_ITEMS: '.dropdown-menu .dropdown-item:not(.disabled):not(:disabled)',
     };
-    var Options = {
+    const Options = {
       HOVER: 'data-hover',
-      BODY_HOVER: 'data-dropdown-grid-hover'
+      BODY_HOVER: 'data-dropdown-grid-hover',
     };
     /**
      * ------------------------------------------------------------------------
@@ -713,9 +709,9 @@
      * ------------------------------------------------------------------------
      */
 
-    var DropdownGrid =
-    /*#__PURE__*/
-    function () {
+    const DropdownGrid =
+    /* #__PURE__ */
+    (function () {
       function DropdownGrid(element) {
         this.ticking = false;
         this.isActive = false;
@@ -737,7 +733,7 @@
         this.setResizeEvent();
       }
 
-      var _proto = DropdownGrid.prototype;
+      const _proto = DropdownGrid.prototype;
 
       _proto.getOptions = function getOptions() {
         if (!this.options) {
@@ -754,8 +750,8 @@
         }
 
         this.isActive = $(this.menu).hasClass(ClassName.SHOW);
-        var togglingOff = this.isActive;
-        var togglingOn = !this.isActive;
+        const togglingOff = this.isActive;
+        const togglingOn = !this.isActive;
 
         if (!this.isSubmenu) {
           DropdownGrid.clearMenus();
@@ -779,10 +775,10 @@
           DropdownGrid.clearMenus(null, this.siblingMenus);
         }
 
-        var relatedTarget = {
-          relatedTarget: this.element
+        const relatedTarget = {
+          relatedTarget: this.element,
         };
-        var showEvent = $.Event(Event.SHOW, relatedTarget);
+        const showEvent = $.Event(Event.SHOW, relatedTarget);
         $(this.parent).trigger(showEvent);
 
         if (showEvent.isDefaultPrevented()) {
@@ -791,7 +787,6 @@
         // empty mouseover listeners to the body's immediate children;
         // only needed because of broken event delegation on iOS
         // https://www.quirksmode.org/blog/archives/2014/02/mouse_event_bub.html
-
 
         if ('ontouchstart' in document.documentElement && $(this.parent).closest(Selector.NAVBAR_NAV).length === 0) {
           $(document.body).children().on('mouseover', null, $.noop);
@@ -808,15 +803,15 @@
       };
 
       _proto.updatePosition = function updatePosition(winWidth) {
-        var windowWidth = winWidth || window.innerWidth;
-        var trigger = mrDropdownGrid.getDimensionsFromElement(this.element);
+        const windowWidth = winWidth || window.innerWidth;
+        const trigger = mrDropdownGrid.getDimensionsFromElement(this.element);
         this.positionContainer(trigger.offsetLeft);
         this.positionContent(windowWidth, trigger.offsetLeft);
       };
 
       _proto.positionContainer = function positionContainer(offsetLeft) {
         if (this.container) {
-          this.container.style.left = "-" + offsetLeft + "px";
+          this.container.style.left = `-${offsetLeft}px`;
         } else {
           throw new TypeError('No element matching .dropdown-menu.container found.');
         }
@@ -824,14 +819,14 @@
 
       _proto.positionContent = function positionContent(windowWidth, offsetLeft) {
         if (this.content) {
-          var leftValue; // let topValue;
+          let leftValue; // let topValue;
 
-          var contentRect = mrDropdownGrid.getDimensionsFromElement(this.content);
-          var contentWidth = contentRect.width; // If submenu, the left of the content needs to sit to the side of the trigger's content
+          const contentRect = mrDropdownGrid.getDimensionsFromElement(this.content);
+          const contentWidth = contentRect.width; // If submenu, the left of the content needs to sit to the side of the trigger's content
 
           if (this.isSubmenu) {
             this.getParentMenu();
-            var parentContent = mrDropdownGrid.getDimensionsFromElement(this.parentMenu.content); // Calculate X Offset
+            const parentContent = mrDropdownGrid.getDimensionsFromElement(this.parentMenu.content); // Calculate X Offset
 
             if (parentContent.offsetLeft + parentContent.width + contentWidth <= windowWidth) {
               // Submenu can fit next to parent menu
@@ -842,7 +837,6 @@
             } else {
               leftValue = 0;
             } // Calculate Y offset
-
           } else if (contentWidth + offsetLeft >= windowWidth) {
             // Not a submenu, but if the content won't fit, sit content close to the right boundary
             leftValue = windowWidth - contentWidth;
@@ -851,7 +845,7 @@
             leftValue = offsetLeft;
           }
 
-          var leftString = Math.round(leftValue) + "px";
+          const leftString = `${Math.round(leftValue)}px`;
           this.content.style.left = leftString;
         } else {
           throw new TypeError('No [data-dropdown-content] element was found.');
@@ -859,11 +853,11 @@
       };
 
       _proto.setResizeEvent = function setResizeEvent() {
-        var _this = this;
+        const _this = this;
 
-        $(window).on(Event.RESIZE, function () {
+        $(window).on(Event.RESIZE, () => {
           if (!_this.ticking) {
-            window.requestAnimationFrame(function () {
+            window.requestAnimationFrame(() => {
               _this.updatePosition();
 
               _this.ticking = false;
@@ -886,7 +880,7 @@
       _proto.getContainerElement = function getContainerElement() {
         if (!this.container) {
           if (this.parent) {
-            this.container = this.parent.querySelector("" + Selector.MENU + Selector.CONTAINER);
+            this.container = this.parent.querySelector(`${Selector.MENU}${Selector.CONTAINER}`);
           }
         }
 
@@ -918,15 +912,15 @@
       };
 
       _proto.getSubmenus = function getSubmenus() {
-        var children = this.content.querySelectorAll(Selector.DATA_TOGGLE);
+        const children = this.content.querySelectorAll(Selector.DATA_TOGGLE);
         this.isParent = children.length !== 0;
         return children;
       };
 
       _proto.addEventListeners = function addEventListeners() {
-        var _this2 = this;
+        const _this2 = this;
 
-        $(this.element).on(Event.CLICK, function (event) {
+        $(this.element).on(Event.CLICK, (event) => {
           event.preventDefault();
           event.stopPropagation();
 
@@ -934,11 +928,11 @@
         });
 
         if (this.hover) {
-          $(this.parent).on(Event.MOUSE_ENTER + " " + Event.MOUSE_LEAVE, function (event) {
+          $(this.parent).on(`${Event.MOUSE_ENTER} ${Event.MOUSE_LEAVE}`, (event) => {
             event.preventDefault();
             event.stopPropagation();
 
-            if ("" + event.type + EVENT_KEY === Event.MOUSE_ENTER && _this2.isActive || "" + event.type + EVENT_KEY === Event.MOUSE_LEAVE && !_this2.isActive) {
+            if (`${event.type}${EVENT_KEY}` === Event.MOUSE_ENTER && _this2.isActive || `${event.type}${EVENT_KEY}` === Event.MOUSE_LEAVE && !_this2.isActive) {
               return;
             }
 
@@ -949,11 +943,10 @@
 
       DropdownGrid.getDimensionsFromElement = function getDimensionsFromElement(element) {
         if (element && mrUtil.isElement(element)) {
-          var rect = element.getBoundingClientRect();
+          const rect = element.getBoundingClientRect();
           rect.offsetLeft = Math.round(rect.left + window.pageXOffset - document.documentElement.clientLeft);
           return rect;
         } // If not an element, throw an error
-
 
         throw new TypeError('Can\'t get a measurement from a non-element');
       };
@@ -967,7 +960,7 @@
           return;
         }
 
-        var toggles;
+        let toggles;
 
         if (specificToggle && typeof specificToggle === 'object') {
           toggles = specificToggle;
@@ -975,11 +968,11 @@
           toggles = document.querySelectorAll(Selector.DATA_TOGGLE);
         }
 
-        mrUtil.forEach(toggles, function (index, toggle) {
-          var parent = DropdownGrid.getParentFromElement(toggle);
-          var context = $(toggle).data(DATA_KEY);
-          var relatedTarget = {
-            relatedTarget: toggle
+        mrUtil.forEach(toggles, (index, toggle) => {
+          const parent = DropdownGrid.getParentFromElement(toggle);
+          const context = $(toggle).data(DATA_KEY);
+          const relatedTarget = {
+            relatedTarget: toggle,
           };
 
           if (event && event.type === 'click') {
@@ -990,7 +983,7 @@
             return;
           }
 
-          var dropdownMenu = context.menu;
+          const dropdownMenu = context.menu;
 
           if (!$(parent).hasClass(ClassName.SHOW)) {
             return;
@@ -1008,14 +1001,13 @@
             }
           }
 
-          var hideEvent = $.Event(Event.HIDE, relatedTarget);
+          const hideEvent = $.Event(Event.HIDE, relatedTarget);
           $(parent).trigger(hideEvent);
 
           if (hideEvent.isDefaultPrevented()) {
             return;
           } // If this is a touch-enabled device we remove the extra
           // empty mouseover listeners we added for iOS support
-
 
           if ('ontouchstart' in document.documentElement) {
             $(document.body).children().off('mouseover', null, $.noop);
@@ -1030,8 +1022,8 @@
 
       DropdownGrid.jQueryInterface = function jQueryInterface(config) {
         return this.each(function jqEachDropdownGrid() {
-          var $element = $(this);
-          var data = $element.data(DATA_KEY);
+          const $element = $(this);
+          let data = $element.data(DATA_KEY);
 
           if (!data) {
             data = new DropdownGrid(this);
@@ -1040,7 +1032,7 @@
 
           if (typeof config === 'string') {
             if (typeof data[config] === 'undefined') {
-              throw new TypeError("No method named \"" + config + "\"");
+              throw new TypeError(`No method named "${config}"`);
             }
 
             data[config]();
@@ -1068,12 +1060,12 @@
           return;
         }
 
-        var parent = DropdownGrid.getParentFromElement(this);
-        var isActive = $(parent).hasClass(ClassName.SHOW);
+        const parent = DropdownGrid.getParentFromElement(this);
+        const isActive = $(parent).hasClass(ClassName.SHOW);
 
         if (!isActive && (event.which !== ESCAPE_KEYCODE || event.which !== SPACE_KEYCODE) || isActive && (event.which === ESCAPE_KEYCODE || event.which === SPACE_KEYCODE)) {
           if (event.which === ESCAPE_KEYCODE) {
-            var toggle = parent.querySelector(Selector.DATA_TOGGLE);
+            const toggle = parent.querySelector(Selector.DATA_TOGGLE);
             $(toggle).trigger('focus');
           }
 
@@ -1081,13 +1073,13 @@
           return;
         }
 
-        var items = [].slice.call(parent.querySelectorAll(Selector.VISIBLE_ITEMS));
+        const items = [].slice.call(parent.querySelectorAll(Selector.VISIBLE_ITEMS));
 
         if (items.length === 0) {
           return;
         }
 
-        var index = items.indexOf(event.target);
+        let index = items.indexOf(event.target);
 
         if (event.which === ARROW_UP_KEYCODE && index > 0) {
           // Up
@@ -1107,36 +1099,36 @@
       };
 
       _createClass(DropdownGrid, null, [{
-        key: "VERSION",
+        key: 'VERSION',
         get: function get() {
           return VERSION;
-        }
+        },
       }]);
 
       return DropdownGrid;
-    }();
+    }());
     /**
      * ------------------------------------------------------------------------
      * Data Api implementation
      * ------------------------------------------------------------------------
      */
 
-
-    $(document).on(Event.KEYDOWN_DATA_API, Selector.DATA_TOGGLE, DropdownGrid.dataApiKeydownHandler).on(Event.KEYDOWN_DATA_API, Selector.MENU, DropdownGrid.dataApiKeydownHandler).on(Event.CLICK_DATA_API + " " + Event.KEYUP_DATA_API, DropdownGrid.clearMenus).on(Event.CLICK_DATA_API, Selector.FORM_CHILD, function (e) {
-      e.stopPropagation();
-    });
+    $(document).on(Event.KEYDOWN_DATA_API, Selector.DATA_TOGGLE, DropdownGrid.dataApiKeydownHandler).on(Event.KEYDOWN_DATA_API, Selector.MENU, DropdownGrid.dataApiKeydownHandler).on(`${Event.CLICK_DATA_API} ${Event.KEYUP_DATA_API}`, DropdownGrid.clearMenus)
+      .on(Event.CLICK_DATA_API, Selector.FORM_CHILD, (e) => {
+        e.stopPropagation();
+      });
     /**
      * ------------------------------------------------------------------------
      * Initialise by data attribute
      * ------------------------------------------------------------------------
      */
 
-    $(document).ready(function () {
-      var dropdownGridElements = $.makeArray($(Selector.DATA_TOGGLE));
+    $(document).ready(() => {
+      const dropdownGridElements = $.makeArray($(Selector.DATA_TOGGLE));
       /* eslint-disable no-plusplus */
 
-      for (var i = dropdownGridElements.length; i--;) {
-        var $dropdownGrid = $(dropdownGridElements[i]);
+      for (let i = dropdownGridElements.length; i--;) {
+        const $dropdownGrid = $(dropdownGridElements[i]);
         DropdownGrid.jQueryInterface.call($dropdownGrid, $dropdownGrid.data());
       }
     });
@@ -1157,9 +1149,8 @@
     };
     /* eslint-enable no-param-reassign */
 
-
     return DropdownGrid;
-  }(jQuery$1);
+  }(jQuery$1));
 
   //
   //
@@ -1168,19 +1159,19 @@
   //
   // Page Transition to fade out when clicking a link which has opted in using class 'fade-page'
   (function () {
-    var ATTR_HREF = 'href';
-    var EVENT_CLICK = 'click';
-    var SELECTOR_FADE = 'fade-page';
-    var EFFECT_DELAY = 500;
-    var fadePage = document.getElementsByClassName(SELECTOR_FADE);
+    const ATTR_HREF = 'href';
+    const EVENT_CLICK = 'click';
+    const SELECTOR_FADE = 'fade-page';
+    const EFFECT_DELAY = 500;
+    const fadePage = document.getElementsByClassName(SELECTOR_FADE);
 
     function fadePageFunction(event) {
       if (!(event.ctrlKey || event.shiftKey || event.metaKey || event.button && event.button === 1)) {
         event.preventDefault();
         event.stopPropagation();
         document.body.classList.add(SELECTOR_FADE);
-        var href = this.getAttribute(ATTR_HREF);
-        setTimeout(function () {
+        const href = this.getAttribute(ATTR_HREF);
+        setTimeout(() => {
           if (href !== '' && href !== '#') {
             window.location.href = href;
           }
@@ -1188,13 +1179,12 @@
       }
     } // Bind click event
 
-
-    for (var i = 0; i < fadePage.length; i += 1) {
+    for (let i = 0; i < fadePage.length; i += 1) {
       fadePage[i].addEventListener(EVENT_CLICK, fadePageFunction, false);
     }
-  })();
+  }());
 
-  var mrFlatpickr = function ($) {
+  const mrFlatpickr = (function ($) {
     /**
      * Check for flatpickr dependency
      */
@@ -1207,18 +1197,17 @@
      * ------------------------------------------------------------------------
      */
 
-
-    var NAME = 'mrFlatpickr';
-    var VERSION = '1.0.0';
-    var DATA_KEY = 'mr.flatpickr';
-    var EVENT_KEY = "." + DATA_KEY;
-    var DATA_API_KEY = '.data-api';
-    var JQUERY_NO_CONFLICT = $.fn[NAME];
-    var Event = {
-      LOAD_DATA_API: "load" + EVENT_KEY + DATA_API_KEY
+    const NAME = 'mrFlatpickr';
+    const VERSION = '1.0.0';
+    const DATA_KEY = 'mr.flatpickr';
+    const EVENT_KEY = `.${DATA_KEY}`;
+    const DATA_API_KEY = '.data-api';
+    const JQUERY_NO_CONFLICT = $.fn[NAME];
+    const Event = {
+      LOAD_DATA_API: `load${EVENT_KEY}${DATA_API_KEY}`,
     };
-    var Selector = {
-      FLATPICKR: '[data-flatpickr]'
+    const Selector = {
+      FLATPICKR: '[data-flatpickr]',
     };
     /**
      * ------------------------------------------------------------------------
@@ -1226,9 +1215,9 @@
      * ------------------------------------------------------------------------
      */
 
-    var Flatpickr =
-    /*#__PURE__*/
-    function () {
+    const Flatpickr =
+    /* #__PURE__ */
+    (function () {
       function Flatpickr(element) {
         // The current flatpickr element
         this.element = element; // const $element = $(element);
@@ -1236,18 +1225,17 @@
         this.initflatpickr();
       } // getters
 
-
-      var _proto = Flatpickr.prototype;
+      const _proto = Flatpickr.prototype;
 
       _proto.initflatpickr = function initflatpickr() {
-        var options = $(this.element).data();
+        const options = $(this.element).data();
         this.instance = flatpickr(this.element, options);
       };
 
       Flatpickr.jQueryInterface = function jQueryInterface() {
         return this.each(function jqEachFlatpickr() {
-          var $element = $(this);
-          var data = $element.data(DATA_KEY);
+          const $element = $(this);
+          let data = $element.data(DATA_KEY);
 
           if (!data) {
             data = new Flatpickr(this);
@@ -1257,14 +1245,14 @@
       };
 
       _createClass(Flatpickr, null, [{
-        key: "VERSION",
+        key: 'VERSION',
         get: function get() {
           return VERSION;
-        }
+        },
       }]);
 
       return Flatpickr;
-    }(); // END Class definition
+    }()); // END Class definition
 
     /**
      * ------------------------------------------------------------------------
@@ -1272,13 +1260,12 @@
      * ------------------------------------------------------------------------
      */
 
-
-    $(window).on(Event.LOAD_DATA_API, function () {
-      var pickers = $.makeArray($(Selector.FLATPICKR));
+    $(window).on(Event.LOAD_DATA_API, () => {
+      const pickers = $.makeArray($(Selector.FLATPICKR));
       /* eslint-disable no-plusplus */
 
-      for (var i = pickers.length; i--;) {
-        var $flatpickr = $(pickers[i]);
+      for (let i = pickers.length; i--;) {
+        const $flatpickr = $(pickers[i]);
         Flatpickr.jQueryInterface.call($flatpickr, $flatpickr.data());
       }
     });
@@ -1299,26 +1286,25 @@
     };
     /* eslint-enable no-param-reassign */
 
-
     return Flatpickr;
-  }(jQuery$1);
+  }(jQuery$1));
 
   //
 
   (function () {
-    $(document).on('shown.bs.modal layoutComplete', function (e) {
-      var flickityInstance = $(e.target).find('[data-flickity]');
-      flickityInstance.each(function (index, instance) {
-        var $instance = $(instance);
+    $(document).on('shown.bs.modal layoutComplete', (e) => {
+      const flickityInstance = $(e.target).find('[data-flickity]');
+      flickityInstance.each((index, instance) => {
+        const $instance = $(instance);
 
         if ($instance.data().flickity.isInitActivated) {
           $instance.flickity('resize');
         }
       });
     });
-  })();
+  }());
 
-  var mrRecaptchav2 = function ($) {
+  var mrRecaptchav2 = (function ($) {
     // Check mrUtil is present and correct version
     if (!(mrUtil && mrUtil.version >= '1.2.0')) {
       throw new Error('mrUtil >= version 1.2.0 is required.');
@@ -1329,36 +1315,35 @@
      * ------------------------------------------------------------------------
      */
 
-
-    var NAME = 'mrRecaptchav2';
-    var VERSION = '1.0.0';
-    var DATA_KEY = 'mr.recaptchav2'; // const EVENT_KEY = `.${DATA_KEY}`;
+    const NAME = 'mrRecaptchav2';
+    const VERSION = '1.0.0';
+    const DATA_KEY = 'mr.recaptchav2'; // const EVENT_KEY = `.${DATA_KEY}`;
     // const DATA_API_KEY = '.data-api';
 
-    var JQUERY_NO_CONFLICT = $.fn[NAME];
-    var RECAPTCHA_CALLBACK = 'mrRecaptchav2Init';
-    var RemoteScript = {
-      RECAPTCHAV2: "https://www.google.com/recaptcha/api.js?onload=" + RECAPTCHA_CALLBACK + "&render=explicit"
+    const JQUERY_NO_CONFLICT = $.fn[NAME];
+    const RECAPTCHA_CALLBACK = 'mrRecaptchav2Init';
+    const RemoteScript = {
+      RECAPTCHAV2: `https://www.google.com/recaptcha/api.js?onload=${RECAPTCHA_CALLBACK}&render=explicit`,
     };
-    var Selector = {
+    const Selector = {
       DATA_RECAPTCHA: '[data-recaptcha]',
-      FORM: 'form'
+      FORM: 'form',
     };
-    var Options = {
-      INVISIBLE: 'invisible'
+    const Options = {
+      INVISIBLE: 'invisible',
     }; // "static" properties
 
-    var instances = [];
-    var apiReady = false;
+    const instances = [];
+    let apiReady = false;
     /**
      * ------------------------------------------------------------------------
      * Class Definition
      * ------------------------------------------------------------------------
      */
 
-    var Recaptchav2 =
-    /*#__PURE__*/
-    function () {
+    const Recaptchav2 =
+    /* #__PURE__ */
+    (function () {
       function Recaptchav2(element) {
         this.element = element;
         this.form = this.getForm();
@@ -1371,11 +1356,10 @@
         instances.push(this);
       } // getters
 
-
-      var _proto = Recaptchav2.prototype;
+      const _proto = Recaptchav2.prototype;
 
       _proto.init = function init() {
-        var _this = this;
+        const _this = this;
 
         if (this.element.innerHTML.replace(/[\s\xA0]+/g, '') === '') {
           this.id = grecaptcha.render(this.element, {
@@ -1389,7 +1373,7 @@
             },
             'expired-callback': function expiredCallback() {
               _this.invalidate();
-            }
+            },
           });
           this.isReady = true;
         }
@@ -1429,16 +1413,16 @@
       };
 
       _proto.getForm = function getForm() {
-        var closestForm = $(this.element).closest(Selector.FORM);
+        const closestForm = $(this.element).closest(Selector.FORM);
         return closestForm.length ? closestForm.get(0) : null;
       };
 
       Recaptchav2.getRecaptchaFromForm = function getRecaptchaFromForm(form) {
         if (mrUtil.isElement(form)) {
-          var captchaElement = form.querySelector(Selector.DATA_RECAPTCHA);
+          const captchaElement = form.querySelector(Selector.DATA_RECAPTCHA);
 
           if (captchaElement) {
-            var data = $(captchaElement).data(DATA_KEY);
+            const data = $(captchaElement).data(DATA_KEY);
             return data || null;
           }
 
@@ -1450,8 +1434,8 @@
 
       Recaptchav2.jQueryInterface = function jQueryInterface() {
         return this.each(function jqEachRecaptchav2() {
-          var $element = $(this);
-          var data = $element.data(DATA_KEY);
+          const $element = $(this);
+          let data = $element.data(DATA_KEY);
 
           if (!data) {
             data = new Recaptchav2(this);
@@ -1461,35 +1445,35 @@
       };
 
       _createClass(Recaptchav2, null, [{
-        key: "VERSION",
+        key: 'VERSION',
         get: function get() {
           return VERSION;
-        }
+        },
       }, {
-        key: "ready",
+        key: 'ready',
         get: function get() {
           return apiReady;
-        }
+        },
       }, {
-        key: "instances",
+        key: 'instances',
         get: function get() {
           return instances;
-        }
+        },
       }, {
-        key: "apiReady",
+        key: 'apiReady',
         set: function set(ready) {
           if (ready === true && apiReady === false) {
-            mrUtil.forEach(Recaptchav2.instances, function (index, instance) {
+            mrUtil.forEach(Recaptchav2.instances, (index, instance) => {
               instance.init();
             });
           }
 
           apiReady = true;
-        }
+        },
       }]);
 
       return Recaptchav2;
-    }();
+    }());
 
     window.mrRecaptchav2Init = function () {
       mrRecaptchav2.apiReady = true;
@@ -1500,16 +1484,15 @@
      * ------------------------------------------------------------------------
      */
 
-
-    $(document).ready(function () {
-      var Recaptchav2Elements = $.makeArray($(Selector.DATA_RECAPTCHA));
+    $(document).ready(() => {
+      const Recaptchav2Elements = $.makeArray($(Selector.DATA_RECAPTCHA));
 
       if (Recaptchav2Elements.length > 0) {
         mrUtil.getScript(RemoteScript.RECAPTCHAV2);
         /* eslint-disable no-plusplus */
 
-        for (var i = Recaptchav2Elements.length; i--;) {
-          var $Recaptchav2 = $(Recaptchav2Elements[i]);
+        for (let i = Recaptchav2Elements.length; i--;) {
+          const $Recaptchav2 = $(Recaptchav2Elements[i]);
           Recaptchav2.jQueryInterface.call($Recaptchav2, $Recaptchav2.data());
         }
       }
@@ -1531,11 +1514,10 @@
     };
     /* eslint-enable no-param-reassign */
 
-
     return Recaptchav2;
-  }(jQuery);
+  }(jQuery));
 
-  var mrFormEmail = function ($) {
+  const mrFormEmail = (function ($) {
     // Check mrUtil is present and correct version
     if (!(mrUtil && mrUtil.version >= '1.2.0')) {
       throw new Error('mrUtil >= version 1.2.0 is required.');
@@ -1546,50 +1528,49 @@
      * ------------------------------------------------------------------------
      */
 
-
-    var NAME = 'mrFormEmail';
-    var VERSION = '1.0.0';
-    var DATA_KEY = 'mr.formEmail';
-    var EVENT_KEY = "." + DATA_KEY;
-    var DATA_API_KEY = '.data-api';
-    var JQUERY_NO_CONFLICT = $.fn[NAME];
-    var ClassName = {
+    const NAME = 'mrFormEmail';
+    const VERSION = '1.0.0';
+    const DATA_KEY = 'mr.formEmail';
+    const EVENT_KEY = `.${DATA_KEY}`;
+    const DATA_API_KEY = '.data-api';
+    const JQUERY_NO_CONFLICT = $.fn[NAME];
+    const ClassName = {
       LOADING: 'btn-loading-animate',
       WAS_VALIDATED: 'was-validated',
-      D_NONE: 'd-none'
+      D_NONE: 'd-none',
     };
-    var Attribute = {
+    const Attribute = {
       ACTION: 'action',
       DISABLED: 'disabled',
       FEEDBACK_DELAY: 'data-feedback-delay',
-      SUCCESS_REDIRECT: 'data-success-redirect'
+      SUCCESS_REDIRECT: 'data-success-redirect',
     };
-    var Selector = {
+    const Selector = {
       DATA_ATTR: 'form-email',
       DATA_FORM_EMAIL: '[data-form-email]',
       DATA_SUCCESS: '[data-success-message]',
       DATA_ERROR: '[data-error-message]',
       SUBMIT_BUTTON: 'button[type="submit"]',
       SPAN: 'span',
-      ALL_INPUTS: 'input,textarea,select'
+      ALL_INPUTS: 'input,textarea,select',
     };
-    var Event = {
-      SENT: "sent" + EVENT_KEY,
-      LOAD_DATA_API: "load" + EVENT_KEY + DATA_API_KEY,
-      SUBMIT: 'submit'
+    const Event = {
+      SENT: `sent${EVENT_KEY}`,
+      LOAD_DATA_API: `load${EVENT_KEY}${DATA_API_KEY}`,
+      SUBMIT: 'submit',
     };
-    var Options = {
-      LOADING_TEXT: 'data-loading-text'
+    const Options = {
+      LOADING_TEXT: 'data-loading-text',
     };
-    var Default = {
+    const Default = {
       LOADING_TEXT: 'Sending',
       FORM_ACTION: 'forms/mail.php',
       FEEDBACK_DELAY: 5000,
-      ERROR_TEXT: 'Form submission error'
+      ERROR_TEXT: 'Form submission error',
     };
-    var Status = {
+    const Status = {
       SUCCESS: 'success',
-      ERROR: 'error'
+      ERROR: 'error',
     };
     /**
      * ------------------------------------------------------------------------
@@ -1597,9 +1578,9 @@
      * ------------------------------------------------------------------------
      */
 
-    var FormEmail =
-    /*#__PURE__*/
-    function () {
+    const FormEmail =
+    /* #__PURE__ */
+    (function () {
       function FormEmail(element) {
         this.form = element;
         this.action = this.form.getAttribute(Attribute.ACTION) || Default.FORM_ACTION; // Returns an object containing the feedback
@@ -1613,8 +1594,7 @@
         this.setSubmitEvent();
       } // getters
 
-
-      var _proto = FormEmail.prototype;
+      const _proto = FormEmail.prototype;
 
       _proto.submitForm = function submitForm() {
         // Hide feedback mesages for fresh submit
@@ -1626,7 +1606,7 @@
       };
 
       _proto.validateForm = function validateForm() {
-        var formIsValid = this.form.checkValidity();
+        let formIsValid = this.form.checkValidity();
 
         if (this.recaptcha) {
           if (this.recaptcha.invisible) {
@@ -1634,7 +1614,6 @@
               this.recaptcha.execute();
               return false;
             } // invalidate if captcha is found and is not valid, otherwise keep original value
-
           } else if (this.recaptcha.checkValidity() === false) {
             formIsValid = false;
           }
@@ -1654,11 +1633,11 @@
       };
 
       _proto.ajaxSubmit = function ajaxSubmit() {
-        var $form = $(this.form);
-        var formData = $form.serializeArray();
+        const $form = $(this.form);
+        const formData = $form.serializeArray();
         formData.push({
           name: 'url',
-          value: window.location.href
+          value: window.location.href,
         });
         jQuery$1.ajax({
           context: this,
@@ -1667,7 +1646,7 @@
           error: this.showFeedback,
           success: this.processResponse,
           type: 'POST',
-          url: this.action
+          url: this.action,
         });
         this.toggleFormLoading(true);
       };
@@ -1684,9 +1663,9 @@
       };
 
       _proto.processResponse = function processResponse(response) {
-        var _this = this;
+        const _this = this;
 
-        var success = response.status === Status.SUCCESS; // Form is no longer in a 'loading' state
+        const success = response.status === Status.SUCCESS; // Form is no longer in a 'loading' state
 
         this.toggleFormLoading(false); // Recaptcha will need to be solved again
 
@@ -1694,10 +1673,9 @@
           this.recaptcha.reset();
         } // Trigger an event so users can fire Analytics scripts upon success
 
-
         $(this.form).trigger($.Event(Event.SENT)); // Redirect upon success if data-attribute is set
 
-        var successRedirect = this.form.getAttribute(Attribute.SUCCESS_REDIRECT);
+        const successRedirect = this.form.getAttribute(Attribute.SUCCESS_REDIRECT);
 
         if (success && successRedirect && successRedirect !== '') {
           window.location = successRedirect;
@@ -1705,16 +1683,12 @@
           this.form.reset(); // Hide all feedback and hold a reference to the timeout
           // to cancel it when necessary.
 
-          this.feedbackTimeout = setTimeout(function () {
-            return _this.hideAllFeedback();
-          }, this.feedbackDelay);
+          this.feedbackTimeout = setTimeout(() => _this.hideAllFeedback(), this.feedbackDelay);
         } //  Show ERROR feedback message if not redirecting
-
 
         if (!successRedirect) {
           this.showFeedback(response.status, response.message);
         } // Detailed error message will be shown in Console if provided
-
 
         if (response.errorDetail) {
           /* eslint-disable no-console */
@@ -1730,7 +1704,7 @@
 
         if (typeof status === 'object' && status.statusText) {
           clearTimeout(this.feedbackTimeout);
-          this.feedback.error.innerHTML = (errorHTTP || text) + ": <em>\"" + this.action + "\"</em> (" + status.status + " " + text + ")";
+          this.feedback.error.innerHTML = `${errorHTTP || text}: <em>"${this.action}"</em> (${status.status} ${text})`;
           this.feedback.error.classList.remove(ClassName.D_NONE);
         } else {
           this.feedback[status].innerHTML = text;
@@ -1747,11 +1721,11 @@
         if (!this.feedback) {
           this.feedback = {
             success: this.form.querySelector(Selector.DATA_SUCCESS),
-            error: this.form.querySelector(Selector.DATA_ERROR)
+            error: this.form.querySelector(Selector.DATA_ERROR),
           }; // Store the error alert's original text to be used as validation error message
 
           this.validationErrorMessage = this.feedback.error.innerHTML;
-          var feedbackDelay = this.form.getAttribute(Attribute.FEEDBACK_DELAY) || Default.FEEDBACK_DELAY;
+          const feedbackDelay = this.form.getAttribute(Attribute.FEEDBACK_DELAY) || Default.FEEDBACK_DELAY;
           this.feedbackDelay = parseInt(feedbackDelay, 10);
           this.feedbackTimeout = null;
         }
@@ -1794,14 +1768,12 @@
 
       FormEmail.toggleDisabled = function toggleDisabled(elements, disabled) {
         // If loading, set text to loading text, else return to original text.
-        mrUtil.forEach(elements, function (index, element) {
-          return element[disabled ? 'setAttribute' : 'removeAttribute'](Attribute.DISABLED, '');
-        });
+        mrUtil.forEach(elements, (index, element) => element[disabled ? 'setAttribute' : 'removeAttribute'](Attribute.DISABLED, ''));
       };
 
       FormEmail.getInstanceFromForm = function getInstanceFromForm(form) {
         if (mrUtil.isElement(form)) {
-          var data = $(form).data(DATA_KEY);
+          const data = $(form).data(DATA_KEY);
           return data || null;
         }
 
@@ -1809,9 +1781,9 @@
       };
 
       _proto.setSubmitEvent = function setSubmitEvent() {
-        var _this2 = this;
+        const _this2 = this;
 
-        $(this.form).on(Event.SUBMIT, function (event) {
+        $(this.form).on(Event.SUBMIT, (event) => {
           event.preventDefault();
 
           _this2.submitForm();
@@ -1820,8 +1792,8 @@
 
       FormEmail.jQueryInterface = function jQueryInterface() {
         return this.each(function jqEachFormEmail() {
-          var $element = $(this);
-          var data = $element.data(DATA_KEY);
+          const $element = $(this);
+          let data = $element.data(DATA_KEY);
 
           if (!data) {
             data = new FormEmail(this);
@@ -1831,27 +1803,26 @@
       };
 
       _createClass(FormEmail, null, [{
-        key: "VERSION",
+        key: 'VERSION',
         get: function get() {
           return VERSION;
-        }
+        },
       }]);
 
       return FormEmail;
-    }();
+    }());
     /**
      * ------------------------------------------------------------------------
      * Initialise by data attribute
      * ------------------------------------------------------------------------
      */
 
-
-    $(window).on(Event.LOAD_DATA_API, function () {
-      var FormEmailElements = $.makeArray($(Selector.DATA_FORM_EMAIL));
+    $(window).on(Event.LOAD_DATA_API, () => {
+      const FormEmailElements = $.makeArray($(Selector.DATA_FORM_EMAIL));
       /* eslint-disable no-plusplus */
 
-      for (var i = FormEmailElements.length; i--;) {
-        var $FormEmail = $(FormEmailElements[i]);
+      for (let i = FormEmailElements.length; i--;) {
+        const $FormEmail = $(FormEmailElements[i]);
         FormEmail.jQueryInterface.call($FormEmail, $FormEmail.data());
       }
     });
@@ -1872,11 +1843,10 @@
     };
     /* eslint-enable no-param-reassign */
 
-
     return FormEmail;
-  }(jQuery$1);
+  }(jQuery$1));
 
-  var mrIonRangeSlider = function ($) {
+  var mrIonRangeSlider = (function ($) {
     /**
      * Check for Ion rangeSlider dependency
      * https://github.com/IonDen/ion.rangeSlider
@@ -1884,7 +1854,6 @@
     if (typeof $.fn.ionRangeSlider !== 'function') {
       throw new Error('mrIonRangeSlider requires ion.rangeSlider.js (https://github.com/IonDen/ion.rangeSlider)');
     } // Check mrUtil is present and correct version
-
 
     if (!(mrUtil && mrUtil.version >= '1.2.0')) {
       throw new Error('mrUtil >= version 1.2.0 is required.');
@@ -1895,26 +1864,25 @@
      * ------------------------------------------------------------------------
      */
 
-
-    var NAME = 'mrIonRangeSlider';
-    var VERSION = '1.0.0';
-    var DATA_KEY = 'mr.ionRangeSlider';
-    var EVENT_KEY = "." + DATA_KEY;
-    var DATA_API_KEY = '.data-api';
-    var JQUERY_NO_CONFLICT = $.fn[NAME];
-    var ION_RANGE_SLIDER_KEY = 'ionRangeSlider';
-    var Event = {
-      LOAD_DATA_API: "load" + EVENT_KEY + DATA_API_KEY,
-      CHANGE: 'input'
+    const NAME = 'mrIonRangeSlider';
+    const VERSION = '1.0.0';
+    const DATA_KEY = 'mr.ionRangeSlider';
+    const EVENT_KEY = `.${DATA_KEY}`;
+    const DATA_API_KEY = '.data-api';
+    const JQUERY_NO_CONFLICT = $.fn[NAME];
+    const ION_RANGE_SLIDER_KEY = 'ionRangeSlider';
+    const Event = {
+      LOAD_DATA_API: `load${EVENT_KEY}${DATA_API_KEY}`,
+      CHANGE: 'input',
     };
-    var Selector = {
+    const Selector = {
       DATA_ATTR: 'ion-rangeslider',
       DATA_ION_RANGESLIDER: '[data-ion-rangeslider]',
       INPUT: 'INPUT',
-      TEXT: 'text'
+      TEXT: 'text',
     };
-    var Options = {
-      SKIN_DEFAULT: 'theme'
+    const Options = {
+      SKIN_DEFAULT: 'theme',
     };
     /**
      * ------------------------------------------------------------------------
@@ -1922,11 +1890,11 @@
      * ------------------------------------------------------------------------
      */
 
-    var IonRangeSlider =
-    /*#__PURE__*/
-    function () {
+    const IonRangeSlider =
+    /* #__PURE__ */
+    (function () {
       function IonRangeSlider(element) {
-        var $element = $(element);
+        const $element = $(element);
         this.options = $element.data();
         this.element = element;
         this.fromElement = null;
@@ -1935,11 +1903,10 @@
         this.initRangeSlider();
       } // getters
 
-
-      var _proto = IonRangeSlider.prototype;
+      const _proto = IonRangeSlider.prototype;
 
       _proto.initRangeSlider = function initRangeSlider() {
-        var options = this.options;
+        const { options } = this;
 
         if (options.fromSelector) {
           this.fromElement = document.querySelectorAll(options.fromSelector);
@@ -1961,7 +1928,7 @@
           onFinish: mrUtil.getFuncFromString(options.onFinish),
           onChange: this.handleChange,
           scope: this,
-          onUpdate: mrUtil.getFuncFromString(options.onUpdate)
+          onUpdate: mrUtil.getFuncFromString(options.onUpdate),
         });
         this.rangeSlider = $(this.element).data(ION_RANGE_SLIDER_KEY);
       } // HandleChange then also calls the user's callback
@@ -1977,11 +1944,11 @@
         }
 
         if (this.unitElement && this.unitElement.length > 0) {
-          var value = parseInt(data.from_value, 10) || data.value;
+          const value = parseInt(data.from_value, 10) || data.value;
           mrIonRangeSlider.updateValue(this.unitElement, value > 1 ? this.options.unitPlural : this.options.unitSingle);
         }
 
-        var userChangeFunction = mrUtil.getFuncFromString(this.options.onChange);
+        const userChangeFunction = mrUtil.getFuncFromString(this.options.onChange);
 
         if (userChangeFunction) {
           userChangeFunction(data);
@@ -1991,13 +1958,13 @@
       ;
 
       _proto.setToUpdateEvent = function setToUpdateEvent(collection) {
-        var _this = this;
+        const _this = this;
 
-        mrUtil.forEach(collection, function (index, element) {
+        mrUtil.forEach(collection, (index, element) => {
           if (element.tagName.toUpperCase() === Selector.INPUT && element.type === Selector.TEXT) {
-            element.addEventListener(Event.CHANGE, function () {
+            element.addEventListener(Event.CHANGE, () => {
               _this.rangeSlider.update({
-                to: element.value
+                to: element.value,
               });
             });
           }
@@ -2007,13 +1974,13 @@
       ;
 
       _proto.setFromUpdateEvent = function setFromUpdateEvent(collection) {
-        var _this2 = this;
+        const _this2 = this;
 
-        mrUtil.forEach(collection, function (index, element) {
+        mrUtil.forEach(collection, (index, element) => {
           if (element.tagName.toUpperCase() === Selector.INPUT && element.type === Selector.TEXT) {
-            element.addEventListener(Event.CHANGE, function () {
+            element.addEventListener(Event.CHANGE, () => {
               _this2.rangeSlider.update({
-                from: element.value
+                from: element.value,
               });
             });
           }
@@ -2021,18 +1988,18 @@
       };
 
       IonRangeSlider.updateValue = function updateValue(collection, value) {
-        mrUtil.forEach(collection, function (index, element) {
-          var updateElement = element; // If element is an input, set the value instead of textContent
+        mrUtil.forEach(collection, (index, element) => {
+          const updateElement = element; // If element is an input, set the value instead of textContent
 
-          var updateMethod = element.tagName.toUpperCase() === Selector.INPUT ? 'value' : 'textContent';
+          const updateMethod = element.tagName.toUpperCase() === Selector.INPUT ? 'value' : 'textContent';
           updateElement[updateMethod] = value;
         });
       };
 
       IonRangeSlider.jQueryInterface = function jQueryInterface() {
         return this.each(function jqEachIonRangeSlider() {
-          var $element = $(this);
-          var data = $element.data(DATA_KEY);
+          const $element = $(this);
+          let data = $element.data(DATA_KEY);
 
           if (!data) {
             data = new IonRangeSlider(this);
@@ -2042,27 +2009,26 @@
       };
 
       _createClass(IonRangeSlider, null, [{
-        key: "VERSION",
+        key: 'VERSION',
         get: function get() {
           return VERSION;
-        }
+        },
       }]);
 
       return IonRangeSlider;
-    }();
+    }());
     /**
      * ------------------------------------------------------------------------
      * Initialise by data attribute
      * ------------------------------------------------------------------------
      */
 
-
-    $(window).on(Event.LOAD_DATA_API, function () {
-      var ionRangeSliderElements = $.makeArray($(Selector.DATA_ION_RANGESLIDER));
+    $(window).on(Event.LOAD_DATA_API, () => {
+      const ionRangeSliderElements = $.makeArray($(Selector.DATA_ION_RANGESLIDER));
       /* eslint-disable no-plusplus */
 
-      for (var i = ionRangeSliderElements.length; i--;) {
-        var $ionRangeSlider = $(ionRangeSliderElements[i]);
+      for (let i = ionRangeSliderElements.length; i--;) {
+        const $ionRangeSlider = $(ionRangeSliderElements[i]);
         IonRangeSlider.jQueryInterface.call($ionRangeSlider, $ionRangeSlider.data());
       }
     });
@@ -2083,11 +2049,10 @@
     };
     /* eslint-enable no-param-reassign */
 
-
     return IonRangeSlider;
-  }(jQuery$1);
+  }(jQuery$1));
 
-  var mrIsotope = function ($) {
+  const mrIsotope = (function ($) {
     /**
      * Check for isotope dependency
      * isotope - https://github.com/metafizzy/isotope
@@ -2101,26 +2066,25 @@
      * ------------------------------------------------------------------------
      */
 
-
-    var NAME = 'mrIsotope';
-    var VERSION = '1.0.0';
-    var DATA_KEY = 'mr.isotope';
-    var EVENT_KEY = "." + DATA_KEY;
-    var DATA_API_KEY = '.data-api';
-    var JQUERY_NO_CONFLICT = $.fn[NAME];
-    var Css = {
-      ACTIVE: 'active'
+    const NAME = 'mrIsotope';
+    const VERSION = '1.0.0';
+    const DATA_KEY = 'mr.isotope';
+    const EVENT_KEY = `.${DATA_KEY}`;
+    const DATA_API_KEY = '.data-api';
+    const JQUERY_NO_CONFLICT = $.fn[NAME];
+    const Css = {
+      ACTIVE: 'active',
     };
-    var Event = {
-      LOAD_DATA_API: "load" + EVENT_KEY + DATA_API_KEY,
+    const Event = {
+      LOAD_DATA_API: `load${EVENT_KEY}${DATA_API_KEY}`,
       FILTER_CLICK: 'click touchstart',
-      SORTER_CLICK: 'click touchstart'
+      SORTER_CLICK: 'click touchstart',
     };
-    var Options = {
+    const Options = {
       DEFAULT_LAYOUT: 'masonry',
-      ORIGINAL_ORDER: 'original-order'
+      ORIGINAL_ORDER: 'original-order',
     };
-    var Selector = {
+    const Selector = {
       FILTER_INITIALISED: '.js-filter-inited',
       DATA_ATTR: 'isotope',
       ISOTOPE_ID: 'data-isotope-id',
@@ -2136,39 +2100,34 @@
       SORT_SELECTOR: 'data-sort-selector',
       DATA_CATEGORY: '[data-category]',
       SORT_ASCENDING: 'data-sort-ascending',
-      FILTER_ALL: '*'
+      FILTER_ALL: '*',
     }; // returns a selector string for filterable elements matching the provided category
 
     function getCategoryFilter(filterBy) {
-      return filterBy && filterBy !== Selector.FILTER_ALL ? "[" + Selector.CATEGORY + "*=\"" + filterBy + "\"]" : Selector.FILTER_ALL;
+      return filterBy && filterBy !== Selector.FILTER_ALL ? `[${Selector.CATEGORY}*="${filterBy}"]` : Selector.FILTER_ALL;
     } // returns a nodelist of all filter links matching the provided isotope ID
 
-
     function getFilters(isotopeId, exclude) {
-      var excludeSelector = exclude ? ":not(" + exclude + ")" : '';
-      var filters = document.querySelectorAll(Selector.DATA_ISOTOPE_FILTERS + "[" + Selector.ISOTOPE_ID + "=\"" + isotopeId + "\"] [" + Selector.FILTER + "]" + excludeSelector);
+      const excludeSelector = exclude ? `:not(${exclude})` : '';
+      const filters = document.querySelectorAll(`${Selector.DATA_ISOTOPE_FILTERS}[${Selector.ISOTOPE_ID}="${isotopeId}"] [${Selector.FILTER}]${excludeSelector}`);
       return filters;
     } // returns a nodelist of all sorter links matching the provided isotope ID
 
-
     function getSorters(isotopeId) {
-      return document.querySelectorAll(Selector.DATA_ISOTOPE_SORTERS + "[" + Selector.ISOTOPE_ID + "=\"" + isotopeId + "\"] [" + Selector.SORTER + "][" + Selector.SORT_SELECTOR + "],\n      " + Selector.DATA_ISOTOPE_SORTERS + "[" + Selector.ISOTOPE_ID + "=\"" + isotopeId + "\"] [" + Selector.SORTER + "][" + Selector.PRIMARY_SORTER + "][" + Selector.SECOND_SORTER + "]");
+      return document.querySelectorAll(`${Selector.DATA_ISOTOPE_SORTERS}[${Selector.ISOTOPE_ID}="${isotopeId}"] [${Selector.SORTER}][${Selector.SORT_SELECTOR}],\n      ${Selector.DATA_ISOTOPE_SORTERS}[${Selector.ISOTOPE_ID}="${isotopeId}"] [${Selector.SORTER}][${Selector.PRIMARY_SORTER}][${Selector.SECOND_SORTER}]`);
     } // returns a nodelist of all sorter links matching the provided sort value
 
-
     function getSorter(isotopeId, sortValue) {
-      return document.querySelectorAll(Selector.DATA_ISOTOPE_SORTERS + "[" + Selector.ISOTOPE_ID + "=\"" + isotopeId + "\"] [" + Selector.SORTER + "=\"" + sortValue + "\"]");
+      return document.querySelectorAll(`${Selector.DATA_ISOTOPE_SORTERS}[${Selector.ISOTOPE_ID}="${isotopeId}"] [${Selector.SORTER}="${sortValue}"]`);
     } // returns a nodelist of all filter links matching the provided filter value
 
-
     function getFilter(isotopeId, filter) {
-      return document.querySelectorAll(Selector.DATA_ISOTOPE_FILTERS + "[" + Selector.ISOTOPE_ID + "=\"" + isotopeId + "\"] [" + Selector.FILTER + "=\"" + filter + "\"]");
+      return document.querySelectorAll(`${Selector.DATA_ISOTOPE_FILTERS}[${Selector.ISOTOPE_ID}="${isotopeId}"] [${Selector.FILTER}="${filter}"]`);
     } // sets active class of provided elements on or off
-
 
     function toggleActive(filters, active) {
       if (filters) {
-        mrUtil.forEach(filters, function (index, filter) {
+        mrUtil.forEach(filters, (index, filter) => {
           if (filter && typeof filter.classList !== typeof undefined) {
             if (active) {
               filter.classList.add(Css.ACTIVE);
@@ -2185,13 +2144,12 @@
      * ------------------------------------------------------------------------
      */
 
-
-    var IsotopeWrapper =
-    /*#__PURE__*/
-    function () {
+    const IsotopeWrapper =
+    /* #__PURE__ */
+    (function () {
       function IsotopeWrapper(element) {
-        var $element = $(element);
-        var attributes = $element.data();
+        const $element = $(element);
+        const attributes = $element.data();
         this.element = element;
         this.attributes = attributes;
         this.filters = {};
@@ -2207,24 +2165,22 @@
         this.initFilters();
       } // getters
 
-
-      var _proto = IsotopeWrapper.prototype;
+      const _proto = IsotopeWrapper.prototype;
 
       _proto.initFilters = function initFilters() {
-        var _this = this;
+        const _this = this;
 
         // Get all filter links
-        var filters = getFilters(this.attributes.isotopeId, Selector.FILTER_INITIALISED);
-        mrUtil.forEach(filters, function (index, filter) {
-          var filterValue = filter.attributes[Selector.FILTER] && filter.attributes[Selector.FILTER].value; // Find all other filters matching this value to be de/activated on click
+        const filters = getFilters(this.attributes.isotopeId, Selector.FILTER_INITIALISED);
+        mrUtil.forEach(filters, (index, filter) => {
+          const filterValue = filter.attributes[Selector.FILTER] && filter.attributes[Selector.FILTER].value; // Find all other filters matching this value to be de/activated on click
 
           _this.filters[filterValue] = getFilter(_this.attributes.isotopeId, filterValue); // Set up filter click event
 
-          $(filter).on(Event.FILTER_CLICK, function (event) {
+          $(filter).on(Event.FILTER_CLICK, (event) => {
             if (event.preventDefault) {
               event.preventDefault();
             } // Activate appropriate links
-
 
             toggleActive(_this.activeFilter, false);
             toggleActive(_this.filters[filterValue], true);
@@ -2241,34 +2197,33 @@
       };
 
       _proto.initSorters = function initSorters() {
-        var _this2 = this;
+        const _this2 = this;
 
         // Get all sorters linked to current isotope-id
-        var sorters = getSorters(this.attributes.isotopeId);
-        var defaultSort = this.attributes.defaultSort || Options.ORIGINAL_ORDER;
-        mrUtil.forEach(sorters, function (index, sorter) {
+        const sorters = getSorters(this.attributes.isotopeId);
+        const defaultSort = this.attributes.defaultSort || Options.ORIGINAL_ORDER;
+        mrUtil.forEach(sorters, (index, sorter) => {
           // Get options from attributes
           // Done this way for brevity (previous way was too wordy)
-          var sa = sorter.attributes;
-          var ss = sa[Selector.SORTER];
-          var ssel = sa[Selector.SORT_SELECTOR];
-          var asc = sa[Selector.SORT_ASCENDING];
-          var pri = sa[Selector.PRIMARY_SORTER];
-          var sec = sa[Selector.SECOND_SORTER]; // Extract options from attributes
+          const sa = sorter.attributes;
+          const ss = sa[Selector.SORTER];
+          const ssel = sa[Selector.SORT_SELECTOR];
+          const asc = sa[Selector.SORT_ASCENDING];
+          const pri = sa[Selector.PRIMARY_SORTER];
+          const sec = sa[Selector.SECOND_SORTER]; // Extract options from attributes
 
-          var sortValue = ss && ss.value;
-          var sortSelector = ssel && ssel.value; // If secondSort is set, pass in an array rather than a single sort value
+          const sortValue = ss && ss.value;
+          const sortSelector = ssel && ssel.value; // If secondSort is set, pass in an array rather than a single sort value
 
-          var arraySort = pri && pri.value && sec && sec.value ? [pri.value, sec.value] : null;
-          var sortAscending = !(asc && asc.value && asc.value === 'false'); // Store list of other sorters matching this value to be de/activated on click
+          const arraySort = pri && pri.value && sec && sec.value ? [pri.value, sec.value] : null;
+          const sortAscending = !(asc && asc.value && asc.value === 'false'); // Store list of other sorters matching this value to be de/activated on click
 
           _this2.sorters[sortValue] = getSorter(_this2.attributes.isotopeId, sortValue); // Set up sorters click event for this one sorter
 
-          $(sorter).on(Event.SORTER_CLICK, function (event) {
+          $(sorter).on(Event.SORTER_CLICK, (event) => {
             if (event.preventDefault) {
               event.preventDefault();
             } // Switch active class on sorter links
-
 
             toggleActive(_this2.activeSorter, false);
             toggleActive(_this2.sorters[sortValue], true);
@@ -2303,13 +2258,13 @@
 
       _proto.initIsotope = function initIsotope() {
         // Get hash filter from URL
-        var hashFilter = window.location.hash.replace('#', '');
+        let hashFilter = window.location.hash.replace('#', '');
         hashFilter = hashFilter !== '' && !this.attributes.ignoreHash ? hashFilter : null; // Determine default filter
 
-        var defaultFilter = hashFilter || this.attributes.defaultFilter || Selector.FILTER_ALL;
-        var defaultFilterSelector = getCategoryFilter(defaultFilter); // Default to true, unless found to be explicitly false
+        const defaultFilter = hashFilter || this.attributes.defaultFilter || Selector.FILTER_ALL;
+        const defaultFilterSelector = getCategoryFilter(defaultFilter); // Default to true, unless found to be explicitly false
 
-        var defaultSortAscending = !this.attributes.sortAscending === false; // Setup initial config
+        const defaultSortAscending = !this.attributes.sortAscending === false; // Setup initial config
 
         this.options.itemSelector = Selector.DATA_ISOTOPE_ITEM;
         this.options.layoutMode = this.attributes.layoutMode || Options.DEFAULT_LAYOUT;
@@ -2322,8 +2277,8 @@
 
       IsotopeWrapper.jQueryInterface = function jQueryInterface() {
         return this.each(function jqEachIsotope() {
-          var $element = $(this);
-          var data = $element.data(DATA_KEY);
+          const $element = $(this);
+          let data = $element.data(DATA_KEY);
 
           if (!data) {
             data = new IsotopeWrapper(this);
@@ -2333,27 +2288,26 @@
       };
 
       _createClass(IsotopeWrapper, null, [{
-        key: "VERSION",
+        key: 'VERSION',
         get: function get() {
           return VERSION;
-        }
+        },
       }]);
 
       return IsotopeWrapper;
-    }();
+    }());
     /**
      * ------------------------------------------------------------------------
      * Initialise by data attribute
      * ------------------------------------------------------------------------
      */
 
-
-    $(window).on(Event.LOAD_DATA_API, function () {
-      var isotopeElements = $.makeArray($(Selector.DATA_ISOTOPE_COLLECTION));
+    $(window).on(Event.LOAD_DATA_API, () => {
+      const isotopeElements = $.makeArray($(Selector.DATA_ISOTOPE_COLLECTION));
       /* eslint-disable no-plusplus */
 
-      for (var i = isotopeElements.length; i--;) {
-        var $isotope = $(isotopeElements[i]);
+      for (let i = isotopeElements.length; i--;) {
+        const $isotope = $(isotopeElements[i]);
         IsotopeWrapper.jQueryInterface.call($isotope, $isotope.data());
       }
     });
@@ -2374,280 +2328,279 @@
     };
     /* eslint-enable no-param-reassign */
 
-
     return IsotopeWrapper;
-  }(jQuery$1);
+  }(jQuery$1));
 
   //
 
   (function ($) {
     if (typeof jarallax$1 === 'function') {
-      $('.alert-dismissible').on('closed.bs.alert', function () {
+      $('.alert-dismissible').on('closed.bs.alert', () => {
         jarallax$1(document.querySelectorAll('[data-jarallax],[data-jarallax-video]'), 'onScroll');
       });
-      $(document).on('resized.mr.overlayNav', function () {
+      $(document).on('resized.mr.overlayNav', () => {
         jarallax$1(document.querySelectorAll('[data-jarallax],[data-jarallax-video]'), 'onResize');
       });
-      document.addEventListener('injected.mr.SVGInjector', function () {
+      document.addEventListener('injected.mr.SVGInjector', () => {
         jarallax$1(document.querySelectorAll('[data-jarallax],[data-jarallax-video]'), 'onResize');
       });
-      var jarallaxOptions = {
+      const jarallaxOptions = {
         disableParallax: /iPad|iPhone|iPod|Android/,
-        disableVideo: /iPad|iPhone|iPod|Android/
+        disableVideo: /iPad|iPhone|iPod|Android/,
       };
-      $(window).on('load', function () {
+      $(window).on('load', () => {
         jarallax$1(document.querySelectorAll('[data-jarallax]'), jarallaxOptions);
-        var jarallaxDelay = document.querySelectorAll('[data-jarallax-video-delay]');
-        mrUtil.forEach(jarallaxDelay, function (index, elem) {
-          var source = elem.getAttribute('data-jarallax-video-delay');
+        const jarallaxDelay = document.querySelectorAll('[data-jarallax-video-delay]');
+        mrUtil.forEach(jarallaxDelay, (index, elem) => {
+          const source = elem.getAttribute('data-jarallax-video-delay');
           elem.removeAttribute('data-jarallax-video-delay');
           elem.setAttribute('data-jarallax-video', source);
         });
         jarallax$1(document.querySelectorAll('[data-jarallax-delay],[data-jarallax-video]'), jarallaxOptions);
       });
     }
-  })(jQuery$1);
+  }(jQuery$1));
 
-  var mrMapStyle = [{
+  const mrMapStyle = [{
     featureType: 'administrative.country',
     elementType: 'labels.text',
     stylers: [{
-      lightness: '29'
-    }]
+      lightness: '29',
+    }],
   }, {
     featureType: 'administrative.province',
     elementType: 'labels.text.fill',
     stylers: [{
-      lightness: '-12'
+      lightness: '-12',
     }, {
-      color: '#796340'
-    }]
+      color: '#796340',
+    }],
   }, {
     featureType: 'administrative.locality',
     elementType: 'labels.text.fill',
     stylers: [{
-      lightness: '15'
+      lightness: '15',
     }, {
-      saturation: '15'
-    }]
+      saturation: '15',
+    }],
   }, {
     featureType: 'landscape.man_made',
     elementType: 'geometry',
     stylers: [{
-      visibility: 'on'
+      visibility: 'on',
     }, {
-      color: '#fbf5ed'
-    }]
+      color: '#fbf5ed',
+    }],
   }, {
     featureType: 'landscape.natural',
     elementType: 'geometry',
     stylers: [{
-      visibility: 'on'
+      visibility: 'on',
     }, {
-      color: '#fbf5ed'
-    }]
+      color: '#fbf5ed',
+    }],
   }, {
     featureType: 'poi',
     elementType: 'labels',
     stylers: [{
-      visibility: 'off'
-    }]
+      visibility: 'off',
+    }],
   }, {
     featureType: 'poi.attraction',
     elementType: 'all',
     stylers: [{
-      visibility: 'on'
+      visibility: 'on',
     }, {
-      lightness: '30'
+      lightness: '30',
     }, {
-      saturation: '-41'
+      saturation: '-41',
     }, {
-      gamma: '0.84'
-    }]
+      gamma: '0.84',
+    }],
   }, {
     featureType: 'poi.attraction',
     elementType: 'labels',
     stylers: [{
-      visibility: 'on'
-    }]
+      visibility: 'on',
+    }],
   }, {
     featureType: 'poi.business',
     elementType: 'all',
     stylers: [{
-      visibility: 'off'
-    }]
+      visibility: 'off',
+    }],
   }, {
     featureType: 'poi.business',
     elementType: 'labels',
     stylers: [{
-      visibility: 'off'
-    }]
+      visibility: 'off',
+    }],
   }, {
     featureType: 'poi.medical',
     elementType: 'geometry',
     stylers: [{
-      color: '#fbd3da'
-    }]
+      color: '#fbd3da',
+    }],
   }, {
     featureType: 'poi.medical',
     elementType: 'labels',
     stylers: [{
-      visibility: 'on'
-    }]
+      visibility: 'on',
+    }],
   }, {
     featureType: 'poi.park',
     elementType: 'geometry',
     stylers: [{
-      color: '#b0e9ac'
+      color: '#b0e9ac',
     }, {
-      visibility: 'on'
-    }]
+      visibility: 'on',
+    }],
   }, {
     featureType: 'poi.park',
     elementType: 'labels',
     stylers: [{
-      visibility: 'on'
-    }]
+      visibility: 'on',
+    }],
   }, {
     featureType: 'poi.park',
     elementType: 'labels.text.fill',
     stylers: [{
-      hue: '#68ff00'
+      hue: '#68ff00',
     }, {
-      lightness: '-24'
+      lightness: '-24',
     }, {
-      gamma: '1.59'
-    }]
+      gamma: '1.59',
+    }],
   }, {
     featureType: 'poi.sports_complex',
     elementType: 'all',
     stylers: [{
-      visibility: 'on'
-    }]
+      visibility: 'on',
+    }],
   }, {
     featureType: 'poi.sports_complex',
     elementType: 'geometry',
     stylers: [{
-      saturation: '10'
+      saturation: '10',
     }, {
-      color: '#c3eb9a'
-    }]
+      color: '#c3eb9a',
+    }],
   }, {
     featureType: 'road',
     elementType: 'geometry.stroke',
     stylers: [{
-      visibility: 'on'
+      visibility: 'on',
     }, {
-      lightness: '30'
+      lightness: '30',
     }, {
-      color: '#e7ded6'
-    }]
+      color: '#e7ded6',
+    }],
   }, {
     featureType: 'road',
     elementType: 'labels',
     stylers: [{
-      visibility: 'on'
+      visibility: 'on',
     }, {
-      saturation: '-39'
+      saturation: '-39',
     }, {
-      lightness: '28'
+      lightness: '28',
     }, {
-      gamma: '0.86'
-    }]
+      gamma: '0.86',
+    }],
   }, {
     featureType: 'road.highway',
     elementType: 'geometry.fill',
     stylers: [{
-      color: '#ffe523'
+      color: '#ffe523',
     }, {
-      visibility: 'on'
-    }]
+      visibility: 'on',
+    }],
   }, {
     featureType: 'road.highway',
     elementType: 'geometry.stroke',
     stylers: [{
-      visibility: 'on'
+      visibility: 'on',
     }, {
-      saturation: '0'
+      saturation: '0',
     }, {
-      gamma: '1.44'
+      gamma: '1.44',
     }, {
-      color: '#fbc28b'
-    }]
+      color: '#fbc28b',
+    }],
   }, {
     featureType: 'road.highway',
     elementType: 'labels',
     stylers: [{
-      visibility: 'on'
+      visibility: 'on',
     }, {
-      saturation: '-40'
-    }]
+      saturation: '-40',
+    }],
   }, {
     featureType: 'road.arterial',
     elementType: 'geometry',
     stylers: [{
-      color: '#fed7a5'
-    }]
+      color: '#fed7a5',
+    }],
   }, {
     featureType: 'road.arterial',
     elementType: 'geometry.fill',
     stylers: [{
-      visibility: 'on'
+      visibility: 'on',
     }, {
-      gamma: '1.54'
+      gamma: '1.54',
     }, {
-      color: '#fbe38b'
-    }]
+      color: '#fbe38b',
+    }],
   }, {
     featureType: 'road.local',
     elementType: 'geometry.fill',
     stylers: [{
-      color: '#ffffff'
+      color: '#ffffff',
     }, {
-      visibility: 'on'
+      visibility: 'on',
     }, {
-      gamma: '2.62'
+      gamma: '2.62',
     }, {
-      lightness: '10'
-    }]
+      lightness: '10',
+    }],
   }, {
     featureType: 'road.local',
     elementType: 'geometry.stroke',
     stylers: [{
-      visibility: 'on'
+      visibility: 'on',
     }, {
-      weight: '0.50'
+      weight: '0.50',
     }, {
-      gamma: '1.04'
-    }]
+      gamma: '1.04',
+    }],
   }, {
     featureType: 'transit.station.airport',
     elementType: 'geometry.fill',
     stylers: [{
-      color: '#dee3fb'
-    }]
+      color: '#dee3fb',
+    }],
   }, {
     featureType: 'water',
     elementType: 'geometry',
     stylers: [{
-      saturation: '46'
+      saturation: '46',
     }, {
-      color: '#a4e1ff'
-    }]
+      color: '#a4e1ff',
+    }],
   }];
 
-  var mrMaps = function ($) {
+  const mrMaps = (function ($) {
     /**
      * ------------------------------------------------------------------------
      * Constants
      * ------------------------------------------------------------------------
      */
-    var NAME = 'mrMaps';
-    var VERSION = '1.1.0';
-    var DATA_KEY = 'mr.maps';
-    var EVENT_KEY = "." + DATA_KEY;
-    var JQUERY_NO_CONFLICT = $.fn[NAME];
-    var Selector = {
+    const NAME = 'mrMaps';
+    const VERSION = '1.1.0';
+    const DATA_KEY = 'mr.maps';
+    const EVENT_KEY = `.${DATA_KEY}`;
+    const JQUERY_NO_CONFLICT = $.fn[NAME];
+    const Selector = {
       MAP: '[data-maps-api-key]',
       MARKER: 'div.map-marker',
       STYLE: 'div.map-style',
@@ -2655,23 +2608,23 @@
       MARKER_LATLNG: 'data-latlong',
       MARKER_IMAGE: 'data-marker-image',
       MARKER_TITLE: 'data-marker-title',
-      INFOWindow: 'div.info-window'
+      INFOWindow: 'div.info-window',
     };
-    var String = {
-      MARKER_TITLE: ''
+    const String = {
+      MARKER_TITLE: '',
     };
-    var Event = {
-      MAP_LOADED: "loaded" + EVENT_KEY
+    const Event = {
+      MAP_LOADED: `loaded${EVENT_KEY}`,
     };
-    var Default = {
-      MARKER_IMAGE_URL: 'assets/img/map-marker.png',
+    const Default = {
+      MARKER_IMAGE_URL: '/img/map-marker.png',
       MAP: {
         disableDefaultUI: true,
         draggable: true,
         scrollwheel: false,
         zoom: 17,
-        zoomControl: false
-      }
+        zoomControl: false,
+      },
     }; // mrMapStyle should be defined in a js file included prior to maps.js
     // The data should be an array of style overrides as per snazzymaps.com.
 
@@ -2682,9 +2635,9 @@
      * ------------------------------------------------------------------------
      */
 
-    var Map =
-    /*#__PURE__*/
-    function () {
+    const Map =
+    /* #__PURE__ */
+    (function () {
       function Map(element) {
         // The current map element
         this.element = element;
@@ -2697,33 +2650,32 @@
         this.createMarkers();
       } // version getter
 
-
       Map.init = function init() {
-        var mapsOnPage = $.makeArray($(Selector.MAP));
+        const mapsOnPage = $.makeArray($(Selector.MAP));
         /* eslint-disable no-plusplus */
 
-        for (var i = mapsOnPage.length; i--;) {
-          var $map = $(mapsOnPage[i]);
+        for (let i = mapsOnPage.length; i--;) {
+          const $map = $(mapsOnPage[i]);
           Map.jQueryInterface.call($map, $map.data());
         }
       };
 
-      var _proto = Map.prototype;
+      const _proto = Map.prototype;
 
       _proto.initMap = function initMap() {
-        var _this = this;
+        const _this = this;
 
-        var mapElement = this.element;
-        var mapInstance = this.$element;
-        var showZoomControl = typeof mapInstance.attr('data-zoom-controls') !== typeof undefined;
-        var zoomControlPos = typeof mapInstance.attr('data-zoom-controls') !== typeof undefined ? mapInstance.attr('data-zoom-controls') : false;
-        var latlong = typeof mapInstance.attr('data-latlong') !== typeof undefined ? mapInstance.attr('data-latlong') : false;
-        var latitude = latlong ? parseFloat(latlong.substr(0, latlong.indexOf(','))) : false;
-        var longitude = latlong ? parseFloat(latlong.substr(latlong.indexOf(',') + 1)) : false;
-        var address = mapInstance.attr('data-address') || '';
-        var mapOptions = null; // let markerOptions = null;
+        const mapElement = this.element;
+        const mapInstance = this.$element;
+        const showZoomControl = typeof mapInstance.attr('data-zoom-controls') !== typeof undefined;
+        const zoomControlPos = typeof mapInstance.attr('data-zoom-controls') !== typeof undefined ? mapInstance.attr('data-zoom-controls') : false;
+        const latlong = typeof mapInstance.attr('data-latlong') !== typeof undefined ? mapInstance.attr('data-latlong') : false;
+        const latitude = latlong ? parseFloat(latlong.substr(0, latlong.indexOf(','))) : false;
+        const longitude = latlong ? parseFloat(latlong.substr(latlong.indexOf(',') + 1)) : false;
+        const address = mapInstance.attr('data-address') || '';
+        let mapOptions = null; // let markerOptions = null;
 
-        var mapAo = {}; // Attribute overrides - allows data attributes on the map to override global options
+        const mapAo = {}; // Attribute overrides - allows data attributes on the map to override global options
 
         try {
           mapAo.styles = this.styleElement.length ? JSON.parse(this.styleElement.html().trim()) : undefined;
@@ -2734,14 +2686,14 @@
         mapAo.zoom = mapInstance.attr('data-map-zoom') ? parseInt(mapInstance.attr('data-map-zoom'), 10) : undefined;
         mapAo.zoomControl = showZoomControl;
         mapAo.zoomControlOptions = zoomControlPos !== false ? {
-          position: google.maps.ControlPosition[zoomControlPos]
+          position: google.maps.ControlPosition[zoomControlPos],
         } : undefined;
         mapOptions = jQuery.extend({}, Default.MAP, mapAo);
         this.map = new google.maps.Map(mapElement, mapOptions);
-        google.maps.event.addListenerOnce(this.map, 'center_changed', function () {
+        google.maps.event.addListenerOnce(this.map, 'center_changed', () => {
           // Map has been centered.
-          var loadedEvent = $.Event(Event.MAP_LOADED, {
-            map: _this.map
+          const loadedEvent = $.Event(Event.MAP_LOADED, {
+            map: _this.map,
           });
           mapInstance.trigger(loadedEvent);
         });
@@ -2757,10 +2709,10 @@
 
       _proto.geocodeAddress = function geocodeAddress(address, callback, thisMap, args) {
         this.geocoder.geocode({
-          address: address
-        }, function (results, status) {
+          address,
+        }, (results, status) => {
           if (status !== google.maps.GeocoderStatus.OK) {
-            throw new Error("There was a problem geocoding the address \"" + address + "\".");
+            throw new Error(`There was a problem geocoding the address "${address}".`);
           } else {
             callback(results, thisMap, args);
           }
@@ -2776,44 +2728,43 @@
       };
 
       _proto.createMarkers = function createMarkers() {
-        var _this2 = this;
+        const _this2 = this;
 
         Default.MARKER = {
           icon: {
             url: this.$element.attr(Selector.MARKER_IMAGE) || Default.MARKER_IMAGE_URL,
-            scaledSize: new google.maps.Size(50, 50)
+            scaledSize: new google.maps.Size(50, 50),
           },
           title: String.MARKER_TITLE,
-          optimised: false
+          optimised: false,
         };
-        this.markerElements.each(function (index, marker) {
-          var gMarker;
-          var $marker = $(marker);
-          var markerAddress = $marker.attr(Selector.MARKER_ADDRESS);
-          var markerLatLng = $marker.attr(Selector.MARKER_LATLNG);
-          var infoWindow = $marker.find(Selector.INFOWindow);
-          var markerAo = {
-            title: $marker.attr(Selector.MARKER_TITLE)
+        this.markerElements.each((index, marker) => {
+          let gMarker;
+          const $marker = $(marker);
+          const markerAddress = $marker.attr(Selector.MARKER_ADDRESS);
+          const markerLatLng = $marker.attr(Selector.MARKER_LATLNG);
+          const infoWindow = $marker.find(Selector.INFOWindow);
+          const markerAo = {
+            title: $marker.attr(Selector.MARKER_TITLE),
           };
           markerAo.icon = typeof $marker.attr(Selector.MARKER_IMAGE) !== typeof undefined ? {
             url: $marker.attr(Selector.MARKER_IMAGE),
-            scaledSize: new google.maps.Size(50, 50)
+            scaledSize: new google.maps.Size(50, 50),
           } : undefined;
-          var markerOptions = jQuery.extend({}, Default.MARKER, markerAo);
+          const markerOptions = jQuery.extend({}, Default.MARKER, markerAo);
           gMarker = new google.maps.Marker(jQuery.extend({}, markerOptions, {
-            map: _this2.map
+            map: _this2.map,
           }));
 
           if (infoWindow.length) {
-            var gInfoWindow = new google.maps.InfoWindow({
+            const gInfoWindow = new google.maps.InfoWindow({
               content: infoWindow.first().html(),
-              maxWidth: parseInt(infoWindow.attr('data-max-width') || '250', 10)
+              maxWidth: parseInt(infoWindow.attr('data-max-width') || '250', 10),
             });
-            gMarker.addListener('click', function () {
+            gMarker.addListener('click', () => {
               gInfoWindow.open(_this2.map, gMarker);
             });
           } // Set marker position
-
 
           if (markerLatLng) {
             if (/(-?\d+(\.\d+)?),\s*(-?\d+(\.\d+)?)/.test(markerLatLng)) {
@@ -2826,15 +2777,15 @@
             _this2.markers[index] = gMarker;
           } else {
             gMarker = null;
-            throw new Error("Invalid data-address or data-latlong provided for marker " + (index + 1));
+            throw new Error(`Invalid data-address or data-latlong provided for marker ${index + 1}`);
           }
         });
       };
 
       Map.jQueryInterface = function jQueryInterface() {
         return this.each(function jqEachMap() {
-          var $element = $(this);
-          var data = $element.data(DATA_KEY);
+          const $element = $(this);
+          let data = $element.data(DATA_KEY);
 
           if (!data) {
             data = new Map(this);
@@ -2844,14 +2795,14 @@
       };
 
       _createClass(Map, null, [{
-        key: "VERSION",
+        key: 'VERSION',
         get: function get() {
           return VERSION;
-        }
+        },
       }]);
 
       return Map;
-    }(); // END Class definition
+    }()); // END Class definition
 
     /**
      * ------------------------------------------------------------------------
@@ -2860,15 +2811,14 @@
      */
     // Load Google MAP API JS with callback to initialise when fully loaded
 
-
     if (document.querySelector('[data-maps-api-key]') && !document.querySelector('.gMapsAPI')) {
       if ($('[data-maps-api-key]').length) {
-        var apiKey = $('[data-maps-api-key]:first').attr('data-maps-api-key') || '';
+        const apiKey = $('[data-maps-api-key]:first').attr('data-maps-api-key') || '';
 
         if (apiKey !== '') {
-          var script = document.createElement('script');
+          const script = document.createElement('script');
           script.type = 'text/javascript';
-          script.src = "https://maps.googleapis.com/maps/api/js?key=" + apiKey + "&callback=theme.mrMaps.init";
+          script.src = `https://maps.googleapis.com/maps/api/js?key=${apiKey}&callback=theme.mrMaps.init`;
           script.className = 'gMapsAPI';
           document.body.appendChild(script);
         }
@@ -2882,7 +2832,6 @@
 
     /* eslint-disable no-param-reassign */
 
-
     $.fn[NAME] = Map.jQueryInterface;
     $.fn[NAME].Constructor = Map;
 
@@ -2892,37 +2841,36 @@
     };
     /* eslint-enable no-param-reassign */
 
-
     return Map;
-  }(jQuery);
+  }(jQuery));
 
-  var mrOverlayNav = function ($) {
+  const mrOverlayNav = (function ($) {
     /**
      * ------------------------------------------------------------------------
      * Constants
      * ------------------------------------------------------------------------
      */
-    var NAME = 'mrOverlayNav';
-    var VERSION = '1.1.0';
-    var DATA_KEY = 'mr.overlayNav';
-    var EVENT_KEY = "." + DATA_KEY;
-    var JQUERY_NO_CONFLICT = $.fn[NAME];
-    var Event = {
-      RESIZE: "resize" + EVENT_KEY,
-      RESIZED: "resized" + EVENT_KEY,
+    const NAME = 'mrOverlayNav';
+    const VERSION = '1.1.0';
+    const DATA_KEY = 'mr.overlayNav';
+    const EVENT_KEY = `.${DATA_KEY}`;
+    const JQUERY_NO_CONFLICT = $.fn[NAME];
+    const Event = {
+      RESIZE: `resize${EVENT_KEY}`,
+      RESIZED: `resized${EVENT_KEY}`,
       IMAGE_LOAD: 'load',
       TOGGLE_SHOW: 'show.bs.collapse',
       TOGGLE_HIDDEN: 'hidden.bs.collapse',
       NOTIFICATION_CLOSE: '',
-      ALERT_CLOSE: 'close.bs.alert'
+      ALERT_CLOSE: 'close.bs.alert',
     };
-    var Selector = {
+    const Selector = {
       CONTAINER: 'body > div.navbar-container',
       OVERLAY_NAV: 'body > div.navbar-container > nav[data-overlay]',
       NAV: 'nav',
       OVERLAY_SECTION: '[data-overlay]',
       IMAGE: 'img',
-      NAV_TOGGLED: 'navbar-toggled-show'
+      NAV_TOGGLED: 'navbar-toggled-show',
     };
     /**
      * ------------------------------------------------------------------------
@@ -2930,9 +2878,9 @@
      * ------------------------------------------------------------------------
      */
 
-    var OverlayNav =
-    /*#__PURE__*/
-    function () {
+    const OverlayNav =
+    /* #__PURE__ */
+    (function () {
       function OverlayNav(element) {
         this.ticking = false; // Used to debounce resize event
 
@@ -2947,8 +2895,7 @@
         this.setNavToggleEvents();
       } // getters
 
-
-      var _proto = OverlayNav.prototype;
+      const _proto = OverlayNav.prototype;
 
       _proto.getNavHeight = function getNavHeight() {
         this.navHeight = this.element.getBoundingClientRect().height;
@@ -2967,8 +2914,8 @@
           return;
         }
 
-        this.container.style.minHeight = this.navHeight + "px";
-        this.container.style.marginBottom = "-" + this.navHeight + "px";
+        this.container.style.minHeight = `${this.navHeight}px`;
+        this.container.style.marginBottom = `-${this.navHeight}px`;
       };
 
       _proto.updateOverlayElement = function updateOverlayElement() {
@@ -2976,15 +2923,15 @@
           return;
         }
 
-        this.overlayElement.style.setProperty('padding-top', this.navHeight + "px", 'important');
+        this.overlayElement.style.setProperty('padding-top', `${this.navHeight}px`, 'important');
       };
 
       _proto.setResizeEvent = function setResizeEvent() {
-        var _this = this;
+        const _this = this;
 
-        $(window).on(Event.RESIZE + " " + Event.ALERT_CLOSE, function () {
+        $(window).on(`${Event.RESIZE} ${Event.ALERT_CLOSE}`, () => {
           if (!_this.ticking) {
-            window.requestAnimationFrame(function () {
+            window.requestAnimationFrame(() => {
               _this.updateValues();
 
               _this.ticking = false;
@@ -2995,26 +2942,24 @@
       };
 
       _proto.setNavToggleEvents = function setNavToggleEvents() {
-        var _this2 = this;
+        const _this2 = this;
 
-        $(this.element).on("" + Event.TOGGLE_SHOW, function () {
+        $(this.element).on(`${Event.TOGGLE_SHOW}`, () => {
           _this2.navToggled = true;
         }); // navHeight should only be recalculated when the nav is not open/toggled
         // Don't allow the navHeight to be recalculated until the nav is fully hidden
 
-        $(this.element).on("" + Event.TOGGLE_HIDDEN, function () {
+        $(this.element).on(`${Event.TOGGLE_HIDDEN}`, () => {
           _this2.navToggled = false;
         });
       };
 
       _proto.setImageLoadEvent = function setImageLoadEvent() {
-        var _this3 = this;
+        const _this3 = this;
 
-        var images = this.container.querySelectorAll(Selector.IMAGE);
-        mrUtil.forEach(images, function (index, image) {
-          image.addEventListener(Event.IMAGE_LOAD, function () {
-            return _this3.updateValues();
-          });
+        const images = this.container.querySelectorAll(Selector.IMAGE);
+        mrUtil.forEach(images, (index, image) => {
+          image.addEventListener(Event.IMAGE_LOAD, () => _this3.updateValues());
         });
       };
 
@@ -3027,13 +2972,13 @@
       };
 
       OverlayNav.getFirstOverlayElement = function getFirstOverlayElement() {
-        return document.querySelector(Selector.OVERLAY_SECTION + ":not(" + Selector.NAV + ")");
+        return document.querySelector(`${Selector.OVERLAY_SECTION}:not(${Selector.NAV})`);
       };
 
       OverlayNav.jQueryInterface = function jQueryInterface() {
         return this.each(function jqEachoverlayNav() {
-          var $element = $(this);
-          var data = $element.data(DATA_KEY);
+          const $element = $(this);
+          let data = $element.data(DATA_KEY);
 
           if (!data) {
             data = new OverlayNav(this);
@@ -3043,27 +2988,26 @@
       };
 
       _createClass(OverlayNav, null, [{
-        key: "VERSION",
+        key: 'VERSION',
         get: function get() {
           return VERSION;
-        }
+        },
       }]);
 
       return OverlayNav;
-    }();
+    }());
     /**
      * ------------------------------------------------------------------------
      * Initialise by data attribute
      * ------------------------------------------------------------------------
      */
 
-
-    $(document).ready(function () {
-      var overlayNavElements = $.makeArray($(Selector.OVERLAY_NAV));
+    $(document).ready(() => {
+      const overlayNavElements = $.makeArray($(Selector.OVERLAY_NAV));
       /* eslint-disable no-plusplus */
 
-      for (var i = overlayNavElements.length; i--;) {
-        var $overlayNav = $(overlayNavElements[i]);
+      for (let i = overlayNavElements.length; i--;) {
+        const $overlayNav = $(overlayNavElements[i]);
         OverlayNav.jQueryInterface.call($overlayNav, $overlayNav.data());
       }
     });
@@ -3084,31 +3028,30 @@
     };
     /* eslint-enable no-param-reassign */
 
-
     return OverlayNav;
-  }(jQuery$1);
+  }(jQuery$1));
 
   //
 
   (function ($) {
-    var Event = {
+    const Event = {
       TOGGLE_SHOW: 'show.bs.collapse',
-      TOGGLE_HIDE: 'hide.bs.collapse'
+      TOGGLE_HIDE: 'hide.bs.collapse',
     };
-    var Selector = {
+    const Selector = {
       CONTAINER: 'body > div.navbar-container',
-      NAV: '.navbar-container > .navbar'
+      NAV: '.navbar-container > .navbar',
     };
-    var ClassName = {
-      TOGGLED_SHOW: 'navbar-toggled-show'
+    const ClassName = {
+      TOGGLED_SHOW: 'navbar-toggled-show',
     };
-    var container = document.querySelector(Selector.CONTAINER);
-    var nav = document.querySelector(Selector.NAV);
-    $(container).on(Event.TOGGLE_SHOW + " " + Event.TOGGLE_HIDE, function (evt) {
-      var action = evt.type + "." + evt.namespace === Event.TOGGLE_SHOW ? 'add' : 'remove';
+    const container = document.querySelector(Selector.CONTAINER);
+    const nav = document.querySelector(Selector.NAV);
+    $(container).on(`${Event.TOGGLE_SHOW} ${Event.TOGGLE_HIDE}`, (evt) => {
+      const action = `${evt.type}.${evt.namespace}` === Event.TOGGLE_SHOW ? 'add' : 'remove';
       nav.classList[action](ClassName.TOGGLED_SHOW);
     });
-  })(jQuery$1);
+  }(jQuery$1));
 
   //
   Plyr.setup('[data-provider],.plyr');
@@ -3116,18 +3059,18 @@
   //
 
   (function ($) {
-    $(document).on('hide.bs.tab', function (evt) {
+    $(document).on('hide.bs.tab', (evt) => {
       $($(evt.target).attr('href')).find('[data-toggle="popover"]').popover('hide');
     });
-    $(document).on('hide.bs.collapse', function (evt) {
+    $(document).on('hide.bs.collapse', (evt) => {
       $(evt.target).find('[data-toggle="popover"]').popover('hide');
     });
-  })(jQuery$1);
+  }(jQuery$1));
 
   //
   Prism.highlightAll();
 
-  var mrReadingPosition = function ($) {
+  const mrReadingPosition = (function ($) {
     /**
      * Check for scrollMonitor dependency
      * scrollMonitor - https://github.com/stutrek/scrollMonitor
@@ -3141,40 +3084,39 @@
      * ------------------------------------------------------------------------
      */
 
-
-    var NAME = 'mrReadingPosition';
-    var VERSION = '1.0.0';
-    var DATA_KEY = 'mr.readingPosition';
-    var EVENT_KEY = "." + DATA_KEY;
-    var DATA_API_KEY = '.data-api';
-    var JQUERY_NO_CONFLICT = $.fn[NAME];
-    var Css = {
-      HIDDEN: 'reading-position-hidden'
+    const NAME = 'mrReadingPosition';
+    const VERSION = '1.0.0';
+    const DATA_KEY = 'mr.readingPosition';
+    const EVENT_KEY = `.${DATA_KEY}`;
+    const DATA_API_KEY = '.data-api';
+    const JQUERY_NO_CONFLICT = $.fn[NAME];
+    const Css = {
+      HIDDEN: 'reading-position-hidden',
     };
-    var Event = {
-      LOAD_DATA_API: "load" + EVENT_KEY + DATA_API_KEY,
+    const Event = {
+      LOAD_DATA_API: `load${EVENT_KEY}${DATA_API_KEY}`,
       RESIZE: 'resize',
-      SCROLL: 'scroll'
+      SCROLL: 'scroll',
     };
-    var Selector = {
+    const Selector = {
       PROGRESS: 'progress.reading-position',
       DATA_ATTR: 'reading-position',
       DATA_READING_POSITION: '[data-reading-position]',
       VALUE: 'value',
-      MAX: 'max'
+      MAX: 'max',
     };
-    var Value = {
+    const Value = {
       BAR_MAX: 100,
-      BAR_MIN: 0
+      BAR_MIN: 0,
     };
-    var progressBars = document.querySelectorAll(Selector.PROGRESS); // const $window = $(window);
+    const progressBars = document.querySelectorAll(Selector.PROGRESS); // const $window = $(window);
     // const $document = $(document);
 
-    var getWindowHeight = function getWindowHeight() {
+    const getWindowHeight = function getWindowHeight() {
       return Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
     };
 
-    var getScrollPosition = function getScrollPosition() {
+    const getScrollPosition = function getScrollPosition() {
       return (document.documentElement.scrollTop === 0 ? document.body.scrollTop : document.documentElement.scrollTop) || 0;
     };
     /**
@@ -3183,10 +3125,9 @@
      * ------------------------------------------------------------------------
      */
 
-
-    var ReadingPosition =
-    /*#__PURE__*/
-    function () {
+    const ReadingPosition =
+    /* #__PURE__ */
+    (function () {
       function ReadingPosition(element) {
         this.progressBars = progressBars;
         this.element = element;
@@ -3205,16 +3146,15 @@
         this.setResizeEvent();
       } // get VERSION
 
-
-      var _proto = ReadingPosition.prototype;
+      const _proto = ReadingPosition.prototype;
 
       _proto.initWatcher = function initWatcher(element) {
-        var _this = this;
+        const _this = this;
 
-        var watcher = scrollMonitor.create(element);
+        const watcher = scrollMonitor.create(element);
         this.watcher = watcher;
         this.recalculateAll();
-        watcher.stateChange(function () {
+        watcher.stateChange(() => {
           _this.inView = watcher.isInViewport;
           _this.reading = watcher.isAboveViewport && watcher.isFullyInViewport;
 
@@ -3223,22 +3163,22 @@
       };
 
       _proto.initBarValues = function initBarValues() {
-        mrUtil.forEach(this.progressBars, function (index, bar) {
+        mrUtil.forEach(this.progressBars, (index, bar) => {
           bar.setAttribute(Selector.MAX, Value.BAR_MAX);
         });
       };
 
       _proto.setValue = function setValue(scrollPosition) {
-        var _this2 = this;
+        const _this2 = this;
 
         this.recalculatePercentage(scrollPosition);
-        mrUtil.forEach(this.progressBars, function (index, bar) {
+        mrUtil.forEach(this.progressBars, (index, bar) => {
           bar.setAttribute(Selector.VALUE, _this2.articlePositionPercent);
         });
       };
 
       _proto.toggleBars = function toggleBars(show) {
-        mrUtil.forEach(this.progressBars, function (index, bar) {
+        mrUtil.forEach(this.progressBars, (index, bar) => {
           if (show) {
             bar.classList.remove(Css.HIDDEN);
           } else {
@@ -3248,13 +3188,13 @@
       };
 
       _proto.setScrollEvent = function setScrollEvent() {
-        var _this3 = this;
+        const _this3 = this;
 
-        window.addEventListener(Event.SCROLL, function () {
-          var scrollPosition = getScrollPosition();
+        window.addEventListener(Event.SCROLL, () => {
+          const scrollPosition = getScrollPosition();
 
           if (!_this3.ticking && _this3.inView && _this3.reading) {
-            window.requestAnimationFrame(function () {
+            window.requestAnimationFrame(() => {
               _this3.setValue(scrollPosition);
 
               _this3.ticking = false;
@@ -3265,11 +3205,9 @@
       };
 
       _proto.setResizeEvent = function setResizeEvent() {
-        var _this4 = this;
+        const _this4 = this;
 
-        window.addEventListener(Event.RESIZE, function () {
-          return _this4.recalculateAll();
-        });
+        window.addEventListener(Event.RESIZE, () => _this4.recalculateAll());
       };
 
       _proto.recalculateAll = function recalculateAll() {
@@ -3290,8 +3228,8 @@
 
       ReadingPosition.jQueryInterface = function jQueryInterface() {
         return this.each(function jqEachReadingPosition() {
-          var $element = $(this);
-          var data = $element.data(DATA_KEY);
+          const $element = $(this);
+          let data = $element.data(DATA_KEY);
 
           if (!data) {
             data = new ReadingPosition(this);
@@ -3301,33 +3239,31 @@
       };
 
       _createClass(ReadingPosition, null, [{
-        key: "VERSION",
+        key: 'VERSION',
         get: function get() {
           return VERSION;
-        }
+        },
       }]);
 
       return ReadingPosition;
-    }();
+    }());
     /**
      * ------------------------------------------------------------------------
      * Initialise by data attribute
      * ------------------------------------------------------------------------
      */
 
-
-    $(window).on(Event.LOAD_DATA_API, function () {
+    $(window).on(Event.LOAD_DATA_API, () => {
       // Proceed to initialise only if a progress bar is found in the document
       if (progressBars.length === 0) {
         return;
       } // Gather articles and loop over, initialising ReadingPosition instance
 
-
-      var readingPositionElements = $.makeArray($(Selector.DATA_READING_POSITION));
+      const readingPositionElements = $.makeArray($(Selector.DATA_READING_POSITION));
       /* eslint-disable no-plusplus */
 
-      for (var i = readingPositionElements.length; i--;) {
-        var $readingPosition = $(readingPositionElements[i]);
+      for (let i = readingPositionElements.length; i--;) {
+        const $readingPosition = $(readingPositionElements[i]);
         ReadingPosition.jQueryInterface.call($readingPosition, $readingPosition.data());
       }
     });
@@ -3348,21 +3284,20 @@
     };
     /* eslint-enable no-param-reassign */
 
-
     return ReadingPosition;
-  }(jQuery);
+  }(jQuery));
 
   //
 
-  var mrSmoothScroll = function ($) {
-    var smoothScroll = new SmoothScroll('a[data-smooth-scroll]', {
+  const mrSmoothScroll = (function ($) {
+    const smoothScroll = new SmoothScroll('a[data-smooth-scroll]', {
       speedAsDuration: true,
-      offset: $('body').attr('data-smooth-scroll-offset') || 0
+      offset: $('body').attr('data-smooth-scroll-offset') || 0,
     });
     return smoothScroll;
-  }(jQuery$1);
+  }(jQuery$1));
 
-  var mrSticky = function ($) {
+  const mrSticky = (function ($) {
     /**
      * Check for scrollMonitor dependency
      * scrollMonitor - https://github.com/stutrek/scrollMonitor
@@ -3376,43 +3311,42 @@
      * ------------------------------------------------------------------------
      */
 
-
-    var NAME = 'mrSticky';
-    var VERSION = '1.4.0';
-    var DATA_KEY = 'mr.sticky';
-    var EVENT_KEY = "." + DATA_KEY;
-    var DATA_API_KEY = '.data-api';
-    var JQUERY_NO_CONFLICT = $.fn[NAME];
-    var NO_OFFSET = 0;
-    var ClassName = {
+    const NAME = 'mrSticky';
+    const VERSION = '1.4.0';
+    const DATA_KEY = 'mr.sticky';
+    const EVENT_KEY = `.${DATA_KEY}`;
+    const DATA_API_KEY = '.data-api';
+    const JQUERY_NO_CONFLICT = $.fn[NAME];
+    const NO_OFFSET = 0;
+    const ClassName = {
       FIXED_TOP: 'position-fixed',
       ABSOLUTE_BOTTOM: 'sticky-bottom',
       FIXED_BOTTOM: 'sticky-viewport-bottom',
-      SCROLLED: 'scrolled'
+      SCROLLED: 'scrolled',
     };
-    var Css = {
+    const Css = {
       HEIGHT: 'min-height',
       WIDTH: 'max-width',
       SPACE_TOP: 'top',
-      SPACE_BOTTOM: 'bottom'
+      SPACE_BOTTOM: 'bottom',
     };
-    var Event = {
-      LOAD_DATA_API: "load" + EVENT_KEY + DATA_API_KEY,
+    const Event = {
+      LOAD_DATA_API: `load${EVENT_KEY}${DATA_API_KEY}`,
       WINDOW_RESIZE: 'resize',
       ALERT_CLOSED: 'closed.bs.alert',
       TOGGLE_SHOW: 'show.bs.collapse',
-      TOGGLE_HIDDEN: 'hidden.bs.collapse'
+      TOGGLE_HIDDEN: 'hidden.bs.collapse',
     };
-    var Options = {
+    const Options = {
       BELOW_NAV: 'below-nav',
       TOP: 'top',
-      BOTTOM: 'bottom'
+      BOTTOM: 'bottom',
     };
-    var Selector = {
+    const Selector = {
       DATA_ATTR: 'sticky',
       DATA_STICKY: '[data-sticky]',
       NAV_STICKY: 'body > div.navbar-container [data-sticky="top"]',
-      ALERT: '.alert-dismissible'
+      ALERT: '.alert-dismissible',
     };
     /**
      * ------------------------------------------------------------------------
@@ -3420,13 +3354,13 @@
      * ------------------------------------------------------------------------
      */
 
-    var Sticky =
-    /*#__PURE__*/
-    function () {
+    const Sticky =
+    /* #__PURE__ */
+    (function () {
       function Sticky(element) {
-        var $element = $(element);
-        var stickyData = $element.data(Selector.DATA_ATTR);
-        var stickyUntil = $element.closest('section') || null;
+        const $element = $(element);
+        const stickyData = $element.data(Selector.DATA_ATTR);
+        const stickyUntil = $element.closest('section') || null;
         this.element = element;
         this.stickBelowNav = stickyData === Options.BELOW_NAV;
         this.stickBottom = stickyData === Options.BOTTOM;
@@ -3447,25 +3381,24 @@
         }
       } // getters
 
-
-      var _proto = Sticky.prototype;
+      const _proto = Sticky.prototype;
 
       _proto.initWatcher = function initWatcher(element) {
-        var _this = this;
+        const _this = this;
 
-        var $element = $(element);
-        var notNavElement = !this.isNavElement;
-        var offset = this.stickBelowNav && this.navIsSticky && notNavElement ? {
-          top: this.navHeight
+        const $element = $(element);
+        const notNavElement = !this.isNavElement;
+        let offset = this.stickBelowNav && this.navIsSticky && notNavElement ? {
+          top: this.navHeight,
         } : NO_OFFSET;
         offset = this.stickBottom && notNavElement ? {
-          bottom: -$element.outerHeight
+          bottom: -$element.outerHeight,
         } : offset;
-        var watcher = scrollMonitor.create(element, offset); // ensure that we're always watching the place the element originally was
+        const watcher = scrollMonitor.create(element, offset); // ensure that we're always watching the place the element originally was
 
         watcher.lock();
-        var untilWatcher = this.stickyUntil !== null ? scrollMonitor.create(this.stickyUntil, {
-          bottom: -(watcher.height + offset.top)
+        const untilWatcher = this.stickyUntil !== null ? scrollMonitor.create(this.stickyUntil, {
+          bottom: -(watcher.height + offset.top),
         }) : null;
         this.watcher = watcher;
         this.untilWatcher = untilWatcher;
@@ -3475,16 +3408,16 @@
           $element.addClass(ClassName.FIXED_TOP);
         }
 
-        watcher.stateChange(function () {
+        watcher.stateChange(() => {
           _this.onWatcherChange($element);
         });
 
         if (untilWatcher !== null) {
-          untilWatcher.exitViewport(function () {
+          untilWatcher.exitViewport(() => {
             // If the element is in a section, it will scroll up with the section
             $element.addClass(ClassName.ABSOLUTE_BOTTOM);
           });
-          untilWatcher.enterViewport(function () {
+          untilWatcher.enterViewport(() => {
             $element.removeClass(ClassName.ABSOLUTE_BOTTOM);
           });
         }
@@ -3506,10 +3439,10 @@
       };
 
       _proto.setResizeEvent = function setResizeEvent() {
-        var _this2 = this;
+        const _this2 = this;
 
         // Closing any alerts above the nav will mean we need to recalculate position.
-        $(Selector.ALERT).on(Event.ALERT_CLOSED, function () {
+        $(Selector.ALERT).on(Event.ALERT_CLOSED, () => {
           // An alert above the nav will cause odd sticky behaviour if
           // the alert is dismissed and nav position is not recalculated,
           // as scrollMonitor has locked the position of the watcher.
@@ -3524,16 +3457,16 @@
 
           _this2.onResize();
         });
-        $(window).on(Event.WINDOW_RESIZE, function () {
+        $(window).on(Event.WINDOW_RESIZE, () => {
           _this2.onResize();
         });
       };
 
       _proto.onResize = function onResize() {
-        var _this3 = this;
+        const _this3 = this;
 
         if (!this.ticking) {
-          window.requestAnimationFrame(function () {
+          window.requestAnimationFrame(() => {
             _this3.updateCss();
 
             _this3.ticking = false;
@@ -3543,25 +3476,25 @@
       };
 
       _proto.setNavToggleEvents = function setNavToggleEvents() {
-        var _this4 = this;
+        const _this4 = this;
 
-        $(this.element).on("" + Event.TOGGLE_SHOW, function () {
+        $(this.element).on(`${Event.TOGGLE_SHOW}`, () => {
           _this4.navToggled = true;
         }); // navHeight should only be recalculated when the nav is not open/toggled
         // Don't allow the navHeight to be recalculated until the nav is fully hidden
 
-        $(this.element).on("" + Event.TOGGLE_HIDDEN, function () {
+        $(this.element).on(`${Event.TOGGLE_HIDDEN}`, () => {
           _this4.navToggled = false;
         });
       };
 
       _proto.updateCss = function updateCss() {
-        var $element = $(this.element); // Fix width by getting parent's width to avoid element spilling out when pos-fixed
+        const $element = $(this.element); // Fix width by getting parent's width to avoid element spilling out when pos-fixed
 
         $element.css(Css.WIDTH, $element.parent().width());
         this.updateNavProperties();
-        var elemHeight = $element.outerHeight();
-        var notNavElement = !this.isNavElement; // Set a min-height to prevent "jumping" when sticking to top
+        const elemHeight = $element.outerHeight();
+        const notNavElement = !this.isNavElement; // Set a min-height to prevent "jumping" when sticking to top
         // but not applied to the nav element itself unless it is overlay (absolute) nav
 
         if (!this.navIsAbsolute && this.isNavElement || notNavElement) {
@@ -3578,7 +3511,7 @@
       };
 
       _proto.updateNavProperties = function updateNavProperties() {
-        var $navElement = this.navElement || $(Selector.NAV_STICKY).first();
+        const $navElement = this.navElement || $(Selector.NAV_STICKY).first();
         this.navElement = $navElement;
         this.navHeight = $navElement.outerHeight();
         this.navIsAbsolute = $navElement.css('position') === 'absolute';
@@ -3587,8 +3520,8 @@
 
       Sticky.jQueryInterface = function jQueryInterface() {
         return this.each(function jqEachSticky() {
-          var $element = $(this);
-          var data = $element.data(DATA_KEY);
+          const $element = $(this);
+          let data = $element.data(DATA_KEY);
 
           if (!data) {
             data = new Sticky(this);
@@ -3598,27 +3531,26 @@
       };
 
       _createClass(Sticky, null, [{
-        key: "VERSION",
+        key: 'VERSION',
         get: function get() {
           return VERSION;
-        }
+        },
       }]);
 
       return Sticky;
-    }();
+    }());
     /**
      * ------------------------------------------------------------------------
      * Initialise by data attribute
      * ------------------------------------------------------------------------
      */
 
-
-    $(window).on(Event.LOAD_DATA_API, function () {
-      var stickyElements = $.makeArray($(Selector.DATA_STICKY));
+    $(window).on(Event.LOAD_DATA_API, () => {
+      const stickyElements = $.makeArray($(Selector.DATA_STICKY));
       /* eslint-disable no-plusplus */
 
-      for (var i = stickyElements.length; i--;) {
-        var $sticky = $(stickyElements[i]);
+      for (let i = stickyElements.length; i--;) {
+        const $sticky = $(stickyElements[i]);
         Sticky.jQueryInterface.call($sticky, $sticky.data());
       }
     });
@@ -3639,72 +3571,72 @@
     };
     /* eslint-enable no-param-reassign */
 
-
     return Sticky;
-  }(jQuery$1);
+  }(jQuery$1));
 
-  var ceil = Math.ceil;
-  var floor = Math.floor;
+  const { ceil } = Math;
+  const { floor } = Math;
 
   // `ToInteger` abstract operation
   // https://tc39.github.io/ecma262/#sec-tointeger
-  var toInteger = function (argument) {
+  const toInteger = function (argument) {
     return isNaN(argument = +argument) ? 0 : (argument > 0 ? floor : ceil)(argument);
   };
 
   // `RequireObjectCoercible` abstract operation
   // https://tc39.github.io/ecma262/#sec-requireobjectcoercible
-  var requireObjectCoercible = function (it) {
-    if (it == undefined) throw TypeError("Can't call method on " + it);
+  const requireObjectCoercible = function (it) {
+    if (it == undefined) throw TypeError(`Can't call method on ${it}`);
     return it;
   };
 
   // `String.prototype.{ codePointAt, at }` methods implementation
-  var createMethod = function (CONVERT_TO_STRING) {
+  const createMethod = function (CONVERT_TO_STRING) {
     return function ($this, pos) {
-      var S = String(requireObjectCoercible($this));
-      var position = toInteger(pos);
-      var size = S.length;
-      var first, second;
+      const S = String(requireObjectCoercible($this));
+      const position = toInteger(pos);
+      const size = S.length;
+      let first; let
+        second;
       if (position < 0 || position >= size) return CONVERT_TO_STRING ? '' : undefined;
       first = S.charCodeAt(position);
       return first < 0xD800 || first > 0xDBFF || position + 1 === size
         || (second = S.charCodeAt(position + 1)) < 0xDC00 || second > 0xDFFF
-          ? CONVERT_TO_STRING ? S.charAt(position) : first
-          : CONVERT_TO_STRING ? S.slice(position, position + 2) : (first - 0xD800 << 10) + (second - 0xDC00) + 0x10000;
+        ? CONVERT_TO_STRING ? S.charAt(position) : first
+        : CONVERT_TO_STRING ? S.slice(position, position + 2) : (first - 0xD800 << 10) + (second - 0xDC00) + 0x10000;
     };
   };
 
-  var stringMultibyte = {
+  const stringMultibyte = {
     // `String.prototype.codePointAt` method
     // https://tc39.github.io/ecma262/#sec-string.prototype.codepointat
     codeAt: createMethod(false),
     // `String.prototype.at` method
     // https://github.com/mathiasbynens/String.prototype.at
-    charAt: createMethod(true)
+    charAt: createMethod(true),
   };
 
-  var commonjsGlobal = typeof globalThis !== 'undefined' ? globalThis : typeof window !== 'undefined' ? window : typeof global !== 'undefined' ? global : typeof self !== 'undefined' ? self : {};
+  const commonjsGlobal = typeof globalThis !== 'undefined' ? globalThis : typeof window !== 'undefined' ? window : typeof global !== 'undefined' ? global : typeof self !== 'undefined' ? self : {};
 
   function createCommonjsModule(fn, module) {
   	return module = { exports: {} }, fn(module, module.exports), module.exports;
   }
 
-  var check = function (it) {
+  const check = function (it) {
     return it && it.Math == Math && it;
   };
 
   // https://github.com/zloirock/core-js/issues/86#issuecomment-115759028
-  var global_1 =
+  const global_1 =
     // eslint-disable-next-line no-undef
-    check(typeof globalThis == 'object' && globalThis) ||
-    check(typeof window == 'object' && window) ||
-    check(typeof self == 'object' && self) ||
-    check(typeof commonjsGlobal == 'object' && commonjsGlobal) ||
+    check(typeof globalThis === 'object' && globalThis)
+    || check(typeof window === 'object' && window)
+    || check(typeof self === 'object' && self)
+    || check(typeof commonjsGlobal === 'object' && commonjsGlobal)
     // eslint-disable-next-line no-new-func
-    Function('return this')();
+    || Function('return this')();
 
-  var fails = function (exec) {
+  const fails = function (exec) {
     try {
       return !!exec();
     } catch (error) {
@@ -3713,32 +3645,28 @@
   };
 
   // Thank's IE8 for his funny defineProperty
-  var descriptors = !fails(function () {
-    return Object.defineProperty({}, 'a', { get: function () { return 7; } }).a != 7;
-  });
+  const descriptors = !fails(() => Object.defineProperty({}, 'a', { get() { return 7; } }).a != 7);
 
-  var isObject = function (it) {
+  const isObject = function (it) {
     return typeof it === 'object' ? it !== null : typeof it === 'function';
   };
 
-  var document$1 = global_1.document;
+  const document$1 = global_1.document;
   // typeof document.createElement is 'object' in old IE
-  var EXISTS = isObject(document$1) && isObject(document$1.createElement);
+  const EXISTS = isObject(document$1) && isObject(document$1.createElement);
 
-  var documentCreateElement = function (it) {
+  const documentCreateElement = function (it) {
     return EXISTS ? document$1.createElement(it) : {};
   };
 
   // Thank's IE8 for his funny defineProperty
-  var ie8DomDefine = !descriptors && !fails(function () {
-    return Object.defineProperty(documentCreateElement('div'), 'a', {
-      get: function () { return 7; }
-    }).a != 7;
-  });
+  const ie8DomDefine = !descriptors && !fails(() => Object.defineProperty(documentCreateElement('div'), 'a', {
+    get() { return 7; },
+  }).a != 7);
 
-  var anObject = function (it) {
+  const anObject = function (it) {
     if (!isObject(it)) {
-      throw TypeError(String(it) + ' is not an object');
+      throw TypeError(`${String(it)} is not an object`);
     } return it;
   };
 
@@ -3746,52 +3674,55 @@
   // https://tc39.github.io/ecma262/#sec-toprimitive
   // instead of the ES6 spec version, we didn't implement @@toPrimitive case
   // and the second argument - flag - preferred type is a string
-  var toPrimitive = function (input, PREFERRED_STRING) {
+  const toPrimitive = function (input, PREFERRED_STRING) {
     if (!isObject(input)) return input;
-    var fn, val;
-    if (PREFERRED_STRING && typeof (fn = input.toString) == 'function' && !isObject(val = fn.call(input))) return val;
-    if (typeof (fn = input.valueOf) == 'function' && !isObject(val = fn.call(input))) return val;
-    if (!PREFERRED_STRING && typeof (fn = input.toString) == 'function' && !isObject(val = fn.call(input))) return val;
+    let fn; let
+      val;
+    if (PREFERRED_STRING && typeof (fn = input.toString) === 'function' && !isObject(val = fn.call(input))) return val;
+    if (typeof (fn = input.valueOf) === 'function' && !isObject(val = fn.call(input))) return val;
+    if (!PREFERRED_STRING && typeof (fn = input.toString) === 'function' && !isObject(val = fn.call(input))) return val;
     throw TypeError("Can't convert object to primitive value");
   };
 
-  var nativeDefineProperty = Object.defineProperty;
+  const nativeDefineProperty = Object.defineProperty;
 
   // `Object.defineProperty` method
   // https://tc39.github.io/ecma262/#sec-object.defineproperty
-  var f = descriptors ? nativeDefineProperty : function defineProperty(O, P, Attributes) {
+  const f = descriptors ? nativeDefineProperty : function defineProperty(O, P, Attributes) {
     anObject(O);
     P = toPrimitive(P, true);
     anObject(Attributes);
-    if (ie8DomDefine) try {
-      return nativeDefineProperty(O, P, Attributes);
-    } catch (error) { /* empty */ }
+    if (ie8DomDefine) {
+      try {
+        return nativeDefineProperty(O, P, Attributes);
+      } catch (error) { /* empty */ }
+    }
     if ('get' in Attributes || 'set' in Attributes) throw TypeError('Accessors not supported');
     if ('value' in Attributes) O[P] = Attributes.value;
     return O;
   };
 
-  var objectDefineProperty = {
-  	f: f
+  const objectDefineProperty = {
+  	f,
   };
 
-  var createPropertyDescriptor = function (bitmap, value) {
+  const createPropertyDescriptor = function (bitmap, value) {
     return {
       enumerable: !(bitmap & 1),
       configurable: !(bitmap & 2),
       writable: !(bitmap & 4),
-      value: value
+      value,
     };
   };
 
-  var createNonEnumerableProperty = descriptors ? function (object, key, value) {
+  const createNonEnumerableProperty = descriptors ? function (object, key, value) {
     return objectDefineProperty.f(object, key, createPropertyDescriptor(1, value));
   } : function (object, key, value) {
     object[key] = value;
     return object;
   };
 
-  var setGlobal = function (key, value) {
+  const setGlobal = function (key, value) {
     try {
       createNonEnumerableProperty(global_1, key, value);
     } catch (error) {
@@ -3799,78 +3730,79 @@
     } return value;
   };
 
-  var SHARED = '__core-js_shared__';
-  var store = global_1[SHARED] || setGlobal(SHARED, {});
+  const SHARED = '__core-js_shared__';
+  const store = global_1[SHARED] || setGlobal(SHARED, {});
 
-  var sharedStore = store;
+  const sharedStore = store;
 
-  var functionToString = Function.toString;
+  const functionToString = Function.toString;
 
   // this helper broken in `3.4.1-3.4.4`, so we can't use `shared` helper
-  if (typeof sharedStore.inspectSource != 'function') {
+  if (typeof sharedStore.inspectSource !== 'function') {
     sharedStore.inspectSource = function (it) {
       return functionToString.call(it);
     };
   }
 
-  var inspectSource = sharedStore.inspectSource;
+  const { inspectSource } = sharedStore;
 
-  var WeakMap = global_1.WeakMap;
+  const { WeakMap } = global_1;
 
-  var nativeWeakMap = typeof WeakMap === 'function' && /native code/.test(inspectSource(WeakMap));
+  const nativeWeakMap = typeof WeakMap === 'function' && /native code/.test(inspectSource(WeakMap));
 
-  var hasOwnProperty = {}.hasOwnProperty;
+  const { hasOwnProperty } = {};
 
-  var has = function (it, key) {
+  const has = function (it, key) {
     return hasOwnProperty.call(it, key);
   };
 
-  var shared = createCommonjsModule(function (module) {
-  (module.exports = function (key, value) {
-    return sharedStore[key] || (sharedStore[key] = value !== undefined ? value : {});
-  })('versions', []).push({
-    version: '3.4.8',
-    mode:  'global',
-    copyright: '© 2019 Denis Pushkarev (zloirock.ru)'
-  });
+  const shared = createCommonjsModule((module) => {
+    (module.exports = function (key, value) {
+      return sharedStore[key] || (sharedStore[key] = value !== undefined ? value : {});
+    })('versions', []).push({
+      version: '3.4.8',
+      mode: 'global',
+      copyright: '© 2019 Denis Pushkarev (zloirock.ru)',
+    });
   });
 
-  var id = 0;
-  var postfix = Math.random();
+  let id = 0;
+  const postfix = Math.random();
 
-  var uid = function (key) {
-    return 'Symbol(' + String(key === undefined ? '' : key) + ')_' + (++id + postfix).toString(36);
+  const uid = function (key) {
+    return `Symbol(${String(key === undefined ? '' : key)})_${(++id + postfix).toString(36)}`;
   };
 
-  var keys = shared('keys');
+  const keys = shared('keys');
 
-  var sharedKey = function (key) {
+  const sharedKey = function (key) {
     return keys[key] || (keys[key] = uid(key));
   };
 
-  var hiddenKeys = {};
+  const hiddenKeys = {};
 
-  var WeakMap$1 = global_1.WeakMap;
-  var set, get, has$1;
+  const WeakMap$1 = global_1.WeakMap;
+  let set; let get; let
+    has$1;
 
-  var enforce = function (it) {
+  const enforce = function (it) {
     return has$1(it) ? get(it) : set(it, {});
   };
 
-  var getterFor = function (TYPE) {
+  const getterFor = function (TYPE) {
     return function (it) {
-      var state;
+      let state;
       if (!isObject(it) || (state = get(it)).type !== TYPE) {
-        throw TypeError('Incompatible receiver, ' + TYPE + ' required');
+        throw TypeError(`Incompatible receiver, ${TYPE} required`);
       } return state;
     };
   };
 
   if (nativeWeakMap) {
-    var store$1 = new WeakMap$1();
-    var wmget = store$1.get;
-    var wmhas = store$1.has;
-    var wmset = store$1.set;
+    const store$1 = new WeakMap$1();
+    const wmget = store$1.get;
+    const wmhas = store$1.has;
+    const wmset = store$1.set;
     set = function (it, metadata) {
       wmset.call(store$1, it, metadata);
       return metadata;
@@ -3882,7 +3814,7 @@
       return wmhas.call(store$1, it);
     };
   } else {
-    var STATE = sharedKey('state');
+    const STATE = sharedKey('state');
     hiddenKeys[STATE] = true;
     set = function (it, metadata) {
       createNonEnumerableProperty(it, STATE, metadata);
@@ -3896,232 +3828,236 @@
     };
   }
 
-  var internalState = {
-    set: set,
-    get: get,
+  const internalState = {
+    set,
+    get,
     has: has$1,
-    enforce: enforce,
-    getterFor: getterFor
+    enforce,
+    getterFor,
   };
 
-  var nativePropertyIsEnumerable = {}.propertyIsEnumerable;
-  var getOwnPropertyDescriptor = Object.getOwnPropertyDescriptor;
+  const nativePropertyIsEnumerable = {}.propertyIsEnumerable;
+  const { getOwnPropertyDescriptor } = Object;
 
   // Nashorn ~ JDK8 bug
-  var NASHORN_BUG = getOwnPropertyDescriptor && !nativePropertyIsEnumerable.call({ 1: 2 }, 1);
+  const NASHORN_BUG = getOwnPropertyDescriptor && !nativePropertyIsEnumerable.call({ 1: 2 }, 1);
 
   // `Object.prototype.propertyIsEnumerable` method implementation
   // https://tc39.github.io/ecma262/#sec-object.prototype.propertyisenumerable
-  var f$1 = NASHORN_BUG ? function propertyIsEnumerable(V) {
-    var descriptor = getOwnPropertyDescriptor(this, V);
+  const f$1 = NASHORN_BUG ? function propertyIsEnumerable(V) {
+    const descriptor = getOwnPropertyDescriptor(this, V);
     return !!descriptor && descriptor.enumerable;
   } : nativePropertyIsEnumerable;
 
-  var objectPropertyIsEnumerable = {
-  	f: f$1
+  const objectPropertyIsEnumerable = {
+  	f: f$1,
   };
 
-  var toString = {}.toString;
+  const { toString } = {};
 
-  var classofRaw = function (it) {
+  const classofRaw = function (it) {
     return toString.call(it).slice(8, -1);
   };
 
-  var split = ''.split;
+  const { split } = '';
 
   // fallback for non-array-like ES3 and non-enumerable old V8 strings
-  var indexedObject = fails(function () {
+  const indexedObject = fails(() =>
     // throws an error in rhino, see https://github.com/mozilla/rhino/issues/346
     // eslint-disable-next-line no-prototype-builtins
-    return !Object('z').propertyIsEnumerable(0);
-  }) ? function (it) {
-    return classofRaw(it) == 'String' ? split.call(it, '') : Object(it);
-  } : Object;
+    !Object('z').propertyIsEnumerable(0)) ? function (it) {
+      return classofRaw(it) == 'String' ? split.call(it, '') : Object(it);
+    } : Object;
 
   // toObject with fallback for non-array-like ES3 strings
 
-
-
-  var toIndexedObject = function (it) {
+  const toIndexedObject = function (it) {
     return indexedObject(requireObjectCoercible(it));
   };
 
-  var nativeGetOwnPropertyDescriptor = Object.getOwnPropertyDescriptor;
+  const nativeGetOwnPropertyDescriptor = Object.getOwnPropertyDescriptor;
 
   // `Object.getOwnPropertyDescriptor` method
   // https://tc39.github.io/ecma262/#sec-object.getownpropertydescriptor
-  var f$2 = descriptors ? nativeGetOwnPropertyDescriptor : function getOwnPropertyDescriptor(O, P) {
+  const f$2 = descriptors ? nativeGetOwnPropertyDescriptor : function getOwnPropertyDescriptor(O, P) {
     O = toIndexedObject(O);
     P = toPrimitive(P, true);
-    if (ie8DomDefine) try {
-      return nativeGetOwnPropertyDescriptor(O, P);
-    } catch (error) { /* empty */ }
+    if (ie8DomDefine) {
+      try {
+        return nativeGetOwnPropertyDescriptor(O, P);
+      } catch (error) { /* empty */ }
+    }
     if (has(O, P)) return createPropertyDescriptor(!objectPropertyIsEnumerable.f.call(O, P), O[P]);
   };
 
-  var objectGetOwnPropertyDescriptor = {
-  	f: f$2
+  const objectGetOwnPropertyDescriptor = {
+  	f: f$2,
   };
 
-  var redefine = createCommonjsModule(function (module) {
-  var getInternalState = internalState.get;
-  var enforceInternalState = internalState.enforce;
-  var TEMPLATE = String(String).split('String');
+  const redefine = createCommonjsModule((module) => {
+    const getInternalState = internalState.get;
+    const enforceInternalState = internalState.enforce;
+    const TEMPLATE = String(String).split('String');
 
-  (module.exports = function (O, key, value, options) {
-    var unsafe = options ? !!options.unsafe : false;
-    var simple = options ? !!options.enumerable : false;
-    var noTargetGet = options ? !!options.noTargetGet : false;
-    if (typeof value == 'function') {
-      if (typeof key == 'string' && !has(value, 'name')) createNonEnumerableProperty(value, 'name', key);
-      enforceInternalState(value).source = TEMPLATE.join(typeof key == 'string' ? key : '');
-    }
-    if (O === global_1) {
+    (module.exports = function (O, key, value, options) {
+      const unsafe = options ? !!options.unsafe : false;
+      let simple = options ? !!options.enumerable : false;
+      const noTargetGet = options ? !!options.noTargetGet : false;
+      if (typeof value === 'function') {
+        if (typeof key === 'string' && !has(value, 'name')) createNonEnumerableProperty(value, 'name', key);
+        enforceInternalState(value).source = TEMPLATE.join(typeof key === 'string' ? key : '');
+      }
+      if (O === global_1) {
+        if (simple) O[key] = value;
+        else setGlobal(key, value);
+        return;
+      } if (!unsafe) {
+        delete O[key];
+      } else if (!noTargetGet && O[key]) {
+        simple = true;
+      }
       if (simple) O[key] = value;
-      else setGlobal(key, value);
-      return;
-    } else if (!unsafe) {
-      delete O[key];
-    } else if (!noTargetGet && O[key]) {
-      simple = true;
-    }
-    if (simple) O[key] = value;
-    else createNonEnumerableProperty(O, key, value);
-  // add fake Function#toString for correct work wrapped methods / constructors with methods like LoDash isNative
-  })(Function.prototype, 'toString', function toString() {
-    return typeof this == 'function' && getInternalState(this).source || inspectSource(this);
-  });
+      else createNonEnumerableProperty(O, key, value);
+      // add fake Function#toString for correct work wrapped methods / constructors with methods like LoDash isNative
+    })(Function.prototype, 'toString', function toString() {
+      return typeof this === 'function' && getInternalState(this).source || inspectSource(this);
+    });
   });
 
-  var path = global_1;
+  const path = global_1;
 
-  var aFunction = function (variable) {
-    return typeof variable == 'function' ? variable : undefined;
+  const aFunction = function (variable) {
+    return typeof variable === 'function' ? variable : undefined;
   };
 
-  var getBuiltIn = function (namespace, method) {
+  const getBuiltIn = function (namespace, method) {
     return arguments.length < 2 ? aFunction(path[namespace]) || aFunction(global_1[namespace])
       : path[namespace] && path[namespace][method] || global_1[namespace] && global_1[namespace][method];
   };
 
-  var min = Math.min;
+  const { min } = Math;
 
   // `ToLength` abstract operation
   // https://tc39.github.io/ecma262/#sec-tolength
-  var toLength = function (argument) {
+  const toLength = function (argument) {
     return argument > 0 ? min(toInteger(argument), 0x1FFFFFFFFFFFFF) : 0; // 2 ** 53 - 1 == 9007199254740991
   };
 
-  var max = Math.max;
-  var min$1 = Math.min;
+  const { max } = Math;
+  const min$1 = Math.min;
 
   // Helper for a popular repeating case of the spec:
   // Let integer be ? ToInteger(index).
   // If integer < 0, let result be max((length + integer), 0); else let result be min(integer, length).
-  var toAbsoluteIndex = function (index, length) {
-    var integer = toInteger(index);
+  const toAbsoluteIndex = function (index, length) {
+    const integer = toInteger(index);
     return integer < 0 ? max(integer + length, 0) : min$1(integer, length);
   };
 
   // `Array.prototype.{ indexOf, includes }` methods implementation
-  var createMethod$1 = function (IS_INCLUDES) {
+  const createMethod$1 = function (IS_INCLUDES) {
     return function ($this, el, fromIndex) {
-      var O = toIndexedObject($this);
-      var length = toLength(O.length);
-      var index = toAbsoluteIndex(fromIndex, length);
-      var value;
+      const O = toIndexedObject($this);
+      const length = toLength(O.length);
+      let index = toAbsoluteIndex(fromIndex, length);
+      let value;
       // Array#includes uses SameValueZero equality algorithm
       // eslint-disable-next-line no-self-compare
-      if (IS_INCLUDES && el != el) while (length > index) {
-        value = O[index++];
-        // eslint-disable-next-line no-self-compare
-        if (value != value) return true;
-      // Array#indexOf ignores holes, Array#includes - not
-      } else for (;length > index; index++) {
-        if ((IS_INCLUDES || index in O) && O[index] === el) return IS_INCLUDES || index || 0;
+      if (IS_INCLUDES && el != el) {
+        while (length > index) {
+          value = O[index++];
+          // eslint-disable-next-line no-self-compare
+          if (value != value) return true;
+          // Array#indexOf ignores holes, Array#includes - not
+        }
+      } else {
+        for (;length > index; index++) {
+          if ((IS_INCLUDES || index in O) && O[index] === el) return IS_INCLUDES || index || 0;
+        }
       } return !IS_INCLUDES && -1;
     };
   };
 
-  var arrayIncludes = {
+  const arrayIncludes = {
     // `Array.prototype.includes` method
     // https://tc39.github.io/ecma262/#sec-array.prototype.includes
     includes: createMethod$1(true),
     // `Array.prototype.indexOf` method
     // https://tc39.github.io/ecma262/#sec-array.prototype.indexof
-    indexOf: createMethod$1(false)
+    indexOf: createMethod$1(false),
   };
 
-  var indexOf = arrayIncludes.indexOf;
+  const { indexOf } = arrayIncludes;
 
-
-  var objectKeysInternal = function (object, names) {
-    var O = toIndexedObject(object);
-    var i = 0;
-    var result = [];
-    var key;
+  const objectKeysInternal = function (object, names) {
+    const O = toIndexedObject(object);
+    let i = 0;
+    const result = [];
+    let key;
     for (key in O) !has(hiddenKeys, key) && has(O, key) && result.push(key);
     // Don't enum bug & hidden keys
-    while (names.length > i) if (has(O, key = names[i++])) {
-      ~indexOf(result, key) || result.push(key);
+    while (names.length > i) {
+      if (has(O, key = names[i++])) {
+        ~indexOf(result, key) || result.push(key);
+      }
     }
     return result;
   };
 
   // IE8- don't enum bug keys
-  var enumBugKeys = [
+  const enumBugKeys = [
     'constructor',
     'hasOwnProperty',
     'isPrototypeOf',
     'propertyIsEnumerable',
     'toLocaleString',
     'toString',
-    'valueOf'
+    'valueOf',
   ];
 
-  var hiddenKeys$1 = enumBugKeys.concat('length', 'prototype');
+  const hiddenKeys$1 = enumBugKeys.concat('length', 'prototype');
 
   // `Object.getOwnPropertyNames` method
   // https://tc39.github.io/ecma262/#sec-object.getownpropertynames
-  var f$3 = Object.getOwnPropertyNames || function getOwnPropertyNames(O) {
+  const f$3 = Object.getOwnPropertyNames || function getOwnPropertyNames(O) {
     return objectKeysInternal(O, hiddenKeys$1);
   };
 
-  var objectGetOwnPropertyNames = {
-  	f: f$3
+  const objectGetOwnPropertyNames = {
+  	f: f$3,
   };
 
-  var f$4 = Object.getOwnPropertySymbols;
+  const f$4 = Object.getOwnPropertySymbols;
 
-  var objectGetOwnPropertySymbols = {
-  	f: f$4
+  const objectGetOwnPropertySymbols = {
+  	f: f$4,
   };
 
   // all object keys, includes non-enumerable and symbols
-  var ownKeys = getBuiltIn('Reflect', 'ownKeys') || function ownKeys(it) {
-    var keys = objectGetOwnPropertyNames.f(anObject(it));
-    var getOwnPropertySymbols = objectGetOwnPropertySymbols.f;
+  const ownKeys = getBuiltIn('Reflect', 'ownKeys') || function ownKeys(it) {
+    const keys = objectGetOwnPropertyNames.f(anObject(it));
+    const getOwnPropertySymbols = objectGetOwnPropertySymbols.f;
     return getOwnPropertySymbols ? keys.concat(getOwnPropertySymbols(it)) : keys;
   };
 
-  var copyConstructorProperties = function (target, source) {
-    var keys = ownKeys(source);
-    var defineProperty = objectDefineProperty.f;
-    var getOwnPropertyDescriptor = objectGetOwnPropertyDescriptor.f;
-    for (var i = 0; i < keys.length; i++) {
-      var key = keys[i];
+  const copyConstructorProperties = function (target, source) {
+    const keys = ownKeys(source);
+    const defineProperty = objectDefineProperty.f;
+    const getOwnPropertyDescriptor = objectGetOwnPropertyDescriptor.f;
+    for (let i = 0; i < keys.length; i++) {
+      const key = keys[i];
       if (!has(target, key)) defineProperty(target, key, getOwnPropertyDescriptor(source, key));
     }
   };
 
-  var replacement = /#|\.prototype\./;
+  const replacement = /#|\.prototype\./;
 
-  var isForced = function (feature, detection) {
-    var value = data[normalize(feature)];
+  const isForced = function (feature, detection) {
+    const value = data[normalize(feature)];
     return value == POLYFILL ? true
       : value == NATIVE ? false
-      : typeof detection == 'function' ? fails(detection)
-      : !!detection;
+        : typeof detection === 'function' ? fails(detection)
+          : !!detection;
   };
 
   var normalize = isForced.normalize = function (string) {
@@ -4132,14 +4068,9 @@
   var NATIVE = isForced.NATIVE = 'N';
   var POLYFILL = isForced.POLYFILL = 'P';
 
-  var isForced_1 = isForced;
+  const isForced_1 = isForced;
 
-  var getOwnPropertyDescriptor$1 = objectGetOwnPropertyDescriptor.f;
-
-
-
-
-
+  const getOwnPropertyDescriptor$1 = objectGetOwnPropertyDescriptor.f;
 
   /*
     options.target      - name of the target object
@@ -4155,11 +4086,12 @@
     options.enumerable  - export as enumerable property
     options.noTargetGet - prevent calling a getter on target
   */
-  var _export = function (options, source) {
-    var TARGET = options.target;
-    var GLOBAL = options.global;
-    var STATIC = options.stat;
-    var FORCED, target, key, targetProperty, sourceProperty, descriptor;
+  const _export = function (options, source) {
+    const TARGET = options.target;
+    const GLOBAL = options.global;
+    const STATIC = options.stat;
+    let FORCED; let target; let key; let targetProperty; let sourceProperty; let
+      descriptor;
     if (GLOBAL) {
       target = global_1;
     } else if (STATIC) {
@@ -4167,83 +4099,85 @@
     } else {
       target = (global_1[TARGET] || {}).prototype;
     }
-    if (target) for (key in source) {
-      sourceProperty = source[key];
-      if (options.noTargetGet) {
-        descriptor = getOwnPropertyDescriptor$1(target, key);
-        targetProperty = descriptor && descriptor.value;
-      } else targetProperty = target[key];
-      FORCED = isForced_1(GLOBAL ? key : TARGET + (STATIC ? '.' : '#') + key, options.forced);
-      // contained in target
-      if (!FORCED && targetProperty !== undefined) {
-        if (typeof sourceProperty === typeof targetProperty) continue;
-        copyConstructorProperties(sourceProperty, targetProperty);
+    if (target) {
+      for (key in source) {
+        sourceProperty = source[key];
+        if (options.noTargetGet) {
+          descriptor = getOwnPropertyDescriptor$1(target, key);
+          targetProperty = descriptor && descriptor.value;
+        } else targetProperty = target[key];
+        FORCED = isForced_1(GLOBAL ? key : TARGET + (STATIC ? '.' : '#') + key, options.forced);
+        // contained in target
+        if (!FORCED && targetProperty !== undefined) {
+          if (typeof sourceProperty === typeof targetProperty) continue;
+          copyConstructorProperties(sourceProperty, targetProperty);
+        }
+        // add a flag to not completely full polyfills
+        if (options.sham || (targetProperty && targetProperty.sham)) {
+          createNonEnumerableProperty(sourceProperty, 'sham', true);
+        }
+        // extend global
+        redefine(target, key, sourceProperty, options);
       }
-      // add a flag to not completely full polyfills
-      if (options.sham || (targetProperty && targetProperty.sham)) {
-        createNonEnumerableProperty(sourceProperty, 'sham', true);
-      }
-      // extend global
-      redefine(target, key, sourceProperty, options);
     }
   };
 
   // `ToObject` abstract operation
   // https://tc39.github.io/ecma262/#sec-toobject
-  var toObject = function (argument) {
+  const toObject = function (argument) {
     return Object(requireObjectCoercible(argument));
   };
 
-  var correctPrototypeGetter = !fails(function () {
+  const correctPrototypeGetter = !fails(() => {
     function F() { /* empty */ }
     F.prototype.constructor = null;
     return Object.getPrototypeOf(new F()) !== F.prototype;
   });
 
-  var IE_PROTO = sharedKey('IE_PROTO');
-  var ObjectPrototype = Object.prototype;
+  const IE_PROTO = sharedKey('IE_PROTO');
+  const ObjectPrototype = Object.prototype;
 
   // `Object.getPrototypeOf` method
   // https://tc39.github.io/ecma262/#sec-object.getprototypeof
-  var objectGetPrototypeOf = correctPrototypeGetter ? Object.getPrototypeOf : function (O) {
+  const objectGetPrototypeOf = correctPrototypeGetter ? Object.getPrototypeOf : function (O) {
     O = toObject(O);
     if (has(O, IE_PROTO)) return O[IE_PROTO];
-    if (typeof O.constructor == 'function' && O instanceof O.constructor) {
+    if (typeof O.constructor === 'function' && O instanceof O.constructor) {
       return O.constructor.prototype;
     } return O instanceof Object ? ObjectPrototype : null;
   };
 
-  var nativeSymbol = !!Object.getOwnPropertySymbols && !fails(function () {
+  const nativeSymbol = !!Object.getOwnPropertySymbols && !fails(() =>
     // Chrome 38 Symbol has incorrect toString conversion
     // eslint-disable-next-line no-undef
-    return !String(Symbol());
-  });
+    !String(Symbol()));
 
-  var useSymbolAsUid = nativeSymbol
+  const useSymbolAsUid = nativeSymbol
     // eslint-disable-next-line no-undef
     && !Symbol.sham
     // eslint-disable-next-line no-undef
-    && typeof Symbol() == 'symbol';
+    && typeof Symbol() === 'symbol';
 
-  var WellKnownSymbolsStore = shared('wks');
-  var Symbol$1 = global_1.Symbol;
-  var createWellKnownSymbol = useSymbolAsUid ? Symbol$1 : uid;
+  const WellKnownSymbolsStore = shared('wks');
+  const Symbol$1 = global_1.Symbol;
+  const createWellKnownSymbol = useSymbolAsUid ? Symbol$1 : uid;
 
-  var wellKnownSymbol = function (name) {
+  const wellKnownSymbol = function (name) {
     if (!has(WellKnownSymbolsStore, name)) {
       if (nativeSymbol && has(Symbol$1, name)) WellKnownSymbolsStore[name] = Symbol$1[name];
-      else WellKnownSymbolsStore[name] = createWellKnownSymbol('Symbol.' + name);
+      else WellKnownSymbolsStore[name] = createWellKnownSymbol(`Symbol.${name}`);
     } return WellKnownSymbolsStore[name];
   };
 
-  var ITERATOR = wellKnownSymbol('iterator');
-  var BUGGY_SAFARI_ITERATORS = false;
+  const ITERATOR = wellKnownSymbol('iterator');
+  let BUGGY_SAFARI_ITERATORS = false;
 
-  var returnThis = function () { return this; };
+  const returnThis = function () { return this; };
 
   // `%IteratorPrototype%` object
   // https://tc39.github.io/ecma262/#sec-%iteratorprototype%-object
-  var IteratorPrototype, PrototypeOfArrayIteratorPrototype, arrayIterator;
+  let IteratorPrototype; let PrototypeOfArrayIteratorPrototype; let
+    arrayIterator;
 
   if ([].keys) {
     arrayIterator = [].keys();
@@ -4258,56 +4192,56 @@
   if (IteratorPrototype == undefined) IteratorPrototype = {};
 
   // 25.1.2.1.1 %IteratorPrototype%[@@iterator]()
-  if ( !has(IteratorPrototype, ITERATOR)) {
+  if (!has(IteratorPrototype, ITERATOR)) {
     createNonEnumerableProperty(IteratorPrototype, ITERATOR, returnThis);
   }
 
-  var iteratorsCore = {
-    IteratorPrototype: IteratorPrototype,
-    BUGGY_SAFARI_ITERATORS: BUGGY_SAFARI_ITERATORS
+  const iteratorsCore = {
+    IteratorPrototype,
+    BUGGY_SAFARI_ITERATORS,
   };
 
   // `Object.keys` method
   // https://tc39.github.io/ecma262/#sec-object.keys
-  var objectKeys = Object.keys || function keys(O) {
+  const objectKeys = Object.keys || function keys(O) {
     return objectKeysInternal(O, enumBugKeys);
   };
 
   // `Object.defineProperties` method
   // https://tc39.github.io/ecma262/#sec-object.defineproperties
-  var objectDefineProperties = descriptors ? Object.defineProperties : function defineProperties(O, Properties) {
+  const objectDefineProperties = descriptors ? Object.defineProperties : function defineProperties(O, Properties) {
     anObject(O);
-    var keys = objectKeys(Properties);
-    var length = keys.length;
-    var index = 0;
-    var key;
+    const keys = objectKeys(Properties);
+    const { length } = keys;
+    let index = 0;
+    let key;
     while (length > index) objectDefineProperty.f(O, key = keys[index++], Properties[key]);
     return O;
   };
 
-  var html = getBuiltIn('document', 'documentElement');
+  const html = getBuiltIn('document', 'documentElement');
 
-  var IE_PROTO$1 = sharedKey('IE_PROTO');
+  const IE_PROTO$1 = sharedKey('IE_PROTO');
 
-  var PROTOTYPE = 'prototype';
-  var Empty = function () { /* empty */ };
+  const PROTOTYPE = 'prototype';
+  const Empty = function () { /* empty */ };
 
   // Create object with fake `null` prototype: use iframe Object with cleared prototype
   var createDict = function () {
     // Thrash, waste and sodomy: IE GC bug
-    var iframe = documentCreateElement('iframe');
-    var length = enumBugKeys.length;
-    var lt = '<';
-    var script = 'script';
-    var gt = '>';
-    var js = 'java' + script + ':';
-    var iframeDocument;
+    const iframe = documentCreateElement('iframe');
+    let { length } = enumBugKeys;
+    const lt = '<';
+    const script = 'script';
+    const gt = '>';
+    const js = `java${script}:`;
+    let iframeDocument;
     iframe.style.display = 'none';
     html.appendChild(iframe);
     iframe.src = String(js);
     iframeDocument = iframe.contentWindow.document;
     iframeDocument.open();
-    iframeDocument.write(lt + script + gt + 'document.F=Object' + lt + '/' + script + gt);
+    iframeDocument.write(`${lt + script + gt}document.F=Object${lt}/${script}${gt}`);
     iframeDocument.close();
     createDict = iframeDocument.F;
     while (length--) delete createDict[PROTOTYPE][enumBugKeys[length]];
@@ -4316,8 +4250,8 @@
 
   // `Object.create` method
   // https://tc39.github.io/ecma262/#sec-object.create
-  var objectCreate = Object.create || function create(O, Properties) {
-    var result;
+  const objectCreate = Object.create || function create(O, Properties) {
+    let result;
     if (O !== null) {
       Empty[PROTOTYPE] = anObject(O);
       result = new Empty();
@@ -4330,39 +4264,33 @@
 
   hiddenKeys[IE_PROTO$1] = true;
 
-  var defineProperty = objectDefineProperty.f;
+  const defineProperty = objectDefineProperty.f;
 
+  const TO_STRING_TAG = wellKnownSymbol('toStringTag');
 
-
-  var TO_STRING_TAG = wellKnownSymbol('toStringTag');
-
-  var setToStringTag = function (it, TAG, STATIC) {
+  const setToStringTag = function (it, TAG, STATIC) {
     if (it && !has(it = STATIC ? it : it.prototype, TO_STRING_TAG)) {
       defineProperty(it, TO_STRING_TAG, { configurable: true, value: TAG });
     }
   };
 
-  var iterators = {};
+  const iterators = {};
 
-  var IteratorPrototype$1 = iteratorsCore.IteratorPrototype;
+  const IteratorPrototype$1 = iteratorsCore.IteratorPrototype;
 
+  const returnThis$1 = function () { return this; };
 
-
-
-
-  var returnThis$1 = function () { return this; };
-
-  var createIteratorConstructor = function (IteratorConstructor, NAME, next) {
-    var TO_STRING_TAG = NAME + ' Iterator';
+  const createIteratorConstructor = function (IteratorConstructor, NAME, next) {
+    const TO_STRING_TAG = `${NAME} Iterator`;
     IteratorConstructor.prototype = objectCreate(IteratorPrototype$1, { next: createPropertyDescriptor(1, next) });
     setToStringTag(IteratorConstructor, TO_STRING_TAG, false);
     iterators[TO_STRING_TAG] = returnThis$1;
     return IteratorConstructor;
   };
 
-  var aPossiblePrototype = function (it) {
+  const aPossiblePrototype = function (it) {
     if (!isObject(it) && it !== null) {
-      throw TypeError("Can't set " + String(it) + ' as a prototype');
+      throw TypeError(`Can't set ${String(it)} as a prototype`);
     } return it;
   };
 
@@ -4370,10 +4298,10 @@
   // https://tc39.github.io/ecma262/#sec-object.setprototypeof
   // Works with __proto__ only. Old v8 can't work with null proto objects.
   /* eslint-disable no-proto */
-  var objectSetPrototypeOf = Object.setPrototypeOf || ('__proto__' in {} ? function () {
-    var CORRECT_SETTER = false;
-    var test = {};
-    var setter;
+  const objectSetPrototypeOf = Object.setPrototypeOf || ('__proto__' in {} ? (function () {
+    let CORRECT_SETTER = false;
+    const test = {};
+    let setter;
     try {
       setter = Object.getOwnPropertyDescriptor(Object.prototype, '__proto__').set;
       setter.call(test, []);
@@ -4386,21 +4314,21 @@
       else O.__proto__ = proto;
       return O;
     };
-  }() : undefined);
+  }()) : undefined);
 
-  var IteratorPrototype$2 = iteratorsCore.IteratorPrototype;
-  var BUGGY_SAFARI_ITERATORS$1 = iteratorsCore.BUGGY_SAFARI_ITERATORS;
-  var ITERATOR$1 = wellKnownSymbol('iterator');
-  var KEYS = 'keys';
-  var VALUES = 'values';
-  var ENTRIES = 'entries';
+  const IteratorPrototype$2 = iteratorsCore.IteratorPrototype;
+  const BUGGY_SAFARI_ITERATORS$1 = iteratorsCore.BUGGY_SAFARI_ITERATORS;
+  const ITERATOR$1 = wellKnownSymbol('iterator');
+  const KEYS = 'keys';
+  const VALUES = 'values';
+  const ENTRIES = 'entries';
 
-  var returnThis$2 = function () { return this; };
+  const returnThis$2 = function () { return this; };
 
-  var defineIterator = function (Iterable, NAME, IteratorConstructor, next, DEFAULT, IS_SET, FORCED) {
+  const defineIterator = function (Iterable, NAME, IteratorConstructor, next, DEFAULT, IS_SET, FORCED) {
     createIteratorConstructor(IteratorConstructor, NAME, next);
 
-    var getIterationMethod = function (KIND) {
+    const getIterationMethod = function (KIND) {
       if (KIND === DEFAULT && defaultIterator) return defaultIterator;
       if (!BUGGY_SAFARI_ITERATORS$1 && KIND in IterablePrototype) return IterablePrototype[KIND];
       switch (KIND) {
@@ -4410,24 +4338,25 @@
       } return function () { return new IteratorConstructor(this); };
     };
 
-    var TO_STRING_TAG = NAME + ' Iterator';
-    var INCORRECT_VALUES_NAME = false;
+    const TO_STRING_TAG = `${NAME} Iterator`;
+    let INCORRECT_VALUES_NAME = false;
     var IterablePrototype = Iterable.prototype;
-    var nativeIterator = IterablePrototype[ITERATOR$1]
+    const nativeIterator = IterablePrototype[ITERATOR$1]
       || IterablePrototype['@@iterator']
       || DEFAULT && IterablePrototype[DEFAULT];
     var defaultIterator = !BUGGY_SAFARI_ITERATORS$1 && nativeIterator || getIterationMethod(DEFAULT);
-    var anyNativeIterator = NAME == 'Array' ? IterablePrototype.entries || nativeIterator : nativeIterator;
-    var CurrentIteratorPrototype, methods, KEY;
+    const anyNativeIterator = NAME == 'Array' ? IterablePrototype.entries || nativeIterator : nativeIterator;
+    let CurrentIteratorPrototype; let methods; let
+      KEY;
 
     // fix native
     if (anyNativeIterator) {
       CurrentIteratorPrototype = objectGetPrototypeOf(anyNativeIterator.call(new Iterable()));
       if (IteratorPrototype$2 !== Object.prototype && CurrentIteratorPrototype.next) {
-        if ( objectGetPrototypeOf(CurrentIteratorPrototype) !== IteratorPrototype$2) {
+        if (objectGetPrototypeOf(CurrentIteratorPrototype) !== IteratorPrototype$2) {
           if (objectSetPrototypeOf) {
             objectSetPrototypeOf(CurrentIteratorPrototype, IteratorPrototype$2);
-          } else if (typeof CurrentIteratorPrototype[ITERATOR$1] != 'function') {
+          } else if (typeof CurrentIteratorPrototype[ITERATOR$1] !== 'function') {
             createNonEnumerableProperty(CurrentIteratorPrototype, ITERATOR$1, returnThis$2);
           }
         }
@@ -4443,7 +4372,7 @@
     }
 
     // define iterator
-    if ( IterablePrototype[ITERATOR$1] !== defaultIterator) {
+    if (IterablePrototype[ITERATOR$1] !== defaultIterator) {
       createNonEnumerableProperty(IterablePrototype, ITERATOR$1, defaultIterator);
     }
     iterators[NAME] = defaultIterator;
@@ -4453,11 +4382,13 @@
       methods = {
         values: getIterationMethod(VALUES),
         keys: IS_SET ? defaultIterator : getIterationMethod(KEYS),
-        entries: getIterationMethod(ENTRIES)
+        entries: getIterationMethod(ENTRIES),
       };
-      if (FORCED) for (KEY in methods) {
-        if (BUGGY_SAFARI_ITERATORS$1 || INCORRECT_VALUES_NAME || !(KEY in IterablePrototype)) {
-          redefine(IterablePrototype, KEY, methods[KEY]);
+      if (FORCED) {
+        for (KEY in methods) {
+          if (BUGGY_SAFARI_ITERATORS$1 || INCORRECT_VALUES_NAME || !(KEY in IterablePrototype)) {
+            redefine(IterablePrototype, KEY, methods[KEY]);
+          }
         }
       } else _export({ target: NAME, proto: true, forced: BUGGY_SAFARI_ITERATORS$1 || INCORRECT_VALUES_NAME }, methods);
     }
@@ -4465,13 +4396,11 @@
     return methods;
   };
 
-  var charAt = stringMultibyte.charAt;
+  const { charAt } = stringMultibyte;
 
-
-
-  var STRING_ITERATOR = 'String Iterator';
-  var setInternalState = internalState.set;
-  var getInternalState = internalState.getterFor(STRING_ITERATOR);
+  const STRING_ITERATOR = 'String Iterator';
+  const setInternalState = internalState.set;
+  const getInternalState = internalState.getterFor(STRING_ITERATOR);
 
   // `String.prototype[@@iterator]` method
   // https://tc39.github.io/ecma262/#sec-string.prototype-@@iterator
@@ -4479,29 +4408,29 @@
     setInternalState(this, {
       type: STRING_ITERATOR,
       string: String(iterated),
-      index: 0
+      index: 0,
     });
   // `%StringIteratorPrototype%.next` method
   // https://tc39.github.io/ecma262/#sec-%stringiteratorprototype%.next
   }, function next() {
-    var state = getInternalState(this);
-    var string = state.string;
-    var index = state.index;
-    var point;
+    const state = getInternalState(this);
+    const { string } = state;
+    const { index } = state;
+    let point;
     if (index >= string.length) return { value: undefined, done: true };
     point = charAt(string, index);
     state.index += point.length;
     return { value: point, done: false };
   });
 
-  var aFunction$1 = function (it) {
-    if (typeof it != 'function') {
-      throw TypeError(String(it) + ' is not a function');
+  const aFunction$1 = function (it) {
+    if (typeof it !== 'function') {
+      throw TypeError(`${String(it)} is not a function`);
     } return it;
   };
 
   // optional / simple context binding
-  var bindContext = function (fn, that, length) {
+  const bindContext = function (fn, that, length) {
     aFunction$1(fn);
     if (that === undefined) return fn;
     switch (length) {
@@ -4524,80 +4453,84 @@
   };
 
   // call something on iterator step with safe closing on error
-  var callWithSafeIterationClosing = function (iterator, fn, value, ENTRIES) {
+  const callWithSafeIterationClosing = function (iterator, fn, value, ENTRIES) {
     try {
       return ENTRIES ? fn(anObject(value)[0], value[1]) : fn(value);
     // 7.4.6 IteratorClose(iterator, completion)
     } catch (error) {
-      var returnMethod = iterator['return'];
+      const returnMethod = iterator.return;
       if (returnMethod !== undefined) anObject(returnMethod.call(iterator));
       throw error;
     }
   };
 
-  var ITERATOR$2 = wellKnownSymbol('iterator');
-  var ArrayPrototype = Array.prototype;
+  const ITERATOR$2 = wellKnownSymbol('iterator');
+  const ArrayPrototype = Array.prototype;
 
   // check on default Array iterator
-  var isArrayIteratorMethod = function (it) {
+  const isArrayIteratorMethod = function (it) {
     return it !== undefined && (iterators.Array === it || ArrayPrototype[ITERATOR$2] === it);
   };
 
-  var createProperty = function (object, key, value) {
-    var propertyKey = toPrimitive(key);
+  const createProperty = function (object, key, value) {
+    const propertyKey = toPrimitive(key);
     if (propertyKey in object) objectDefineProperty.f(object, propertyKey, createPropertyDescriptor(0, value));
     else object[propertyKey] = value;
   };
 
-  var TO_STRING_TAG$1 = wellKnownSymbol('toStringTag');
-  var test = {};
+  const TO_STRING_TAG$1 = wellKnownSymbol('toStringTag');
+  const test = {};
 
   test[TO_STRING_TAG$1] = 'z';
 
-  var toStringTagSupport = String(test) === '[object z]';
+  const toStringTagSupport = String(test) === '[object z]';
 
-  var TO_STRING_TAG$2 = wellKnownSymbol('toStringTag');
+  const TO_STRING_TAG$2 = wellKnownSymbol('toStringTag');
   // ES3 wrong here
-  var CORRECT_ARGUMENTS = classofRaw(function () { return arguments; }()) == 'Arguments';
+  const CORRECT_ARGUMENTS = classofRaw(function () { return arguments; }()) == 'Arguments';
 
   // fallback for IE11 Script Access Denied error
-  var tryGet = function (it, key) {
+  const tryGet = function (it, key) {
     try {
       return it[key];
     } catch (error) { /* empty */ }
   };
 
   // getting tag from ES6+ `Object.prototype.toString`
-  var classof = toStringTagSupport ? classofRaw : function (it) {
-    var O, tag, result;
+  const classof = toStringTagSupport ? classofRaw : function (it) {
+    let O; let tag; let
+      result;
     return it === undefined ? 'Undefined' : it === null ? 'Null'
       // @@toStringTag case
-      : typeof (tag = tryGet(O = Object(it), TO_STRING_TAG$2)) == 'string' ? tag
+      : typeof (tag = tryGet(O = Object(it), TO_STRING_TAG$2)) === 'string' ? tag
       // builtinTag case
-      : CORRECT_ARGUMENTS ? classofRaw(O)
-      // ES3 arguments fallback
-      : (result = classofRaw(O)) == 'Object' && typeof O.callee == 'function' ? 'Arguments' : result;
+        : CORRECT_ARGUMENTS ? classofRaw(O)
+        // ES3 arguments fallback
+          : (result = classofRaw(O)) == 'Object' && typeof O.callee === 'function' ? 'Arguments' : result;
   };
 
-  var ITERATOR$3 = wellKnownSymbol('iterator');
+  const ITERATOR$3 = wellKnownSymbol('iterator');
 
-  var getIteratorMethod = function (it) {
-    if (it != undefined) return it[ITERATOR$3]
+  const getIteratorMethod = function (it) {
+    if (it != undefined) {
+      return it[ITERATOR$3]
       || it['@@iterator']
       || iterators[classof(it)];
+    }
   };
 
   // `Array.from` method implementation
   // https://tc39.github.io/ecma262/#sec-array.from
-  var arrayFrom = function from(arrayLike /* , mapfn = undefined, thisArg = undefined */) {
-    var O = toObject(arrayLike);
-    var C = typeof this == 'function' ? this : Array;
-    var argumentsLength = arguments.length;
-    var mapfn = argumentsLength > 1 ? arguments[1] : undefined;
-    var mapping = mapfn !== undefined;
-    var index = 0;
-    var iteratorMethod = getIteratorMethod(O);
-    var length, result, step, iterator, next;
+  const arrayFrom = function from(arrayLike /* , mapfn = undefined, thisArg = undefined */) {
+    const O = toObject(arrayLike);
+    const C = typeof this === 'function' ? this : Array;
+    const argumentsLength = arguments.length;
+    let mapfn = argumentsLength > 1 ? arguments[1] : undefined;
+    const mapping = mapfn !== undefined;
+    let index = 0;
+    const iteratorMethod = getIteratorMethod(O);
+    let length; let result; let step; let iterator; let
+      next;
     if (mapping) mapfn = bindContext(mapfn, argumentsLength > 2 ? arguments[2] : undefined, 2);
     // if the target is not iterable or it's an array with the default iterator - use a simple case
     if (iteratorMethod != undefined && !(C == Array && isArrayIteratorMethod(iteratorMethod))) {
@@ -4607,8 +4540,7 @@
       for (;!(step = next.call(iterator)).done; index++) {
         createProperty(result, index, mapping
           ? callWithSafeIterationClosing(iterator, mapfn, [step.value, index], true)
-          : step.value
-        );
+          : step.value);
       }
     } else {
       length = toLength(O.length);
@@ -4621,36 +4553,36 @@
     return result;
   };
 
-  var ITERATOR$4 = wellKnownSymbol('iterator');
-  var SAFE_CLOSING = false;
+  const ITERATOR$4 = wellKnownSymbol('iterator');
+  let SAFE_CLOSING = false;
 
   try {
-    var called = 0;
-    var iteratorWithReturn = {
-      next: function () {
+    let called = 0;
+    const iteratorWithReturn = {
+      next() {
         return { done: !!called++ };
       },
-      'return': function () {
+      return() {
         SAFE_CLOSING = true;
-      }
+      },
     };
     iteratorWithReturn[ITERATOR$4] = function () {
       return this;
     };
     // eslint-disable-next-line no-throw-literal
-    Array.from(iteratorWithReturn, function () { throw 2; });
+    Array.from(iteratorWithReturn, () => { throw 2; });
   } catch (error) { /* empty */ }
 
-  var checkCorrectnessOfIteration = function (exec, SKIP_CLOSING) {
+  const checkCorrectnessOfIteration = function (exec, SKIP_CLOSING) {
     if (!SKIP_CLOSING && !SAFE_CLOSING) return false;
-    var ITERATION_SUPPORT = false;
+    let ITERATION_SUPPORT = false;
     try {
-      var object = {};
+      const object = {};
       object[ITERATOR$4] = function () {
         return {
-          next: function () {
+          next() {
             return { done: ITERATION_SUPPORT = true };
-          }
+          },
         };
       };
       exec(object);
@@ -4658,30 +4590,30 @@
     return ITERATION_SUPPORT;
   };
 
-  var INCORRECT_ITERATION = !checkCorrectnessOfIteration(function (iterable) {
+  const INCORRECT_ITERATION = !checkCorrectnessOfIteration((iterable) => {
     Array.from(iterable);
   });
 
   // `Array.from` method
   // https://tc39.github.io/ecma262/#sec-array.from
   _export({ target: 'Array', stat: true, forced: INCORRECT_ITERATION }, {
-    from: arrayFrom
+    from: arrayFrom,
   });
 
-  var from_1 = path.Array.from;
+  const from_1 = path.Array.from;
 
   //
   svgInjector.SVGInjector(document.querySelectorAll('[data-inject-svg]'), {
     afterEach: function afterEach(err, svg) {
       if (typeof jarallax === 'function') {
         svg.dispatchEvent(new CustomEvent('injected.mr.SVGInjector', {
-          bubbles: true
+          bubbles: true,
         }));
       }
-    }
+    },
   });
 
-  var mrTwitterFetcher = function ($) {
+  const mrTwitterFetcher = (function ($) {
     /**
      * Check for twitterFetcher dependency
      * twitterFetcher - https://github.com/jasonmayes/Twitter-Post-Fetcher
@@ -4695,38 +4627,37 @@
      * ------------------------------------------------------------------------
      */
 
-
-    var NAME = 'mrTwitterFetcher';
-    var VERSION = '1.0.0';
-    var DATA_KEY = 'mr.twitterFetcher';
-    var EVENT_KEY = "." + DATA_KEY;
-    var DATA_API_KEY = '.data-api';
-    var JQUERY_NO_CONFLICT = $.fn[NAME];
-    var Event = {
-      LOAD_DATA_API: "load" + EVENT_KEY + DATA_API_KEY,
-      RESIZE: "resize" + EVENT_KEY,
-      READY: "ready" + EVENT_KEY,
-      APPEND: "tweetAppended" + EVENT_KEY
+    const NAME = 'mrTwitterFetcher';
+    const VERSION = '1.0.0';
+    const DATA_KEY = 'mr.twitterFetcher';
+    const EVENT_KEY = `.${DATA_KEY}`;
+    const DATA_API_KEY = '.data-api';
+    const JQUERY_NO_CONFLICT = $.fn[NAME];
+    const Event = {
+      LOAD_DATA_API: `load${EVENT_KEY}${DATA_API_KEY}`,
+      RESIZE: `resize${EVENT_KEY}`,
+      READY: `ready${EVENT_KEY}`,
+      APPEND: `tweetAppended${EVENT_KEY}`,
     };
-    var Selector = {
+    const Selector = {
       DATA_ATTR: 'twitter-fetcher',
       DATA_TWITTER_FETCHER: '[data-twitter-fetcher]',
       DATA_TWITTER: 'data-twitter',
       USER: '.user',
       TWEET: '.tweet',
       TIME_POSTED: '.timePosted',
-      INTERACT: '.interact'
+      INTERACT: '.interact',
     };
-    var Defaults = {
+    const Defaults = {
       USERNAME: 'twitter',
-      MAX_TWEETS: 6
+      MAX_TWEETS: 6,
     };
-    var Options = {
+    const Options = {
       USERNAME: 'username',
       MAX_TWEETS: 'max-tweets',
       FLICKITY: 'flickity',
       SLIDER: 'twitterFlickity',
-      ISOTOPE: 'isotope'
+      ISOTOPE: 'isotope',
     };
     /**
      * ------------------------------------------------------------------------
@@ -4734,32 +4665,31 @@
      * ------------------------------------------------------------------------
      */
 
-    var TwitterFetcher =
-    /*#__PURE__*/
-    function () {
+    const TwitterFetcher =
+    /* #__PURE__ */
+    (function () {
       function TwitterFetcher(element) {
-        var $element = $(element);
+        const $element = $(element);
         this.element = element;
-        this.element.id = "tweets-" + new Date().getTime();
+        this.element.id = `tweets-${new Date().getTime()}`;
         this.username = $element.data(Options.USERNAME).replace('@', '') || Defaults.USERNAME;
         this.maxTweets = parseInt($element.data(Options.MAX_TWEETS), 10) || Defaults.MAX_TWEETS; // Check if data-twitter-slider is options object, plain attribute or not present.
 
-        this.slider = this.element.getAttribute(Selector.DATA_TWITTER + "-" + Options.FLICKITY) !== null;
+        this.slider = this.element.getAttribute(`${Selector.DATA_TWITTER}-${Options.FLICKITY}`) !== null;
         this.slider = this.slider && typeof $element.data(Options.SLIDER) === 'object' ? $element.data(Options.SLIDER) : this.slider; // Check if data-twitter-isotope is present.
 
-        this.isotope = this.element.getAttribute(Selector.DATA_TWITTER + "-" + Options.ISOTOPE) !== null;
+        this.isotope = this.element.getAttribute(`${Selector.DATA_TWITTER}-${Options.ISOTOPE}`) !== null;
         this.initTwitterFeed();
       } // getters
 
-
-      var _proto = TwitterFetcher.prototype;
+      const _proto = TwitterFetcher.prototype;
 
       _proto.initTwitterFeed = function initTwitterFeed() {
-        var _this = this;
+        const _this = this;
 
         this.config = {
           profile: {
-            screenName: this.username
+            screenName: this.username,
           },
           domId: this.element.id,
           maxTweets: this.maxTweets,
@@ -4769,15 +4699,15 @@
           dateFunction: '',
           showRetweet: false,
           customCallback: function customCallback(tweets) {
-            var $element = $(_this.element);
-            var html;
-            var template = $element.children().first().detach();
-            var x = tweets.length;
-            var n = 0;
+            const $element = $(_this.element);
+            let html;
+            const template = $element.children().first().detach();
+            const x = tweets.length;
+            let n = 0;
 
             while (n < x) {
-              var tweetContent = $('<div>').append($(tweets[n]));
-              var templateClone = template.clone();
+              const tweetContent = $('<div>').append($(tweets[n]));
+              const templateClone = template.clone();
               templateClone.find(Selector.TWEET).html(tweetContent.find(Selector.TWEET).html());
               templateClone.find(Selector.USER).html(tweetContent.find(Selector.USER).html());
               templateClone.find(Selector.TIME_POSTED).html(tweetContent.find(Selector.TIME_POSTED).html());
@@ -4785,7 +4715,7 @@
               $element.append(templateClone);
               n += 1; // Fire an event when each tweet is added to the div
 
-              var appendEvent = $.Event(Event.APPEND);
+              const appendEvent = $.Event(Event.APPEND);
               appendEvent.appendedElement = templateClone;
               appendEvent.mrTwitterFetcher = _this;
               $(_this.element).trigger(appendEvent);
@@ -4807,20 +4737,19 @@
               }
             } // Fire an event for tweets ready
 
-
-            var readyEvent = $.Event(Event.READY);
+            const readyEvent = $.Event(Event.READY);
             readyEvent.mrTwitterFetcher = _this;
             $(_this.element).trigger(readyEvent);
             return html;
-          }
+          },
         };
         twitterFetcher.fetch(this.config);
       };
 
       TwitterFetcher.jQueryInterface = function jQueryInterface() {
         return this.each(function jqEachTwitterFetcher() {
-          var $element = $(this);
-          var data = $element.data(DATA_KEY);
+          const $element = $(this);
+          let data = $element.data(DATA_KEY);
 
           if (!data) {
             data = new TwitterFetcher(this);
@@ -4830,27 +4759,26 @@
       };
 
       _createClass(TwitterFetcher, null, [{
-        key: "VERSION",
+        key: 'VERSION',
         get: function get() {
           return VERSION;
-        }
+        },
       }]);
 
       return TwitterFetcher;
-    }();
+    }());
     /**
      * ------------------------------------------------------------------------
      * Initialise by data attribute
      * ------------------------------------------------------------------------
      */
 
-
-    $(window).on(Event.LOAD_DATA_API, function () {
-      var twitterFetcherElements = $.makeArray($(Selector.DATA_TWITTER_FETCHER));
+    $(window).on(Event.LOAD_DATA_API, () => {
+      const twitterFetcherElements = $.makeArray($(Selector.DATA_TWITTER_FETCHER));
       /* eslint-disable no-plusplus */
 
-      for (var i = twitterFetcherElements.length; i--;) {
-        var $twitterFetcher = $(twitterFetcherElements[i]);
+      for (let i = twitterFetcherElements.length; i--;) {
+        const $twitterFetcher = $(twitterFetcherElements[i]);
         TwitterFetcher.jQueryInterface.call($twitterFetcher, $twitterFetcher.data());
       }
     });
@@ -4871,11 +4799,10 @@
     };
     /* eslint-enable no-param-reassign */
 
-
     return TwitterFetcher;
-  }(jQuery$1);
+  }(jQuery$1));
 
-  var mrTypedText = function ($) {
+  const mrTypedText = (function ($) {
     /**
      * Check for typedText dependency
      * typedText - https://github.com/mattboldt/typed.js/
@@ -4888,7 +4815,6 @@
      * scrollMonitor - https://github.com/stutrek/scrollMonitor
      */
 
-
     if (typeof scrollMonitor === 'undefined') {
       throw new Error('mrTypedText requires scrollMonitor.js (https://github.com/stutrek/scrollMonitor)');
     }
@@ -4898,18 +4824,17 @@
      * ------------------------------------------------------------------------
      */
 
-
-    var NAME = 'mrTypedText';
-    var VERSION = '1.0.0';
-    var DATA_KEY = 'mr.typedText';
-    var EVENT_KEY = "." + DATA_KEY;
-    var DATA_API_KEY = '.data-api';
-    var JQUERY_NO_CONFLICT = $.fn[NAME];
-    var Event = {
-      LOAD_DATA_API: "load" + EVENT_KEY + DATA_API_KEY
+    const NAME = 'mrTypedText';
+    const VERSION = '1.0.0';
+    const DATA_KEY = 'mr.typedText';
+    const EVENT_KEY = `.${DATA_KEY}`;
+    const DATA_API_KEY = '.data-api';
+    const JQUERY_NO_CONFLICT = $.fn[NAME];
+    const Event = {
+      LOAD_DATA_API: `load${EVENT_KEY}${DATA_API_KEY}`,
     };
-    var Selector = {
-      TYPED_TEXT: '[data-typed-text]'
+    const Selector = {
+      TYPED_TEXT: '[data-typed-text]',
     };
     /**
      * ------------------------------------------------------------------------
@@ -4917,22 +4842,21 @@
      * ------------------------------------------------------------------------
      */
 
-    var TypedText =
-    /*#__PURE__*/
-    function () {
+    const TypedText =
+    /* #__PURE__ */
+    (function () {
       function TypedText(element) {
         // The current map element
         this.element = element;
-        var $element = $(element);
+        const $element = $(element);
         this.Typed = new Typed(this.element, $element.data());
         this.initWatcher(element);
       } // getters
 
-
       TypedText.jQueryInterface = function jQueryInterface() {
         return this.each(function jqEachTypedText() {
-          var $element = $(this);
-          var data = $element.data(DATA_KEY);
+          const $element = $(this);
+          let data = $element.data(DATA_KEY);
 
           if (!data) {
             data = new TypedText(this);
@@ -4941,13 +4865,13 @@
         });
       };
 
-      var _proto = TypedText.prototype;
+      const _proto = TypedText.prototype;
 
       _proto.initWatcher = function initWatcher(element) {
-        var _this = this;
+        const _this = this;
 
-        var watcher = scrollMonitor.create(element);
-        watcher.stateChange(function () {
+        const watcher = scrollMonitor.create(element);
+        watcher.stateChange(() => {
           // Stop the Typed animation when the element leaves the viewport
           if (watcher.isInViewport) {
             _this.Typed.start();
@@ -4959,27 +4883,26 @@
       ;
 
       _createClass(TypedText, null, [{
-        key: "VERSION",
+        key: 'VERSION',
         get: function get() {
           return VERSION;
-        }
+        },
       }]);
 
       return TypedText;
-    }();
+    }());
     /**
      * ------------------------------------------------------------------------
      * Initialise by data attribute
      * ------------------------------------------------------------------------
      */
 
-
-    $(window).on(Event.LOAD_DATA_API, function () {
-      var cdownsOnPage = $.makeArray($(Selector.TYPED_TEXT));
+    $(window).on(Event.LOAD_DATA_API, () => {
+      const cdownsOnPage = $.makeArray($(Selector.TYPED_TEXT));
       /* eslint-disable no-plusplus */
 
-      for (var i = cdownsOnPage.length; i--;) {
-        var $typedText = $(cdownsOnPage[i]);
+      for (let i = cdownsOnPage.length; i--;) {
+        const $typedText = $(cdownsOnPage[i]);
         TypedText.jQueryInterface.call($typedText, $typedText.data());
       }
     });
@@ -5000,15 +4923,14 @@
     };
     /* eslint-enable no-param-reassign */
 
-
     return TypedText;
-  }(jQuery$1);
+  }(jQuery$1));
 
   (function () {
     if (typeof $ === 'undefined') {
       throw new TypeError('Medium Rare JavaScript requires jQuery. jQuery must be included before theme.js.');
     }
-  })();
+  }());
 
   exports.mrCountdown = mrCountdown;
   exports.mrCountup = mrCountup;
@@ -5028,6 +4950,5 @@
   exports.mrUtil = mrUtil;
 
   Object.defineProperty(exports, '__esModule', { value: true });
-
 }));
-//# sourceMappingURL=theme.js.map
+// # sourceMappingURL=theme.js.map

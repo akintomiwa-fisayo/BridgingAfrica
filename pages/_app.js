@@ -1,4 +1,4 @@
-// import '../less/styles.less';
+import '../less/styles.less';
 
 import App from 'next/app';
 import React from 'react';
